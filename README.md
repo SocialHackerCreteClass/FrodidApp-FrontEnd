@@ -8,7 +8,10 @@ Before you run this project you need to set up **Prettier** and **eslint**
 #### ( feel free to update any part of this readme if necessary )
 
 Prettier should be run on every save of a file. You need to install 
-https://github.com/prettier/prettier-vscode 
+https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
+
+For eslint you need to install 
+https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
 
 ## Run project
 In order to run this project you should run:

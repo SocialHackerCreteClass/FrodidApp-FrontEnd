@@ -1,3 +1,20 @@
+# Info for SHA developers
+
+## Configuration info
+npm install
+
+Before you run this project you need to set up **Prettier** and **eslint**
+
+#### ( feel free to update any part of this readme if necessary )
+
+Prettier should be run on every save of a file. You need to install 
+https://github.com/prettier/prettier-vscode 
+
+## Run project
+In order to run this project you should run:
+npm run start
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

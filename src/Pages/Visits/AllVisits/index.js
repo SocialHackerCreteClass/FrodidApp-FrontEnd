@@ -1,11 +1,13 @@
 import React from "react"
+import { useI18n } from "providers/I18n"
 
 AllVisits.propTypes = {}
 
 function AllVisits() {
+  const { t } = useI18n()
   return (
     <div>
-      <h1>This page with host a list with all the visits</h1>
+      <h1>{t("int.all-visit-header", "visits")}</h1>
     </div>
   )
 }

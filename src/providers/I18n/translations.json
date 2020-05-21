@@ -1,0 +1,10 @@
+{
+  "en": {
+    "int.login": "Login",
+    "int.all-visit-header": "This page with host a list with all the {0}"
+  },
+  "el": {
+    "int.login": "Σύνδεση",
+    "int.all-visit-header": "This page with host a list with all the {0}"
+  }
+}

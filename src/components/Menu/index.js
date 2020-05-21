@@ -1,9 +1,11 @@
 import React from "react"
 import { Link } from "react-router-dom"
+import { useI18n } from "providers/I18n"
 
 Menu.propTypes = {}
 
 function Menu() {
+  const { t } = useI18n()
   return (
     <nav>
       <ul>
@@ -11,7 +13,7 @@ function Menu() {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/login">Login</Link>
+          <Link to="/login">{t("int.login")}</Link>
         </li>
         <li>
           <Link to="/register">Register</Link>

@@ -2,18 +2,17 @@ import React, { useState } from "react"
 
 Login.propTypes = {}
 
-function Login() {
-  const [userIsLogged, setUserIsLogged] = useState(false)
-  console.log(userIsLogged)
+function Login(props) {
+  let { userIsLogged } = props
 
-  function login() {
-    setUserIsLogged(true)
-    console.log(userIsLogged)
+  const [loggedStatous, setLoggedStatous] = useState(userIsLogged)
+
+  function login(loggedStatous) {
+    setLoggedStatous(true)
   }
 
-  function logout() {
-    setUserIsLogged(false)
-    console.log(userIsLogged)
+  function logout(loggedStatous) {
+    setLoggedStatous(false)
   }
 
   return (
@@ -21,7 +20,7 @@ function Login() {
       <h1>This will be the Login page</h1>
       <button onClick={login}>Log In</button>
       <button onClick={logout}>Log Out</button>
-      {userIsLogged && <h1>Welcome to our app!</h1>}
+      {loggedStatous && <h1>Welcome to our app!</h1>}
     </div>
   )
 }

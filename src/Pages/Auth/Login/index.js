@@ -1,19 +1,22 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
 
 Login.propTypes = {}
 
 function Login(props) {
-  let { userIsLogged } = props
-
-  const [loggedStatous, setLoggedStatous] = useState(userIsLogged)
+  const loggedStatous = props.userIsLogged
 
   function login(loggedStatous) {
-    setLoggedStatous(true)
+    props.setUserIsLogged(true)
   }
 
   function logout(loggedStatous) {
-    setLoggedStatous(false)
+    props.setUserIsLogged(false)
   }
+
+  useEffect(() => {
+    localStorage.setItem("user is logged", loggedStatous)
+  }, [loggedStatous])
 
   return (
     <div>
@@ -21,6 +24,10 @@ function Login(props) {
       <button onClick={login}>Log In</button>
       <button onClick={logout}>Log Out</button>
       {loggedStatous && <h1>Welcome to our app!</h1>}
+      <br />
+      <Link to="/">
+        <button>Go back</button>
+      </Link>
     </div>
   )
 }

@@ -6,14 +6,19 @@ import Register from "./Pages/Auth/Register"
 import I18nProvider from "./providers/I18n"
 
 function App() {
-  const [userIsLogged, setUserIsLogged] = useState(false)
+  const loggedStatous = localStorage.getItem("user is logged")
+  const [userIsLogged, setUserIsLogged] = useState(loggedStatous)
+  console.log("from app component, userlogged is ", userIsLogged)
 
   return (
     <Router>
       <I18nProvider>
         <Switch>
           <Route path="/login">
-            <Login userIsLogged={userIsLogged} />
+            <Login
+              userIsLogged={userIsLogged}
+              setUserIsLogged={setUserIsLogged}
+            />
           </Route>
           <Route path="/register">
             <Register />

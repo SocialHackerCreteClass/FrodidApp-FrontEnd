@@ -1,6 +1,7 @@
 import React from "react"
 
-Visit.propTypes = {}
+
+Patient.propTypes = {}
 
 function Patient() {
   return (

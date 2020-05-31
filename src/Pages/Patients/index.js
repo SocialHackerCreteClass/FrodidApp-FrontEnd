@@ -14,8 +14,6 @@ function Patients({ match }) {
     <Switch>
       <Route path={`${match.url}/create-new`} component={Edit} />
       <Route path={`${match.url}/edit/:id`} component={Edit} />
-      
-      
     </Switch>
   )
 }

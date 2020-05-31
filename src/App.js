@@ -8,7 +8,6 @@ import I18nProvider from "./providers/I18n"
 function App() {
   const loggedStatous = localStorage.getItem("user is logged")
   const [userIsLogged, setUserIsLogged] = useState(loggedStatous)
-  console.log("from app component, userlogged is ", userIsLogged)
 
   return (
     <Router>

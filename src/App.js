@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import Pages from "./Pages"
 import Login from "./Pages/Auth/Login"
@@ -12,6 +12,12 @@ function App() {
   return (
     <Router>
       <I18nProvider>
+        {loggedStatous === "true" ? (
+          <h1 style={{ backgroundColor: "green" }}>User is Logged in</h1>
+        ) : (
+          <h1 style={{ backgroundColor: "red" }}>User is logged out</h1>
+        )}
+
         <Switch>
           <Route path="/login">
             <Login
@@ -23,7 +29,7 @@ function App() {
             <Register />
           </Route>
           <Route path="/">
-            <Pages />
+            <Pages loggedStatous={loggedStatous} />
           </Route>
         </Switch>
       </I18nProvider>

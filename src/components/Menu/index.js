@@ -6,7 +6,7 @@ Menu.propTypes = {}
 
 const userIsLogged = localStorage.getItem("user is logged")
 
-function Menu() {
+function Menu(props) {
   const { t } = useI18n()
 
   return (
@@ -21,7 +21,8 @@ function Menu() {
         <li>
           <Link to="/register">Register</Link>
         </li>
-        {userIsLogged === "true" && (
+
+        {props.loggedStatous === "true" && (
           <div>
             <li>
               <Link to="/visits">All Visits</Link>

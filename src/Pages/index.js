@@ -2,17 +2,21 @@ import React from "react"
 import { Route, Switch } from "react-router-dom"
 import Menu from "../components/Menu"
 import Visits from "./Visits"
+import ProtectedRoute from "./../components/ProtectedRoute"
 
 Pages.propTypes = {}
 
 function Pages() {
+  const user = localStorage.getItem("user is logged") === "true"
+  console.log(user)
+
   return (
     <div>
       <Menu />
 
       <Switch>
-        <Route path="/visits" component={Visits} />
-        <Route path="/" component={Home} />
+        <ProtectedRoute user={user} path="/visits" component={Visits} />
+        <Route exact path="/" render={(props) => <Home user={user} />} />
       </Switch>
     </div>
   )

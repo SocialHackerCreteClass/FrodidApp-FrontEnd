@@ -5,10 +5,10 @@ import Visits from "./Visits"
 
 Pages.propTypes = {}
 
-function Pages(props) {
+function Pages() {
   return (
     <div>
-      <Menu loggedStatous={props.loggedStatous} />
+      <Menu />
 
       <Switch>
         <Route path="/visits" component={Visits} />

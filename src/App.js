@@ -29,7 +29,7 @@ function App() {
             <Register />
           </Route>
           <Route path="/">
-            <Pages loggedStatous={loggedStatous} />
+            <Pages />
           </Route>
         </Switch>
       </I18nProvider>

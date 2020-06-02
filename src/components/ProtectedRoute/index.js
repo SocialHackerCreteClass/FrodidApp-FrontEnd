@@ -1,5 +1,6 @@
 import React from "react"
 import { Route } from "react-router-dom"
+import AccessDenied from 'components/AccessDenied'
 
 const ProtectedRoute = ({ component: Component, user, ...rest }) => {
   return (
@@ -9,7 +10,7 @@ const ProtectedRoute = ({ component: Component, user, ...rest }) => {
         if (user) {
           return <Component {...rest} {...props} />
         } else {
-          return <h1>You must log in to view visits</h1>
+          return <AccessDenied/>
         }
       }}
     />

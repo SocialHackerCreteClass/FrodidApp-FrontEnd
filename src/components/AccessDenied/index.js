@@ -4,7 +4,7 @@ function AccessDenied() {
   return (
     <div>
       <h1>Access is Denied</h1>
-      <p>Please Log in to view the pages</p>
+      <p>Please Log in to view the pages of your visits</p>
     </div>
   )
 }

@@ -31,28 +31,16 @@ function Menu() {
           <Link to="/visits/edit/test-id">Edit a visit</Link>
         </li>
         <li>
-          <Link to="/patients">
-            Patients - Will display a table of all patients
-          </Link>
+          <Link to="/patients">Patients</Link>
         </li>
         <li>
-          <Link to="patients/details/test-id">
-            Patient Details - Will display the details of a patient.
-          </Link>
-        </li>
-
-        <li>
-          <Link to="/patients/create-new">
-            Patient Create New -will contain a form for the creation of a
-            patient. For now display just a message.
-          </Link>
+          <Link to="/patients/details/test-id">Patient Details</Link>
         </li>
         <li>
-          <Link to="/patients/edit/test-id">
-            Patient Edit -will contain a form for the editing of a patient. For
-            now display just a message. This will be the same page as the
-            create-new page
-          </Link>
+          <Link to="/patients/create-new">Patient Create New</Link>
+        </li>
+        <li>
+          <Link to="/patients/edit/test-id">Patient Edit</Link>
         </li>
       </ul>
     </nav>

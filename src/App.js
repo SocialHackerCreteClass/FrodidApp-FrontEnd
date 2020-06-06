@@ -6,13 +6,13 @@ import Register from "./Pages/Auth/Register"
 import I18nProvider from "./providers/I18n"
 
 function App() {
-  const loggedStatous = localStorage.getItem("user is logged")
-  const [userIsLogged, setUserIsLogged] = useState(loggedStatous)
+  const loggedStatus = localStorage.getItem("user is logged")
+  const [userIsLogged, setUserIsLogged] = useState(loggedStatus)
 
   return (
     <Router>
       <I18nProvider>
-        {loggedStatous === "true" ? (
+        {loggedStatus === "true" ? (
           <h1 style={{ backgroundColor: "green" }}>User is Logged in</h1>
         ) : (
           <h1 style={{ backgroundColor: "red" }}>User is logged out</h1>
@@ -38,5 +38,3 @@ function App() {
 }
 
 export default App
-
-//this is a test comment for a test commit

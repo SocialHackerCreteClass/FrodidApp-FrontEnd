@@ -1,24 +1,33 @@
 import React, { useEffect } from "react"
-import { Link } from "react-router-dom"
+import { Link, useHistory, useParams } from "react-router-dom"
 
 Login.propTypes = {}
 
 function Login(props) {
-  const loggedStatous = props.userIsLogged
+  //const loggedStatus = props.userIsLogged
 
-  function login(loggedStatous) {
+  let history = useHistory()
+  console.log(history)
+
+  const params = useParams()
+
+  const { userIsLogged } = props
+
+  function login(userIsLogged) {
     props.setUserIsLogged(true)
-    window.location.reload(false)
+    //window.location.reload(false)
+    history.goBack()
   }
 
-  function logout(loggedStatous) {
+  function logout(userIsLogged) {
     props.setUserIsLogged(false)
-    window.location.reload(false)
+    //window.location.reload(false)
+    history.goBack()
   }
 
   useEffect(() => {
-    localStorage.setItem("user is logged", loggedStatous)
-  }, [loggedStatous])
+    localStorage.setItem("user is logged", userIsLogged)
+  }, [userIsLogged])
 
   return (
     <div>
@@ -27,9 +36,6 @@ function Login(props) {
       <button onClick={logout}>Log Out</button>
 
       <br />
-      <Link to="/">
-        <button>Go back</button>
-      </Link>
     </div>
   )
 }

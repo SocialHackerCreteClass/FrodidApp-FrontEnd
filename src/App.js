@@ -7,7 +7,11 @@ import I18nProvider from "./providers/I18n"
 
 function App() {
   const loggedStatus = localStorage.getItem("user is logged")
+<<<<<<< HEAD
   const [userIsLogged, setUserIsLogged] = useState(loggedStatus)
+=======
+  const [userIsLogged, setUserIsLogged] = useState(loggedStatous)
+>>>>>>> 256662133b09d30bd0b2e235e4c51739f6aa4ba5
 
   return (
     <Router>

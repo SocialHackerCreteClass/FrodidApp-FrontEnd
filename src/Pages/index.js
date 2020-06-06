@@ -8,13 +8,14 @@ Pages.propTypes = {}
 
 function Pages() {
   const user = localStorage.getItem("user is logged") === "true"
-  console.log(user)
+  
 
   return (
     <div>
       <Menu />
 
       <Switch>
+
         <ProtectedRoute user={user} path="/visits" component={Visits} />
         <Route exact path="/" render={(props) => <Home user={user} />} />
       </Switch>

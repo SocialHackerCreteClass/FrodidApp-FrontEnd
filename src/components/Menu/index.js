@@ -22,7 +22,7 @@ function Menu() {
           <Link to="/register">Register</Link>
         </li>
 
-        {userIsLogged === "true" && (
+        
           <div>
             <li>
               <Link to="/visits">All Visits</Link>
@@ -37,7 +37,7 @@ function Menu() {
               <Link to="/visits/edit/test-id">Edit a visit</Link>
             </li>
           </div>
-        )}
+       
       </ul>
     </nav>
   )

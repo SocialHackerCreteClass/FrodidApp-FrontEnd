@@ -6,7 +6,7 @@ import Register from "./Pages/Auth/Register"
 import I18nProvider from "./providers/I18n"
 
 function App() {
-  const loggedStatous = localStorage.getItem("user is logged")
+  const loggedStatus = localStorage.getItem("user is logged")
   const [userIsLogged, setUserIsLogged] = useState(loggedStatous)
 
   return (

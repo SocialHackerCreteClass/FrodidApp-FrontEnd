@@ -13,7 +13,7 @@ import I18nProvider from "./providers/I18n"
 function App() {
   const loggedStatus = localStorage.getItem("user is logged")
 
-  console.log("app rendered")
+  console.log("App component rendered")
 
   return (
     <Router>

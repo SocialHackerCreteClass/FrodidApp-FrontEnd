@@ -5,22 +5,22 @@ import { exact } from "prop-types"
 Login.propTypes = {}
 
 function Login(props) {
+  console.log("login rendered ")
+
   let history = useHistory()
 
   const [loggedStatus, setLoggedStatus] = useState(
     localStorage.getItem("user is logged")
   )
 
-  //const { loggedStatus } = props
-
   function login(userIsLogged) {
     setLoggedStatus(true)
-    //window.location.reload(false)
+    window.location.reload(false)
   }
 
   function logout(userIsLogged) {
     setLoggedStatus(false)
-    //window.location.reload(false)
+    window.location.reload(false)
   }
 
   useEffect(() => {

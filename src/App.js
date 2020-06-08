@@ -3,31 +3,34 @@ import {
   BrowserRouter as Router,
   Route,
   Switch,
-  useHistory
+  useHistory,
+  useLocation,
+  Redirect
 } from "react-router-dom"
 import Pages from "./Pages"
 import Login from "./Pages/Auth/Login"
 import Register from "./Pages/Auth/Register"
 import I18nProvider from "./providers/I18n"
+import LoginStatus from "./components/LoginStatus"
 
 function App() {
-  const loggedStatus = localStorage.getItem("user is logged")
-
-  console.log("App component rendered")
+  const [loggedStatus, setLoggedStatus] = useState(
+    localStorage.getItem("user is logged")
+  )
 
   return (
     <Router>
       <I18nProvider>
-        {loggedStatus}
-        {loggedStatus === "true" ? (
-          <h1 style={{ backgroundColor: "green" }}>User is Logged in</h1>
-        ) : (
-          <h1 style={{ backgroundColor: "red" }}>User is logged out</h1>
-        )}
-
+        <LoginStatus
+          loggedStatus={loggedStatus}
+          setLoggedStatus={setLoggedStatus}
+        />
         <Switch>
           <Route path="/login">
-            <Login loggedStatus={localStorage.getItem("user is logged")} />
+            <Login
+              loggedStatus={loggedStatus}
+              setLoggedStatus={setLoggedStatus}
+            />
           </Route>
           <Route path="/register">
             <Register />

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { Link } from "react-router-dom"
 import { useI18n } from "providers/I18n"
 
@@ -22,22 +22,20 @@ function Menu() {
           <Link to="/register">Register</Link>
         </li>
 
-        
-          <div>
-            <li>
-              <Link to="/visits">All Visits</Link>
-            </li>
-            <li>
-              <Link to="/visits/details/test-id">View a single Visit</Link>
-            </li>
-            <li>
-              <Link to="/visits/create-new">New visit</Link>
-            </li>
-            <li>
-              <Link to="/visits/edit/test-id">Edit a visit</Link>
-            </li>
-          </div>
-       
+        <div>
+          <li>
+            <Link to="/visits">All Visits</Link>
+          </li>
+          <li>
+            <Link to="/visits/details/test-id">View a single Visit</Link>
+          </li>
+          <li>
+            <Link to="/visits/create-new">New visit</Link>
+          </li>
+          <li>
+            <Link to="/visits/edit/test-id">Edit a visit</Link>
+          </li>
+        </div>
       </ul>
     </nav>
   )

@@ -1,5 +1,5 @@
 import React from "react"
-import { Route, Switch } from "react-router-dom"
+import { Route, Switch, useHistory } from "react-router-dom"
 import Menu from "../components/Menu"
 import Visits from "./Visits"
 import ProtectedRoute from "./../components/ProtectedRoute"

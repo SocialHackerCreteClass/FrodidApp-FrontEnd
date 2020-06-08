@@ -1,26 +1,31 @@
 import React, { useEffect, useState } from "react"
-import { Link, useHistory, useParams } from "react-router-dom"
+import {
+  Link,
+  useHistory,
+  useParams,
+  BrowserRouter as Router,
+  Route,
+  Redirect
+} from "react-router-dom"
 import { exact } from "prop-types"
 
 Login.propTypes = {}
 
 function Login(props) {
-  console.log("login rendered ")
-
   let history = useHistory()
 
-  const [loggedStatus, setLoggedStatus] = useState(
-    localStorage.getItem("user is logged")
-  )
+  const { loggedStatus, setLoggedStatus } = props
 
   function login(userIsLogged) {
     setLoggedStatus(true)
-    window.location.reload(false)
+
+    history.goBack()
   }
 
   function logout(userIsLogged) {
     setLoggedStatus(false)
-    window.location.reload(false)
+
+    history.goBack()
   }
 
   useEffect(() => {
@@ -33,6 +38,7 @@ function Login(props) {
 
       <button onClick={login}>Log In</button>
       <button onClick={logout}>Log Out</button>
+      <hr />
 
       <br />
     </div>

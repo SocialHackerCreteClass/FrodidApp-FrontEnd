@@ -4,8 +4,11 @@ import { useI18n } from "providers/I18n"
 
 Menu.propTypes = {}
 
+const userIsLogged = localStorage.getItem("user is logged")
+
 function Menu() {
   const { t } = useI18n()
+
   return (
     <nav>
       <ul>
@@ -18,6 +21,23 @@ function Menu() {
         <li>
           <Link to="/register">Register</Link>
         </li>
+
+
+        <div>
+          <li>
+            <Link to="/visits">All Visits</Link>
+          </li>
+          <li>
+            <Link to="/visits/details/test-id">View a single Visit</Link>
+          </li>
+          <li>
+            <Link to="/visits/create-new">New visit</Link>
+          </li>
+          <li>
+            <Link to="/visits/edit/test-id">Edit a visit</Link>
+          </li>
+        </div>
+
         <li>
           <Link to="/visits">All Visits</Link>
         </li>
@@ -42,6 +62,7 @@ function Menu() {
         <li>
           <Link to="/patients/edit/test-id">Patient Edit</Link>
         </li>
+
       </ul>
     </nav>
   )

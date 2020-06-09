@@ -1,36 +1,25 @@
-import React, { useEffect, useState } from "react"
-import {
-  Link,
-  useHistory,
-  useParams,
-  BrowserRouter as Router,
-  Route,
-  Redirect
-} from "react-router-dom"
-import { exact } from "prop-types"
+import React from "react"
+import { useHistory } from "react-router-dom"
+import PropTypes from "prop-types"
 
-Login.propTypes = {}
+Login.propTypes = {
+  setLoggedStatus: PropTypes.func
+}
 
 function Login(props) {
-  let history = useHistory()
+  const history = useHistory()
 
-  const { loggedStatus, setLoggedStatus } = props
+  const { setLoggedStatus } = props
 
-  function login(userIsLogged) {
+  function login() {
     setLoggedStatus(true)
-
-    history.goBack()
+    history.push("/")
   }
 
-  function logout(userIsLogged) {
+  function logout() {
     setLoggedStatus(false)
-
-    history.goBack()
+    history.push("/login")
   }
-
-  useEffect(() => {
-    localStorage.setItem("user is logged", loggedStatus)
-  }, [loggedStatus])
 
   return (
     <div>

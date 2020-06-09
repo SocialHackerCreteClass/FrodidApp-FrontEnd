@@ -1,12 +1,5 @@
-import React, { useState, useEffect } from "react"
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  useHistory,
-  useLocation,
-  Redirect
-} from "react-router-dom"
+import React, { useEffect, useState } from "react"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import Pages from "./Pages"
 import Login from "./Pages/Auth/Login"
 import Register from "./Pages/Auth/Register"
@@ -15,8 +8,12 @@ import LoginStatus from "./components/LoginStatus"
 
 function App() {
   const [loggedStatus, setLoggedStatus] = useState(
-    localStorage.getItem("user is logged")
+    localStorage.getItem("user is logged") === "true"
   )
+
+  useEffect(() => {
+    localStorage.setItem("user is logged", loggedStatus)
+  }, [loggedStatus])
 
   return (
     <Router>
@@ -36,7 +33,7 @@ function App() {
             <Register />
           </Route>
           <Route path="/">
-            <Pages />
+            <Pages loggedStatus={loggedStatus} />
           </Route>
         </Switch>
       </I18nProvider>

@@ -421,6 +421,9 @@ button {
 .c-btn--ghost.c-btn--small {
   padding: 4px 10px;
 }
+.c-btn--ghost.c-btn--large {
+  padding: 22px 46px;
+}
 .c-btn--ghost.c-btn--primary {
   color: var(--primary-90);
 }

@@ -5,6 +5,7 @@ import Login from "./Pages/Auth/Login"
 import Register from "./Pages/Auth/Register"
 import I18nProvider from "./providers/I18n"
 import LoginStatus from "./components/LoginStatus"
+import "./styles/globalStyles"
 
 function App() {
   const [loggedStatus, setLoggedStatus] = useState(

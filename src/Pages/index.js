@@ -5,6 +5,7 @@ import Menu from "../components/Menu"
 import Visits from "./Visits"
 import ProtectedRoute from "./../components/ProtectedRoute"
 import Patients from "./Patients"
+import TestPage from "./TestPage"
 
 Pages.propTypes = {
   loggedStatus: PropTypes.bool
@@ -21,6 +22,7 @@ function Pages({ loggedStatus }) {
           path="/patients"
           component={Patients}
         />
+        <Route path="/test" component={TestPage} />
         <Route path="/" component={Home} />
       </Switch>
     </div>

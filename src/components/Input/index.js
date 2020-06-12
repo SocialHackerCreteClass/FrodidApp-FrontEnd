@@ -15,13 +15,12 @@ Input.propTypes = {
 function Input({ className, onChange, label, value, disabled, errorMessage }) {
   const [inputValue, setInputValue] = useState("")
   const [isDisabled, setIsDisabled] = useState(false)
+  const [error, setError] = useState(false)
+
+  errorMessage = "We are sorry, an error occured. Please try again."
 
   return (
-    <form
-      className="inputComponent"
-      onSubmit={(e) => {
-        e.preventDefault()
-      }}>
+    <div className="inputComponent">
       <label>
         This is an input Component
         <input
@@ -30,9 +29,11 @@ function Input({ className, onChange, label, value, disabled, errorMessage }) {
             e.preventDefault()
             setInputValue(e.target.value)
             console.log(inputValue)
-          }}></input>
+          }}
+          disabled={isDisabled}></input>
       </label>
-    </form>
+      {error && <div>{errorMessage}</div>}
+    </div>
   )
 }
 

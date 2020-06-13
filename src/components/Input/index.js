@@ -12,7 +12,7 @@ Input.propTypes = {
   errorMessage: PropTypes.string
 }
 
-function Input({ className, onChange, label, value, disabled, errorMessage }) {
+function Input({ className, onChange, label, value, errorMessage, success, errorForm, disabled, search }) {
   const [inputValue, setInputValue] = useState("")
   const [isDisabled, setIsDisabled] = useState(false)
   const [error, setError] = useState(false)
@@ -20,9 +20,7 @@ function Input({ className, onChange, label, value, disabled, errorMessage }) {
   errorMessage = "We are sorry, an error occured. Please try again."
 
   return (
-    <div className={InputCls}>
-      <label>
-        This is an input Component
+    <div className={cx(InputCls, { success, errorForm, disabled, search }, className)}>
         <input
           type="text"
           onChange={(e) => {
@@ -31,9 +29,7 @@ function Input({ className, onChange, label, value, disabled, errorMessage }) {
             console.log(inputValue)
           }}
           disabled={isDisabled}></input>
-      </label>
-      {error && <div>{errorMessage}</div>}
-    </div>
+        </div>
   )
 }
 

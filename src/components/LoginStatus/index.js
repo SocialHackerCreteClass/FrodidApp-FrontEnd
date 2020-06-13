@@ -20,9 +20,6 @@ function LoginStatus(props) {
       <button onClick={() => updateLocale("en")}>English</button>
       <button onClick={() => updateLocale("el")}>Ελληνικά</button>
       {props.loggedStatus}
-      <div>
-        <Input />
-      </div>
     </div>
   )
 }

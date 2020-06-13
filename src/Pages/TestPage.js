@@ -1,5 +1,6 @@
 import React from "react"
 import Badge from "../components/Badge"
+import Input from "../components/Input"
 
 function TestPage() {
   return (
@@ -14,6 +15,14 @@ function TestPage() {
         Active badge: <Badge active />
       </section>
       <hr />
+      <h3>Input</h3>
+      <section>
+          Normal input: <Input success />
+          <Input errorForm />
+          <Input search />
+          <Input disabled />
+      </section>
+      ----------------
     </div>
   )
 }

@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
-import { InputCls } from "./styles"
+import { inputCls, wrapper } from "./styles"
 import { cx } from "emotion"
 
 Input.propTypes = {
@@ -12,7 +12,17 @@ Input.propTypes = {
   errorMessage: PropTypes.string
 }
 
-function Input({ className, onChange, label, value, errorMessage, success, errorForm, disabled, search }) {
+function Input({
+  className,
+  onChange,
+  label,
+  value,
+  errorMessage,
+  success,
+  errorForm,
+  disabled,
+  search
+}) {
   const [inputValue, setInputValue] = useState("")
   const [isDisabled, setIsDisabled] = useState(false)
   const [error, setError] = useState(false)
@@ -20,16 +30,23 @@ function Input({ className, onChange, label, value, errorMessage, success, error
   errorMessage = "We are sorry, an error occured. Please try again."
 
   return (
-    <div className={cx(InputCls, { success, errorForm, disabled, search }, className)}>
-        <input
-          type="text"
-          onChange={(e) => {
-            e.preventDefault()
-            setInputValue(e.target.value)
-            console.log(inputValue)
-          }}
-          disabled={isDisabled}></input>
-        </div>
+    <div
+      className={cx(
+        wrapper,
+        { success, errorForm, disabled, search },
+        className
+      )}>
+      <input
+        className={inputCls}
+        type="text"
+        onChange={(e) => {
+          e.preventDefault()
+          setInputValue(e.target.value)
+          console.log(inputValue)
+        }}
+        disabled={disabled ? "disabled" : ""}
+      />
+    </div>
   )
 }
 

@@ -20,7 +20,7 @@ function Input({ className, onChange, label, value, disabled, errorMessage }) {
   errorMessage = "We are sorry, an error occured. Please try again."
 
   return (
-    <div className="inputComponent">
+    <div className={InputCls}>
       <label>
         This is an input Component
         <input

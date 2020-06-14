@@ -42,7 +42,6 @@ function Input({
         onChange={(e) => {
           e.preventDefault()
           setInputValue(e.target.value)
-          console.log(inputValue)
         }}
         disabled={disabled ? "disabled" : ""}
       />

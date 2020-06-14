@@ -1,8 +1,6 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
-
 import { inputCls, wrapper } from "./styles"
-
 import { cx } from "emotion"
 
 Input.propTypes = {
@@ -44,6 +42,7 @@ function Input({
         onChange={(e) => {
           e.preventDefault()
           setInputValue(e.target.value)
+          console.log(inputValue)
         }}
         disabled={disabled ? "disabled" : ""}
       />

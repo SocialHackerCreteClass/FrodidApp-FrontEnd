@@ -1,6 +1,6 @@
 import React from "react"
 
-Visit.propTypes = {}
+Professional.propTypes = {}
 
 function Professional() {
   return (

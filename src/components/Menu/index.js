@@ -55,27 +55,16 @@ function Menu() {
           <Link to="/patients/edit/test-id">Patient Edit</Link>
         </li>
         <li>
-          <Link to="/professionals">
-            Professionals - Will display a table of all professionals
-          </Link>
+          <Link to="/professionals">Professionals</Link>
         </li>
         <li>
-          <Link to="/professionals/details/test-id">
-            Professional Details - Will display the details of a professional.
-          </Link>
+          <Link to="/professionals/details/test-id">Professional Details</Link>
         </li>
         <li>
-          <Link to="/professionals/create-new">
-            Professional Create New - will contain a form for the creation of a
-            professional. For now display just a message.
-          </Link>
+          <Link to="/professionals/create-new">Professional Create New</Link>
         </li>
         <li>
-          <Link to="/professionals/edit/test-id">
-            Professional Edit - will contain a form for the editing of a
-            professional. For now display just a message. This will be the same
-            page as the create-new page
-          </Link>
+          <Link to="/professionals/edit/test-id">Professional Edit</Link>
         </li>
       </ul>
     </nav>

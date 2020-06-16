@@ -2,11 +2,13 @@
   "en": {
     "int.login": "Login",
     "int.all-visit-header": "This page with host a list with all the {0}",
-    "int.all-patients-header": "This page with host a list with all the {0}"
+    "int.all-patients-header": "This page with host a list with all the {0}",
+    "int.all-professional-header": "This page with host a list with all the {0}"
   },
   "el": {
     "int.login": "Σύνδεση",
     "int.all-visit-header": "This page with host a list with all the {0}",
-    "int.all-patients-header": "Αυτη η σελιδα θα δείχνει όλους τους {0}"
+    "int.all-patients-header": "Αυτη η σελιδα θα δείχνει όλους τους {0}",
+    "int.all-professional-header": "Αυτη η σελιδα θα δείχνει όλους τους {0}"
   }
 }

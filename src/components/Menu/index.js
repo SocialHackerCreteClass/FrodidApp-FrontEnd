@@ -6,6 +6,7 @@ Menu.propTypes = {}
 
 function Menu() {
   const { t } = useI18n()
+
   return (
     <nav>
       <ul>
@@ -52,6 +53,28 @@ function Menu() {
             professional. For now display just a message. This will be the same
             page as the create-new page
           </Link>
+          <Link to="/visits">All Visits</Link>
+        </li>
+        <li>
+          <Link to="/visits/details/test-id">View a single Visit</Link>
+        </li>
+        <li>
+          <Link to="/visits/create-new">New visit</Link>
+        </li>
+        <li>
+          <Link to="/visits/edit/test-id">Edit a visit</Link>
+        </li>
+        <li>
+          <Link to="/patients">Patients</Link>
+        </li>
+        <li>
+          <Link to="/patients/details/test-id">Patient Details</Link>
+        </li>
+        <li>
+          <Link to="/patients/create-new">Patient Create New</Link>
+        </li>
+        <li>
+          <Link to="/patients/edit/test-id">Patient Edit</Link>
         </li>
       </ul>
     </nav>

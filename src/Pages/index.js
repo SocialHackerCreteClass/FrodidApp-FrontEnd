@@ -1,17 +1,29 @@
 import React from "react"
 import { Route, Switch } from "react-router-dom"
+import PropTypes from "prop-types"
 import Menu from "../components/Menu"
 import Visits from "./Visits"
 import Professionals from "./Professionals"
+import ProtectedRoute from "./../components/ProtectedRoute"
+import Patients from "./Patients"
+import TestPage from "./TestPage"
 
-Pages.propTypes = {}
+Pages.propTypes = {
+  loggedStatus: PropTypes.bool
+}
 
-function Pages() {
+function Pages({ loggedStatus }) {
   return (
     <div>
       <Menu />
       <Switch>
-        <Route path="/visits" component={Visits} />
+        <ProtectedRoute user={loggedStatus} path="/visits" component={Visits} />
+        <ProtectedRoute
+          user={loggedStatus}
+          path="/patients"
+          component={Patients}
+        />
+        <Route path="/test" component={TestPage} />
         <Route path="/" component={Home} />
         <Route path="/professionals" component={Professionals} />
       </Switch>

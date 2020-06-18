@@ -12,7 +12,8 @@ export const UserType = PropTypes.shape({
     afm: PropTypes.number.isRequired,
     amka: PropTypes.number.isRequired,
     role: PropTypes.oneOf(["admin", "professional"]).isRequired,
-    profession: PropTypes.string.isRequired,
+    profession: PropTypes.oneOf(["Nurse", "Social Worker", "Psychologist", "Family Helper", "Physiotherapist", "Doctor"]).isRequired,
     image: PropTypes.string
 })
+
    

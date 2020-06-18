@@ -12,7 +12,7 @@ Input.propTypes = {
   errorMessage: PropTypes.string
 }
 
-//test comment
+//test comment 2
 
 function Input({
   className,

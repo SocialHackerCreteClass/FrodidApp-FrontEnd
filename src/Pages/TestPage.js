@@ -17,10 +17,10 @@ function TestPage() {
       <hr />
       <h3>Input</h3>
       <section>
-          Normal input: <Input success />
-          <Input errorForm />
-          <Input search />
-          <Input disabled />
+        Normal input: <Input success />
+        <Input errorForm />
+        <Input search />
+        <Input disabled />
       </section>
       ----------------
     </div>

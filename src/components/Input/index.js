@@ -12,8 +12,6 @@ Input.propTypes = {
   errorMessage: PropTypes.string
 }
 
-//test comment 2
-
 function Input({
   className,
   onChange,
@@ -26,10 +24,6 @@ function Input({
   search
 }) {
   const [inputValue, setInputValue] = useState("")
-  const [isDisabled, setIsDisabled] = useState(false)
-  const [error, setError] = useState(false)
-
-  errorMessage = "We are sorry, an error occured. Please try again."
 
   return (
     <div
@@ -39,6 +33,7 @@ function Input({
         className
       )}>
       <input
+        placeholder="Write here"
         className={inputCls}
         type="text"
         onChange={(e) => {

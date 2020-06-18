@@ -12,6 +12,8 @@ Input.propTypes = {
   errorMessage: PropTypes.string
 }
 
+//test comment
+
 function Input({
   className,
   onChange,

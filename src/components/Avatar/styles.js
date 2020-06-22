@@ -34,7 +34,7 @@ export const imgWrapper = css`
   align-items: center;
 `
 export const marginBottom = css`
-  margin-bottom: 24px !important;
+  margin-bottom: 24px;
 `
 export const avatarMobile = css`
 width: 2rem;

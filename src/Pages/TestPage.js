@@ -1,6 +1,6 @@
 import React from "react"
 import Badge from "../components/Badge"
-import Avatar from "../components/Avatar/Avatar"
+import Avatar from "../components/Avatar"
 
 function TestPage() {
   return (

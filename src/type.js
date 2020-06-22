@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 
 export const UserType = PropTypes.shape({
@@ -37,7 +36,7 @@ export const PatientType = PropTypes.shape({
     })
 })
 
-export const VisitType = React.PropTypes.shape({
+export const VisitType = PropTypes.shape({
     id: PropTypes.number,
     date: PropTypes.number.isRequired,
     comment: PropTypes.string,

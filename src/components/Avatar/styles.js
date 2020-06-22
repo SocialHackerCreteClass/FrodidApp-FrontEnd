@@ -33,3 +33,30 @@ export const imgWrapper = css`
   justify-content: center;
   align-items: center;
 `
+export const marginBottom = css`
+  margin-bottom: 24px !important;
+`
+export const avatarMobile = css`
+width: 2rem;
+height: 2rem;
+& @media (min-width: 33.13em) {
+  .c-avatar--mobile {
+    width: 3rem;
+    height: 3rem;
+  }
+`
+
+export const avatarImage = css`
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+export const letters = css`
+  font-weight: 700;
+  text-transform: uppercase;
+`

@@ -38,7 +38,7 @@ function Input({
         type="text"
         onChange={(e) => {
           e.preventDefault()
-          setInputValue(e.target.value)
+          onChange(e.target.value)
         }}
         disabled={disabled ? "disabled" : ""}
       />

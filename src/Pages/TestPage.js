@@ -1,6 +1,10 @@
 import React from "react"
 import Badge from "../components/Badge"
+
 import Input from "../components/Input"
+
+import Avatar from "../components/Avatar"
+
 
 function TestPage() {
   return (
@@ -15,6 +19,7 @@ function TestPage() {
         Active badge: <Badge active />
       </section>
       <hr />
+
       <h3>Input</h3>
       <section>
         Normal input: <Input success />
@@ -23,6 +28,15 @@ function TestPage() {
         <Input disabled />
       </section>
       ----------------
+
+      <section>
+        Avatar: <Avatar src="https://placekitten.com/300/300" />
+        <div>
+          Large Avatar:{" "}
+          <Avatar size={"large"} src="https://placekitten.com/300/400" />
+        </div>
+      </section>
+
     </div>
   )
 }

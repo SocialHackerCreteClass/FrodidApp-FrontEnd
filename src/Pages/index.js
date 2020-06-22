@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom"
 import PropTypes from "prop-types"
 import Menu from "../components/Menu"
 import Visits from "./Visits"
+import Professionals from "./Professionals"
 import ProtectedRoute from "./../components/ProtectedRoute"
 import Patients from "./Patients"
 import TestPage from "./TestPage"
@@ -22,8 +23,13 @@ function Pages({ loggedStatus }) {
           path="/patients"
           component={Patients}
         />
+
         <Route path="/test" exact component={TestPage} />
         <Route path="/" exact component={Home} />
+        <Route path="/professionals" component={Professionals} />
+        
+        <Route path="/" component={Home} />
+
       </Switch>
     </div>
   )

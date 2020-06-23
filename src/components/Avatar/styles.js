@@ -33,3 +33,25 @@ export const imgWrapper = css`
   justify-content: center;
   align-items: center;
 `
+export const marginBottom = css`
+  margin-bottom: 24px;
+`
+export const avatarMobile = css`
+  width: 2rem;
+  height: 2rem;
+`
+
+export const avatarImage = css`
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+export const letters = css`
+  font-weight: 700;
+  text-transform: uppercase;
+`

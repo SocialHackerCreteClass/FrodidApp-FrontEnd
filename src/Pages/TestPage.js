@@ -16,10 +16,26 @@ function TestPage() {
       </section>
       <hr />
       <section>
-        Avatar: <Avatar src="https://placekitten.com/300/300" />
+        Avatar:{" "}
+        <Avatar
+          user={{
+            image: "https://placekitten.com/300/300",
+            firstName: "John",
+            lastName: "Doe"
+          }}
+        />
+        <Avatar user={{ image: null, firstName: "John", lastName: "doe" }} />
+        <Avatar user={{ image: "", firstName: "John", lastName: "" }} />
         <div>
           Large Avatar:{" "}
-          <Avatar size={"large"} src="https://placekitten.com/300/400" />
+          <Avatar
+            size={"large"}
+            user={{
+              image: "https://placekitten.com/300/300",
+              firstName: "John",
+              lastName: "Doe"
+            }}
+          />
         </div>
       </section>
     </div>

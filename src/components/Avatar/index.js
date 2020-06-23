@@ -12,11 +12,11 @@ import {
 import { UserType } from "../../type"
 
 // Renders the Avatar with Image
-const AvatarImage = ({ size = "medium", src, className }) => {
+const AvatarImage = ({ size = "medium", user, className }) => {
   return (
     <div className={cx(wrapper, { large: size === "large" }, className)}>
       <div className={imgWrapper}>
-        <img src={src.image} alt="avatar" />
+        <img src={user.image} alt="avatar" />
       </div>
     </div>
   )
@@ -25,7 +25,7 @@ const AvatarImage = ({ size = "medium", src, className }) => {
 AvatarImage.propTypes = {
   className: PropTypes.string,
   size: PropTypes.oneOf(["medium", "large"]),
-  src: UserType.image.PropTypes.string
+  user: UserType.image.PropTypes.string
 }
 
 // Renders avatar with the letters
@@ -38,7 +38,7 @@ const AvatarText = ({ user }) => {
         <span className={cx(wrapper, avatarMobile)}>
           <span className={cx(avatarImage)}>
             <span className={cx(letters)}>
-              {`${firstNameLetter} ${lastNameLetter}`}
+              {`${firstNameLetter}${lastNameLetter}`}
             </span>
           </span>
         </span>
@@ -52,14 +52,10 @@ AvatarText.propTypes = {
 }
 
 const Avatar = ({ user }) => {
-  return (
-    <div>
-      {user.image === "" ? (
-        <AvatarText user={user} />
-      ) : (
-        <AvatarImage src={user.image} />
-      )}
-    </div>
+  return user.image === "" ? (
+    <AvatarText user={user} />
+  ) : (
+    <AvatarImage src={user.image} />
   )
 }
 

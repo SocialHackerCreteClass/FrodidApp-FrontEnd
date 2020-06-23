@@ -25,7 +25,7 @@ const AvatarImage = ({ size = "medium", user, className }) => {
 AvatarImage.propTypes = {
   className: PropTypes.string,
   size: PropTypes.oneOf(["medium", "large"]),
-  user: UserType.image.PropTypes.string
+  user: UserType
 }
 
 // Renders avatar with the letters
@@ -55,7 +55,7 @@ const Avatar = ({ user }) => {
   return user.image === "" ? (
     <AvatarText user={user} />
   ) : (
-    <AvatarImage src={user.image} />
+    <AvatarImage user={user} />
   )
 }
 

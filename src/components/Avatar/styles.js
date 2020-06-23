@@ -33,12 +33,26 @@ export const imgWrapper = css`
   justify-content: center;
   align-items: center;
 `
-export const marginBottom = css`
-  margin-bottom: 24px;
+
+export const avatarImageWrapper = css`
+  border: none;
 `
+
+export const avatarTextWrapper = css`
+  & a {
+    text-decoration: none;
+  }
+`
+
 export const avatarMobile = css`
   width: 2rem;
   height: 2rem;
+  @media (min-width: 33.13em) {
+    & {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
 `
 
 export const avatarImage = css`

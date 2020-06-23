@@ -29,13 +29,19 @@ AvatarImage.propTypes = {
 }
 
 // Renders avatar with the letters
-const AvatarText = ({ user }) => {
+const AvatarText = ({ size = "medium", user, className }) => {
   const firstNameLetter = user.firstName.slice(0, 1)
   const lastNameLetter = user.lastName.slice(0, 1)
   return (
     <div className={cx(marginBottom)}>
       <a href="#" title={`${user.firstName} ${user.lastName}`}>
-        <span className={cx(wrapper, avatarMobile)}>
+        <span
+          className={cx(
+            wrapper,
+            { large: size === "large" },
+            className,
+            avatarMobile
+          )}>
           <span className={cx(avatarImage)}>
             <span className={cx(letters)}>
               {`${firstNameLetter}${lastNameLetter}`}
@@ -48,18 +54,23 @@ const AvatarText = ({ user }) => {
 }
 
 AvatarText.propTypes = {
+  className: PropTypes.string,
+  size: PropTypes.oneOf(["medium", "large"]),
   user: UserType
 }
 
-const Avatar = ({ user }) => {
+// Rendering Component
+const Avatar = ({ size = "medium", user, className }) => {
   return user.image === "" ? (
-    <AvatarText user={user} />
+    <AvatarText user={user} size={size} className={className} />
   ) : (
-    <AvatarImage user={user} />
+    <AvatarImage user={user} size={size} className={className} />
   )
 }
 
 Avatar.propTypes = {
+  className: PropTypes.string,
+  size: PropTypes.oneOf(["medium", "large"]),
   user: UserType
 }
 export default Avatar

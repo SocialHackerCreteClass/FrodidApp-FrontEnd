@@ -1,6 +1,6 @@
-import React, { useState } from "react"
+import React from "react"
 import PropTypes from "prop-types"
-import { inputCls, wrapper } from "./styles"
+import { inputCls } from "./styles"
 import { cx } from "emotion"
 
 Input.propTypes = {
@@ -9,40 +9,36 @@ Input.propTypes = {
   label: PropTypes.string,
   value: PropTypes.string,
   disabled: PropTypes.bool,
-  errorMessage: PropTypes.string
+  errorMessage: PropTypes.string,
+  search: PropTypes.bool,
+  type: PropTypes.string
 }
 
 function Input({
   className,
-  onChange,
-  label,
+  onChange = () => {},
   value,
   errorMessage,
-  success,
-  errorForm,
   disabled,
-  search
+  search,
+  type = "text"
 }) {
-  const [inputValue, setInputValue] = useState("")
-
   return (
-    <div
-      className={cx(
-        wrapper,
-        { success, errorForm, disabled, search },
+    <input
+      placeholder="Write here"
+      className={cx(inputCls, {
+        errorForm: Boolean(errorMessage),
+        search,
         className
-      )}>
-      <input
-        placeholder="Write here"
-        className={inputCls}
-        type="text"
-        onChange={(e) => {
-          e.preventDefault()
-          onChange(e.target.value)
-        }}
-        disabled={disabled ? "disabled" : ""}
-      />
-    </div>
+      })}
+      type={search ? "search" : type}
+      onChange={(e) => {
+        e.preventDefault()
+        onChange(e.target.value)
+      }}
+      value={value}
+      disabled={disabled ? "disabled" : ""}
+    />
   )
 }
 

@@ -5,7 +5,6 @@ import Input from "../components/Input"
 
 import Avatar from "../components/Avatar"
 
-
 function TestPage() {
   return (
     <div>
@@ -19,16 +18,14 @@ function TestPage() {
         Active badge: <Badge active />
       </section>
       <hr />
-
       <h3>Input</h3>
       <section>
         Normal input: <Input success />
-        <Input errorForm />
-        <Input search />
+        <Input />
+        <Input search errorMessage={"there is an error"} />
         <Input disabled />
       </section>
       ----------------
-
       <section>
         Avatar:{" "}
         <Avatar
@@ -52,7 +49,6 @@ function TestPage() {
           />
         </div>
       </section>
-
     </div>
   )
 }

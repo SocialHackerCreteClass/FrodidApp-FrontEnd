@@ -37,13 +37,8 @@ export const marginBottom = css`
   margin-bottom: 24px;
 `
 export const avatarMobile = css`
-width: 2rem;
-height: 2rem;
-& @media (min-width: 33.13em) {
-  .c-avatar--mobile {
-    width: 3rem;
-    height: 3rem;
-  }
+  width: 2rem;
+  height: 2rem;
 `
 
 export const avatarImage = css`

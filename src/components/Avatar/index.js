@@ -61,7 +61,7 @@ AvatarText.propTypes = {
 
 // Rendering Component
 const Avatar = ({ size = "medium", user, className }) => {
-  return user.image === "" ? (
+  return !user.image ? (
     <AvatarText user={user} size={size} className={className} />
   ) : (
     <AvatarImage user={user} size={size} className={className} />

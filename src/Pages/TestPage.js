@@ -24,7 +24,7 @@ function TestPage() {
             lastName: "Doe"
           }}
         />
-        <Avatar user={{ image: "", firstName: "John", lastName: "doe" }} />
+        <Avatar user={{ image: null, firstName: "John", lastName: "doe" }} />
         <Avatar user={{ image: "", firstName: "John", lastName: "" }} />
         <div>
           Large Avatar:{" "}

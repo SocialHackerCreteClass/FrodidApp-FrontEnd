@@ -1,11 +1,17 @@
 import React from "react"
 import Badge from "../components/Badge"
 import Input from "../components/Input"
+import BreadcrumbsComponent from "../components/Breadcrumbs"
 
 function TestPage() {
   return (
     <div>
       <hr />
+      <section>
+        <h3>Breadcrumbs Component</h3>
+        <BreadcrumbsComponent />
+      </section>
+      ----------------
       <h3>Badge</h3>
       <section>
         Normal badge: <Badge />

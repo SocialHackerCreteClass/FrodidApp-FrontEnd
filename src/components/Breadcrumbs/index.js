@@ -10,7 +10,7 @@ const routesList = {
   "/visits": "Visits",
   "/visits/details/:id": "View a single Visit",
   "/visits/create-new": "New Visit",
-  "/visits/edit/test-id": "Edit a Visit",
+  "/visits/edit/:id": "Edit a Visit",
   "/visits": "All Visits",
   "/patients": "Patients",
   "/patients/details/test-id": "Patient Details",

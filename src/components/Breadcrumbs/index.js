@@ -20,8 +20,10 @@ const routesList = {
 
 function BreadcrumbsComponent() {
   return (
-    <div className={breadcrumbsCls}>
-      <Breadcrumbs mappedRoutes={routesList} />
+    <div style={{ display: "inline" }}>
+      <div className={breadcrumbsCls}>
+        <Breadcrumbs mappedRoutes={routesList} />
+      </div>
     </div>
   )
 }

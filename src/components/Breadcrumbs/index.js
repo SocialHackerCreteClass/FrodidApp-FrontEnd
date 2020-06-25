@@ -8,7 +8,7 @@ const routesList = {
   "/login": "Login",
   "/register": "Register",
   "/visits": "Visits",
-  "/visits/details/test-id": "View a single Visit",
+  "/visits/details/:id": "View a single Visit",
   "/visits/create-new": "New Visit",
   "/visits/edit/test-id": "Edit a Visit",
   "/visits": "All Visits",

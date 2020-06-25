@@ -1,7 +1,7 @@
 import React from "react"
 import Breadcrumbs from "react-router-dynamic-breadcrumbs"
-import { Link, BrowserRouter as Router } from "react-router-dom"
-import PropTypes from "prop-types"
+
+import { breadcrumbsCls } from "./styles"
 
 const routesList = {
   "/": "Home",
@@ -13,16 +13,16 @@ const routesList = {
   "/visits/edit/:id": "Edit a Visit",
   "/visits": "All Visits",
   "/patients": "Patients",
-  "/patients/details/test-id": "Patient Details",
+  "/patients/details/:id": "Patient Details",
   "/patients/create-new": "Patient Create New",
-  "/patients/edit/test-id": "Patient Edit"
+  "/patients/edit/:id": "Patient Edit"
 }
 
 function BreadcrumbsComponent() {
   return (
-    <Router>
+    <div className={breadcrumbsCls}>
       <Breadcrumbs mappedRoutes={routesList} />
-    </Router>
+    </div>
   )
 }
 

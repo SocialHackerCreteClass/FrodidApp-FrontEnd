@@ -5,6 +5,7 @@ import Login from "./Pages/Auth/Login"
 import Register from "./Pages/Auth/Register"
 import I18nProvider from "./providers/I18n"
 import LoginStatus from "./components/LoginStatus"
+import BreadcrumbsComponent from "./components/Breadcrumbs"
 import "./styles/globalStyles"
 
 function App() {
@@ -19,6 +20,11 @@ function App() {
   return (
     <Router>
       <I18nProvider>
+        <section>
+          <BreadcrumbsComponent />
+          ------------------this component is placed here for development
+          purposes.
+        </section>
         <LoginStatus
           loggedStatus={loggedStatus}
           setLoggedStatus={setLoggedStatus}

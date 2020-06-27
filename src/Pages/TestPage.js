@@ -5,6 +5,8 @@ import Input from "../components/Input"
 
 import Avatar from "../components/Avatar"
 
+import { Table, columns, data } from "../table"
+
 function TestPage() {
   return (
     <div>
@@ -48,6 +50,11 @@ function TestPage() {
             }}
           />
         </div>
+      </section>
+      ----------------
+      <section>
+        Table:
+        <Table columns={columns} data={data} />
       </section>
     </div>
   )

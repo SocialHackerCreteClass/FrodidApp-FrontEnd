@@ -17,8 +17,6 @@ function App() {
     localStorage.setItem("user is logged", loggedStatus)
   }, [loggedStatus])
 
-  //I have placed the breadcrumb component inside the App.js in order to be visible from everywhere and display changes.
-
   return (
     <Router>
       <I18nProvider>

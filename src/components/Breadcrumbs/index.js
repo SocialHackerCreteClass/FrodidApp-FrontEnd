@@ -8,14 +8,14 @@ const routesList = {
   "/login": "Login",
   "/register": "Register",
   "/visits": "Visits",
-  "/visits/details/:id": "View a single Visit",
+  "/visits/details/visit:id": "View a single Visit",
   "/visits/create-new": "New Visit",
-  "/visits/edit/:id": "Edit a Visit",
+  "/visits/edit/visit:id": "Edit a Visit",
   "/visits": "All Visits",
   "/patients": "Patients",
-  "/patients/details/:id": "Patient Details",
+  "/patients/details/patient:id": "Patient Details",
   "/patients/create-new": "Patient Create New",
-  "/patients/edit/:id": "Patient Edit"
+  "/patients/edit/patient:id": "Patient Edit"
 }
 
 function BreadcrumbsComponent() {

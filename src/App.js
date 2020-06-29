@@ -22,9 +22,6 @@ function App() {
   return (
     <Router>
       <I18nProvider>
-        <section>
-          <BreadcrumbsComponent />
-        </section>
         <LoginStatus
           loggedStatus={loggedStatus}
           setLoggedStatus={setLoggedStatus}

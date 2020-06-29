@@ -6,6 +6,7 @@ import Visits from "./Visits"
 import ProtectedRoute from "./../components/ProtectedRoute"
 import Patients from "./Patients"
 import TestPage from "./TestPage"
+import Breadcrumbs from "./../components/Breadcrumbs"
 
 Pages.propTypes = {
   loggedStatus: PropTypes.bool
@@ -14,6 +15,7 @@ Pages.propTypes = {
 function Pages({ loggedStatus }) {
   return (
     <div>
+      <Breadcrumbs />
       <Menu />
       <Switch>
         <ProtectedRoute user={loggedStatus} path="/visits" component={Visits} />

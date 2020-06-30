@@ -1,26 +1,5 @@
 import { css } from "emotion"
 
-export const wrapper = css`
-  &.search {
-    display: flex;
-    align-items: center;
-  }
-  &.disabled > input {
-    border-color: var(--global-grey-40);
-    background-color: var(--global-grey-30);
-  }
-  &.success > input {
-    border-color: var(--global-success-70);
-    background-color: var(--global-success-10);
-    color: var(--global-success-70);
-  }
-  &.errorForm > input {
-    border-color: var(--global-error-70);
-    background-color: var(--global-error-10);
-    color: var(--global-error-70);
-  }
-`
-
 export const inputCls = css`
   display: block;
   width: 100%;
@@ -35,11 +14,27 @@ export const inputCls = css`
   line-height: 1.6;
   &[disabled] {
     cursor: not-allowed;
+    border-color: var(--global-grey-40);
+    background-color: var(--global-grey-30);
   }
   &:focus {
     color: var(--primary-90);
     background-color: var(--global-white);
     border-color: var(--global-grey-20);
     outline: var(--primary-60) solid 3px;
+  }
+  &.search {
+    display: flex;
+    align-items: center;
+  }
+  &.success {
+    border-color: var(--global-success-70);
+    background-color: var(--global-success-10);
+    color: var(--global-success-70);
+  }
+  &.errorForm {
+    border-color: var(--global-error-70);
+    background-color: var(--global-error-10);
+    color: var(--global-error-70);
   }
 `

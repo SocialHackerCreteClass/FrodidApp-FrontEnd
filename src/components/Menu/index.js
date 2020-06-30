@@ -6,7 +6,6 @@ Menu.propTypes = {}
 
 function Menu() {
   const { t } = useI18n()
-
   return (
     <nav>
       <ul>
@@ -42,6 +41,18 @@ function Menu() {
         </li>
         <li>
           <Link to="/patients/edit/edit-id">Patient Edit</Link>
+        </li>
+        <li>
+          <Link to="/professionals">Professionals</Link>
+        </li>
+        <li>
+          <Link to="/professionals/details/test-id">Professional Details</Link>
+        </li>
+        <li>
+          <Link to="/professionals/create-new">Professional Create New</Link>
+        </li>
+        <li>
+          <Link to="/professionals/edit/test-id">Professional Edit</Link>
         </li>
       </ul>
     </nav>

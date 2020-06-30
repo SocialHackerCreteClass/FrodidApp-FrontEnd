@@ -1,10 +1,8 @@
 import React from "react"
 import Badge from "../components/Badge"
-
-import Input from "../components/Input"
-
 import Avatar from "../components/Avatar"
-
+import SubmitButton from "../components/Button"
+import LinkButton from "../components/Button"
 function TestPage() {
   return (
     <div>
@@ -18,14 +16,6 @@ function TestPage() {
         Active badge: <Badge active />
       </section>
       <hr />
-      <h3>Input</h3>
-      <section>
-        Normal input: <Input success />
-        <Input />
-        <Input search errorMessage={"there is an error"} />
-        <Input disabled />
-      </section>
-      ----------------
       <section>
         Avatar:{" "}
         <Avatar
@@ -49,6 +39,11 @@ function TestPage() {
           />
         </div>
       </section>
+      -------------------
+      <SubmitButton href="" onClick="" primary small>
+        {" "}
+      </SubmitButton>
+      <LinkButton></LinkButton>
     </div>
   )
 }

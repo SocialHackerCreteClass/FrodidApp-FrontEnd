@@ -1,30 +1,38 @@
+/* eslint-disable react/prop-types */
 import React from "react"
 import Breadcrumbs from "react-router-dynamic-breadcrumbs"
-
-import { breadcrumbsCls } from "./styles"
+import { itemCls, wrapperCls } from "./styles"
+import { cx } from "emotion"
 
 const routesList = {
-  "/": "Home",
   "/login": "Login",
   "/register": "Register",
-  "/visits": "Visits",
-  "/visits/details/visit:id": "View a single Visit",
+  "/visits/details": null,
+  "/visits/details/:id": "View a single Visit",
   "/visits/create-new": "New Visit",
-  "/visits/edit/visit:id": "Edit a Visit",
+  "/visits/edit": null,
+  "/visits/edit/:id": "Edit a Visit",
   "/visits": "All Visits",
   "/patients": "Patients",
-  "/patients/details/patient:id": "Patient Details",
-  "/patients/create-new": "Patient Create New",
-  "/patients/edit/patient:id": "Patient Edit"
+  "/patients/details": null,
+  "/patients/details/:id": "Patient Details",
+  "/patients/create-new": "Create New",
+  "/patients/edit": null,
+  "/patients/edit/:id": "Patient Edit"
 }
 
 function BreadcrumbsComponent() {
   return (
-    <div style={{ display: "inline" }}>
-      <div className={breadcrumbsCls}>
-        <Breadcrumbs mappedRoutes={routesList} />
-      </div>
-    </div>
+    <Breadcrumbs
+      mappedRoutes={routesList}
+      WrapperComponent={(props) => (
+        <ol className={wrapperCls}>{props.children}</ol>
+      )}
+      LinkComponent={(props) => <li className={itemCls}>{props.children}</li>}
+      ActiveLinkComponent={(props) => (
+        <li className={cx(itemCls, "active")}>{props.children}</li>
+      )}
+    />
   )
 }
 

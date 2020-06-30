@@ -1,21 +1,24 @@
 import { css } from "emotion"
 
-export const breadcrumbsCls = css`
-  background-color: transparent;
-  -webkit-text-decoration-skip: objects;
-  color: var(--primary-60);
-  display: inline;
-  li {
-    display: inline;
-    list-style-type: none;
-    margin-left: 0;
+export const wrapperCls = css`
+  display: flex;
+  list-style: none;
+  margin-left: 0;
+  margin-bottom: 0;
+`
+
+export const itemCls = css`
+  &.active {
+    color: var(--global-grey-60);
   }
-  li:before {
-    content: "/";
-    padding-right: 3px;
-  }
-  li:first-child:before {
-    content: "";
-    padding-right: 0;
+
+  & + & {
+    padding-left: 12px;
+    &:before {
+      display: inline-block;
+      padding-right: 6px;
+      color: var(--global-grey-60);
+      content: "\\203A";
+    }
   }
 `

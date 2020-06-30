@@ -1,13 +1,13 @@
 import React from "react"
 import { Route, Switch } from "react-router-dom"
 import PropTypes from "prop-types"
-import Menu from "../components/Menu"
+import Menu from "components/Menu"
 import Visits from "./Visits"
 import Professionals from "./Professionals"
-import ProtectedRoute from "./../components/ProtectedRoute"
+import ProtectedRoute from "components/ProtectedRoute"
 import Patients from "./Patients"
 import TestPage from "./TestPage"
-import Breadcrumbs from "./../components/Breadcrumbs"
+import Breadcrumbs from "components/Breadcrumbs"
 
 Pages.propTypes = {
   loggedStatus: PropTypes.bool

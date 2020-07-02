@@ -3,31 +3,34 @@ import React from "react"
 import Breadcrumbs from "react-router-dynamic-breadcrumbs"
 import { itemCls, wrapperCls } from "./styles"
 import { cx } from "emotion"
-
-const routesList = {
-  "/login": "Login",
-  "/register": "Register",
-  "/visits/details": null,
-  "/visits/details/:id": "View a single Visit",
-  "/visits/create-new": "New Visit",
-  "/visits/edit": null,
-  "/visits/edit/:id": "Edit a Visit",
-  "/visits": "All Visits",
-  "/patients": "Patients",
-  "/patients/details": null,
-  "/patients/details/:id": "Patient Details",
-  "/patients/create-new": "Create New",
-  "/patients/edit": null,
-  "/patients/edit/:id": "Patient Edit",
-  "/professionals": "Professionals",
-  "/professionals/details": null,
-  "/professionals/details/:id": "Professional Details",
-  "/professionals/create-new": "Create New Professional",
-  "/professionals/edit": null,
-  "/professionals/edit/:id": "Professional Edit"
-}
+import { useI18n } from "providers/I18n"
 
 function BreadcrumbsComponent() {
+  const { t } = useI18n()
+
+  const routesList = {
+    "/login": `${t("int.login")}`,
+    "/register": "Register", //
+    "/visits/details": null, //
+    "/visits/details/:id": `${t("int.view_single_visit")}`, //
+    "/visits/create-new": `${t("int.create_new_visit")}`, //
+    "/visits/edit": null, //
+    "/visits/edit/:id": `${t("int.edit_a_visit")}`, //
+    "/visits": `${t("int.allvisits")}`, //
+    "/patients": `${t("int.patients")}`, //
+    "/patients/details": null, //
+    "/patients/details/:id": `${t("int.patient_details")}`, //
+    "/patients/create-new": `${t("int.patients_create_new")}`, //
+    "/patients/edit": null, //
+    "/patients/edit/:id": `${t("int.patient_edit")}`, //
+    "/professionals": `${t("int.professionals")}`, //
+    "/professionals/details": null,
+    "/professionals/details/:id": `${t("int.professional_details")}`, //
+    "/professionals/create-new": `${t("int.professional_create_new")}`, //
+    "/professionals/edit": null,
+    "/professionals/edit/:id": `${t("int.professional_edit")}` //
+  }
+
   return (
     <Breadcrumbs
       mappedRoutes={routesList}

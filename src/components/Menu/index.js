@@ -46,7 +46,9 @@ function Menu() {
           <Link to="/professionals">Professionals</Link>
         </li>
         <li>
-          <Link to="/professionals/details/test-id">Professional Details</Link>
+          <Link to="/professionals/details/details-id">
+            Professional Details
+          </Link>
         </li>
         <li>
           <Link to="/professionals/create-new">Professional Create New</Link>

@@ -19,8 +19,12 @@ const routesList = {
   "/patients/create-new": "Create New",
   "/patients/edit": null,
   "/patients/edit/:id": "Patient Edit",
-  "/professionals": null,
-  "professionals/details/:id":
+  "/professionals": "Professionals",
+  "/professionals/details": null,
+  "/professionals/details/:id": "Professional Details",
+  "/professionals/create-new": "Create New Professional",
+  "/professionals/edit": null,
+  "/professionals/edit/:id": "Professional Edit"
 }
 
 function BreadcrumbsComponent() {

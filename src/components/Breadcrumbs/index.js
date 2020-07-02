@@ -10,25 +10,25 @@ function BreadcrumbsComponent() {
 
   const routesList = {
     "/login": `${t("int.login")}`,
-    "/register": "Register", //
-    "/visits/details": null, //
-    "/visits/details/:id": `${t("int.view_single_visit")}`, //
-    "/visits/create-new": `${t("int.create_new_visit")}`, //
-    "/visits/edit": null, //
-    "/visits/edit/:id": `${t("int.edit_a_visit")}`, //
-    "/visits": `${t("int.allvisits")}`, //
-    "/patients": `${t("int.patients")}`, //
-    "/patients/details": null, //
-    "/patients/details/:id": `${t("int.patient_details")}`, //
-    "/patients/create-new": `${t("int.patients_create_new")}`, //
-    "/patients/edit": null, //
-    "/patients/edit/:id": `${t("int.patient_edit")}`, //
-    "/professionals": `${t("int.professionals")}`, //
+    "/register": "Register",
+    "/visits/details": null,
+    "/visits/details/:id": `${t("int.view_single_visit")}`,
+    "/visits/create-new": `${t("int.create_new_visit")}`,
+    "/visits/edit": null,
+    "/visits/edit/:id": `${t("int.edit_a_visit")}`,
+    "/visits": `${t("int.allvisits")}`,
+    "/patients": `${t("int.patients")}`,
+    "/patients/details": null,
+    "/patients/details/:id": `${t("int.patient_details")}`,
+    "/patients/create-new": `${t("int.patients_create_new")}`,
+    "/patients/edit": null,
+    "/patients/edit/:id": `${t("int.patient_edit")}`,
+    "/professionals": `${t("int.professionals")}`,
     "/professionals/details": null,
-    "/professionals/details/:id": `${t("int.professional_details")}`, //
-    "/professionals/create-new": `${t("int.professional_create_new")}`, //
+    "/professionals/details/:id": `${t("int.professional_details")}`,
+    "/professionals/create-new": `${t("int.professional_create_new")}`,
     "/professionals/edit": null,
-    "/professionals/edit/:id": `${t("int.professional_edit")}` //
+    "/professionals/edit/:id": `${t("int.professional_edit")}`
   }
 
   return (

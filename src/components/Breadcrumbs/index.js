@@ -22,7 +22,7 @@ const routesList = {
   "/professionals": null,
   "professionals/details/:id":
 }
-//test commit
+
 function BreadcrumbsComponent() {
   return (
     <Breadcrumbs

@@ -18,9 +18,11 @@ const routesList = {
   "/patients/details/:id": "Patient Details",
   "/patients/create-new": "Create New",
   "/patients/edit": null,
-  "/patients/edit/:id": "Patient Edit"
+  "/patients/edit/:id": "Patient Edit",
+  "/professionals": null,
+  "professionals/details/:id":
 }
-
+//test commit
 function BreadcrumbsComponent() {
   return (
     <Breadcrumbs

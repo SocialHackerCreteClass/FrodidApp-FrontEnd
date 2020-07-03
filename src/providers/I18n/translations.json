@@ -4,7 +4,6 @@
     "int.all-visit-header": "This page with host a list with all the {0}",
     "int.all-patients-header": "This page with host a list with all the {0}",
     "int.all-professional-header": "This page with host a list with all the {0}",
-    //Breadcrumb Translations-------------------------------------------------------
     "int.allvisits": "All Visits",
     "int.view_single_visit": "View a single Visit",
     "int.create_new_visit": "New Visit",
@@ -23,7 +22,6 @@
     "int.all-visit-header": "This page with host a list with all the {0}",
     "int.all-patients-header": "Αυτη η σελιδα θα δείχνει όλους τους {0}",
     "int.all-professional-header": "Αυτη η σελιδα θα δείχνει όλους τους {0}",
-    //Breadcrumb Translations-------------------------------------------------------
     "int.allvisits": "Όλες οι Επισκέψεις",
     "int.view_single_visit": "Προβολή Επίσκεψης",
     "int.create_new_visit": "Καταχώρηση Επίσκεψης",

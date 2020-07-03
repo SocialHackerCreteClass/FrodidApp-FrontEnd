@@ -31,7 +31,7 @@ function BreadcrumbsComponent() {
       "/professionals/edit": null,
       "/professionals/edit/:id": `${t("int.professional_edit")}`
     }
-  }, [])
+  }, [t])
 
   return (
     <Breadcrumbs

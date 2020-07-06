@@ -1,11 +1,14 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import App from "./App"
+import AppAuth from "./AppAuth"
 import * as serviceWorker from "./serviceWorker"
+import { AuthProvider } from "./auth-context"
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <AuthProvider>
+      <AppAuth />
+    </AuthProvider>
   </React.StrictMode>,
   document.getElementById("root")
 )

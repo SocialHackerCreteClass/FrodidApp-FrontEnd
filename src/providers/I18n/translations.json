@@ -3,12 +3,36 @@
     "int.login": "Login",
     "int.all-visit-header": "This page with host a list with all the {0}",
     "int.all-patients-header": "This page with host a list with all the {0}",
-    "int.all-professional-header": "This page with host a list with all the {0}"
+    "int.all-professional-header": "This page with host a list with all the {0}",
+    "int.allvisits": "All Visits",
+    "int.view_single_visit": "View a single Visit",
+    "int.create_new_visit": "New Visit",
+    "int.edit_a_visit": "Edit a Visit",
+    "int.patients": "Patients",
+    "int.patient_details": "Patient Details",
+    "int.patients_create_new": "Create new Patients",
+    "int.patient_edit": "Patient Edit",
+    "int.professionals": "Professionals",
+    "int.professional_details": "Professional Details",
+    "int.professional_create_new": "Create New Professional",
+    "int.professional_edit": "Edit Professional"
   },
   "el": {
     "int.login": "Σύνδεση",
     "int.all-visit-header": "This page with host a list with all the {0}",
     "int.all-patients-header": "Αυτη η σελιδα θα δείχνει όλους τους {0}",
-    "int.all-professional-header": "Αυτη η σελιδα θα δείχνει όλους τους {0}"
+    "int.all-professional-header": "Αυτη η σελιδα θα δείχνει όλους τους {0}",
+    "int.allvisits": "Όλες οι Επισκέψεις",
+    "int.view_single_visit": "Προβολή Επίσκεψης",
+    "int.create_new_visit": "Καταχώρηση Επίσκεψης",
+    "int.edit_a_visit": "Επεξεργασία Επίσκεψης",
+    "int.patients": "Ασθενείς",
+    "int.patient_details": "Λεπτομέρειες Ασθενούς",
+    "int.patients_create_new": "Καταχώρηση Ασθενούς",
+    "int.patient_edit": "Επεξεργασία Ασθενούς",
+    "int.professionals": "Επαγγελματίες",
+    "int.professional_details": "Λεπτομέρειες Επαγγελματία",
+    "int.professional_create_new": "Καταχώρηση Επαγγελματία",
+    "int.professional_edit": "Επεξεργασία Επαγγελματία"
   }
 }

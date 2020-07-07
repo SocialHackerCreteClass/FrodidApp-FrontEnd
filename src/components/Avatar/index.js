@@ -42,7 +42,7 @@ const AvatarText = ({ size, user, className }) => {
   const lastNameLetter = user.lastName.slice(0, 1)
   return (
     <div className={cx(avatarTextWrapper, className)}>
-      <a href="#" title={`${user.firstName} ${user.lastName}`}>
+      <a href="/#" title={`${user.firstName} ${user.lastName}`}>
         <span
           className={cx(wrapper, { large: size === "large" }, avatarMobile)}>
           <span className={avatarImage}>

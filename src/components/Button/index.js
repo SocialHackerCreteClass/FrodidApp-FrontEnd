@@ -22,10 +22,7 @@ const ButtonPropTypes = {
 function SubmitButton({ className, onClick = () => {}, size, variant }) {
   return (
     <button
-      onClick={(e) => {
-        e.preventDefault()
-        onClick(e.target.value)
-      }}
+      onClick={onClick}
       className={cx(
         buttonCls,
         primaryBtn,

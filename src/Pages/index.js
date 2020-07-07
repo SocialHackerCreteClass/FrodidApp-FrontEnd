@@ -23,9 +23,13 @@ function Pages({ loggedStatus }) {
           path="/patients"
           component={Patients}
         />
+
+        <Route path="/test" exact component={TestPage} />
+        <Route path="/" exact component={Home} />
         <Route path="/professionals" component={Professionals} />
-        <Route path="/test" component={TestPage} />
+        
         <Route path="/" component={Home} />
+
       </Switch>
     </div>
   )

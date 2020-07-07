@@ -1,11 +1,9 @@
 import React from "react"
 import Badge from "../components/Badge"
-
 import Input from "../components/Input"
 import BreadcrumbsComponent from "../components/Breadcrumbs"
-
 import Avatar from "../components/Avatar"
-
+import Button from "../components/Button"
 function TestPage() {
   return (
     <div>
@@ -53,6 +51,12 @@ function TestPage() {
               lastName: "Doe"
             }}
           />
+        </div>
+      </section>
+      <section>
+        <div>
+          <Button type="submit"></Button>
+          <Button></Button>
         </div>
       </section>
     </div>

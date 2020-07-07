@@ -1,6 +1,6 @@
 import { css } from "emotion"
 
-export const FormFooterCls = css`
+export const wrapper = css`
   background-color: var(--primary-90);
   color: var(--global-white);
   padding: 24px 6px;

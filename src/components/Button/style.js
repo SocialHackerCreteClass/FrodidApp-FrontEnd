@@ -26,7 +26,7 @@ export const buttonCls = css`
   border: 2px solid;
   padding: 10px 22px;
   background: none;
- & &:active {
+&:active {
     background: none;
   }
   &:focus {

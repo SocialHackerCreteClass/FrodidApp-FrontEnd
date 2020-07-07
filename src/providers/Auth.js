@@ -1,13 +1,20 @@
-import React from "react"
+import React, { useState } from "react"
 
 const AuthContext = React.createContext()
 
 function AuthProvider(props) {
+  const [user, setUser] = useState({})
+
   const login = () => {} // make a login request
   const register = () => {} // register the user
   const logout = () => {} // clear the token in localStorage and the user data
 
-  return <AuthContext.Provider value={{ login, logout, register }} {...props} />
+  return (
+    <AuthContext.Provider
+      value={{ user, setUser, login, logout, register }}
+      {...props}
+    />
+  )
 }
 
 const useAuth = () => React.useContext(AuthContext)

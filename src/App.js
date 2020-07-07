@@ -5,6 +5,7 @@ import Login from "./Pages/Auth/Login"
 import Pin from "./Pages/Auth/Pin"
 import Register from "./Pages/Auth/Register"
 import I18nProvider from "./providers/I18n"
+import { AuthProvider } from "./providers/Auth"
 import "./styles/globalStyles"
 import { ReactQueryDevtools } from "react-query-devtools"
 import { css } from "emotion"
@@ -22,6 +23,7 @@ function App() {
   return (
     <Router>
       <ReactQueryDevtools />
+      <AuthProvider>
       <I18nProvider>
         <div className={wrapper}>
           <Switch>
@@ -49,6 +51,7 @@ function App() {
           </Switch>
         </div>
       </I18nProvider>
+      </AuthProvider>
     </Router>
   )
 }

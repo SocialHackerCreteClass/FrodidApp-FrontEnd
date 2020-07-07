@@ -2,10 +2,11 @@ import React, { useState } from "react"
 import Input from "components/Input"
 import Button from "components/Button"
 import { useI18n } from "providers/I18n"
+import { useAuth } from "providers/Auth"
 
 function Login(props) {
   const { t } = useI18n()
-
+  const { login } = useAuth()
   const [formData, setFormData] = useState({ email: "", password: "" })
 
   function handleSubmit() {

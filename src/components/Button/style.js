@@ -23,10 +23,11 @@ export const buttonCls = css`
     cursor: not-allowed;
     border-color: var(--global-grey-40);
     background-color: var(--global-grey-30);
-  border: 2px solid;
-  padding: 10px 22px;
-  background: none;
-&:active {
+    border: 2px solid;
+    padding: 10px 22px;
+    background: none;
+  }
+  &:active {
     background: none;
   }
   &:focus {
@@ -44,7 +45,7 @@ export const buttonCls = css`
 `
 export const primaryBtn = css`
   background-color: var(--primary-90);
-  ext-decoration: none;
+  text-decoration: none;
   color: var(--global-white);
   &:active {
     text-decoration: none;
@@ -75,7 +76,7 @@ export const secondaryBtn = css`
     background-color: var(--secondary-60);
   }
   &:hover {
-    ttext-decoration: none;
+    text-decoration: none;
     color: var(--global-white);
     background-color: var(--secondary-60);
   }

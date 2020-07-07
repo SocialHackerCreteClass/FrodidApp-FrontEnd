@@ -1,7 +1,7 @@
 import React from "react"
 
 import PropTypes from "prop-types"
-import FormFooter from "components/FormFooter"
+import Footer from "./components/Footer"
 import { wrapper, gridNarrow, gridWide } from "./styles"
 
 LayoutAuth.propTypes = {
@@ -17,7 +17,7 @@ function LayoutAuth(props) {
         </div>
       </div>
       <div className={gridWide}>
-        <FormFooter />
+        <Footer />
       </div>
     </div>
   )

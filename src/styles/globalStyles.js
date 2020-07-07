@@ -203,5 +203,4 @@ img {
   font-style: italic;
   vertical-align: middle;
 }
-
 `

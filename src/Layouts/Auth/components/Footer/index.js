@@ -2,12 +2,13 @@ import React from "react"
 import Mail from "components/Icons/Mail"
 import Phone from "components/Icons/Phone"
 import { wrapper } from "./styles"
+import Grid, { GridCell } from "components/Grid"
 
-function FormFooter(props) {
+function Footer() {
   return (
-    <div className={ wrapper }>
-      <div className="o-grid">
-        <div className="o-grid__cell u-1/1 u-1/2@desktop">
+    <div className={wrapper}>
+      <Grid>
+        <GridCell className="u-1/1 u-1/2@desktop">
           <div className="u-margin-bottom u-margin-bottom-none@desktop">
             <ul className="o-list-inline u-margin-bottom-none">
               <li className="o-list-inline__item u-margin-right u-margin-bottom-small u-margin-bottom-none@desktop">
@@ -34,8 +35,8 @@ function FormFooter(props) {
               </li>
             </ul>
           </div>
-        </div>
-        <div className="o-grid__cell u-1/1 u-1/2@desktop">
+        </GridCell>
+        <GridCell className="u-1/1 u-1/2@desktop">
           <div className="u-text-align-right@desktop">
             <span>
               Designed and Developed
@@ -44,10 +45,10 @@ function FormFooter(props) {
               </a>
             </span>
           </div>
-        </div>
-      </div>
+        </GridCell>
+      </Grid>
     </div>
   )
 }
 
-export default FormFooter
+export default Footer

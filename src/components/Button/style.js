@@ -19,84 +19,68 @@ export const buttonCls = css`
   &.large {
     padding: 24px 48px;
   }
-  &[ghost] {
-    cursor: not-allowed;
-    border-color: var(--global-grey-40);
-    background-color: var(--global-grey-30);
+
+  &.primary {
+    background-color: var(--primary-90);
+    text-decoration: none;
+    color: var(--global-white);
+    &:focus,
+    &:hover {
+      background-color: var(--primary-80);
+    }
+  }
+  &.secondary {
+    background-color: var(--secondary-70);
+    text-decoration: none;
+    color: var(--global-white);
+    &:focus,
+    &:hover {
+      background-color: var(--secondary-60);
+    }
+  }
+  &.danger {
+    background-color: var(--global-error-80);
+    text-decoration: none;
+    color: var(--global-white);
+    &:focus,
+    &:hover {
+      background-color: var(--global-error-70);
+    }
+  }
+
+  &.ghost {
     border: 2px solid;
     padding: 10px 22px;
     background: none;
-  }
-  &:active {
-    background: none;
-  }
-  &:focus {
-    background: none;
-  }
-  &:hover {
-    background: none;
-  }
-  &.small {
-    padding: 4px 10px;
-  }
-  &.primary {
-    color: var(--primary-90);
-  }
-`
-export const primaryBtn = css`
-  background-color: var(--primary-90);
-  text-decoration: none;
-  color: var(--global-white);
-  &:active {
-    text-decoration: none;
-    color: var(--global-white);
-  }
-  &:focus {
-    text-decoration: none;
-    color: var(--global-white);
-    background-color: var(--primary-80);
-  }
-  &:hover {
-    text-decoration: none;
-    color: var(--global-white);
-    background-color: var(--primary-80);
-  }
-`
-export const secondaryBtn = css`
-  background-color: var(--secondary-70);
-  text-decoration: none;
-  color: var(--global-white);
-  &:active {
-    text-decoration: none;
-    color: var(--global-white);
-  }
-  &:focus {
-    text-decoration: none;
-    color: var(--global-white);
-    background-color: var(--secondary-60);
-  }
-  &:hover {
-    text-decoration: none;
-    color: var(--global-white);
-    background-color: var(--secondary-60);
-  }
-`
-export const dangerBtn = css`
-  background-color: var(--global-error-80);
-  text-decoration: none;
-  color: var(--global-white);
-  &:active {
-    text-decoration: none;
-    color: var(--global-white);
-  }
-  &:focus {
-    text-decoration: none;
-    color: var(--global-white);
-    background-color: var(--global-error-70);
-  }
-  &:hover {
-    text-decoration: none;
-    color: var(--global-white);
-    background-color: var(--global-error-70);
+    &:hover {
+      background: none;
+    }
+    &.small {
+      padding: 4px 10px;
+    }
+    &.large {
+      padding: 22px 46px;
+    }
+    &.primary {
+      color: var(--primary-90);
+      &:focus,
+      &:hover {
+        color: var(--primary-80);
+      }
+    }
+    &.secondary {
+      color: var(--secondary-70);
+      &:focus,
+      &:hover {
+        color: var(--secondary-60);
+      }
+    }
+    &.danger {
+      color: var(--global-error-80);
+      &:hover,
+      &:focus {
+        color: var(--global-error-70);
+      }
+    }
   }
 `

@@ -5,7 +5,7 @@ export const UserType = PropTypes.shape({
   firstName: PropTypes.string.isRequired,
   lastName: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
-  password: PropTypes.string.isRequired,
+  password: PropTypes.string,
   birthDate: PropTypes.number.isRequired,
   createdDate: PropTypes.number.isRequired,
   afm: PropTypes.number.isRequired,

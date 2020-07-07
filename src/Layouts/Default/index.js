@@ -1,8 +1,18 @@
 import React from "react"
-import GridApp from "components/GridApp"
+import AppHeader from "components/AppHeader"
+import AppContent from "components/AppContent"
+import AppHeaderMobile from "components/AppHeaderMobile"
+
+import { wrapper } from "./styles"
 
 function LayoutDefault(props) {
-  return <GridApp />
+  return (
+    <div className={wrapper}>
+      <AppHeaderMobile />
+      <AppHeader />
+      <AppContent />
+    </div>
+  )
 }
 
 export default LayoutDefault

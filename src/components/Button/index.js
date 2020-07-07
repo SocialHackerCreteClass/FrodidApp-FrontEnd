@@ -49,10 +49,7 @@ function LinkButton({
 }) {
   return (
     <a
-      onClick={(e) => {
-        e.preventDefault()
-        onClick(e.target.value)
-      }}
+      onClick={onClick}
       className={cx(
         buttonCls,
         { small: size === "small" },

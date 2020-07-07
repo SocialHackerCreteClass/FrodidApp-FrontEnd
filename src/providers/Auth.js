@@ -5,13 +5,22 @@ const AuthContext = React.createContext()
 function AuthProvider(props) {
   const [user, setUser] = useState({})
 
-  const login = () => {} // make a login request
+  const login = () => {
+    setUser({
+      username: "Nikos",
+      password: 1234
+    })
+  } // make a login request
+
   const register = () => {} // register the user
-  const logout = () => {} // clear the token in localStorage and the user data
+
+  const logout = () => {
+    setUser(undefined)
+  } // clear the token in localStorage and the user data
 
   return (
     <AuthContext.Provider
-      value={{ user, setUser, login, logout, register }}
+      value={{ user, login, logout, register }}
       {...props}
     />
   )

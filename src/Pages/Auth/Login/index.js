@@ -1,6 +1,8 @@
 import React from "react"
 import { useHistory } from "react-router-dom"
 import PropTypes from "prop-types"
+import { form, input } from "./styles"
+import { cx } from "emotion"
 
 Login.propTypes = {
   setLoggedStatus: PropTypes.func
@@ -21,10 +23,14 @@ function Login(props) {
     history.push("/login")
   }
 
+  function handleSubmit(e) {
+    console.log(e.target.value)
+  }
+
   return (
     <div>
       <h1>This will be the Login page</h1>
-      <form>
+      <form className={form}>
         <label>
           Email
           <input type="email" />
@@ -33,6 +39,7 @@ function Login(props) {
           Password
           <input type="password" />
         </label>
+        <button type="submit">Submit</button>
       </form>
 
       <button onClick={login}>Log In</button>

@@ -5,7 +5,7 @@ import { css, cx } from "emotion"
 const flagWrapper = css`
   display: flex;
   align-items: center;
-  &--right {
+  &.right {
     justify-content: flex-end;
   }
 `
@@ -17,7 +17,12 @@ Flag.propTypes = {
 }
 
 function Flag(props) {
-  return <div {...props} className={cx(flagWrapper, props.className)} />
+  return (
+    <div
+      {...props}
+      className={cx(flagWrapper, props.direction, props.className)}
+    />
+  )
 }
 
 export default Flag
@@ -43,4 +48,19 @@ FlagBody.propTypes = {
 
 export function FlagBody(props) {
   return <div {...props} className={cx(bodyWrapper, props.className)} />
+}
+
+TextIcon.propTypes = {
+  className: PropTypes.string,
+  icon: PropTypes.node,
+  children: PropTypes.node
+}
+
+export function TextIcon(props) {
+  return (
+    <Flag>
+      <FlagImg>{props.icon}</FlagImg>
+      <FlagBody>{props.children}</FlagBody>
+    </Flag>
+  )
 }

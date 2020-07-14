@@ -12,7 +12,7 @@ function LayoutAuth(props) {
   return (
     <div className={wrapper}>
       <div className={gridNarrow}>
-        <div className="u-padding-vertical u-margin-bottom-large u-margin-bottom-huge@tablet">
+        <div className="u-padding-vertical u-margin-bottom-large u-margin-bottom-huge-tablet">
           {props.children}
         </div>
       </div>

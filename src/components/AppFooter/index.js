@@ -1,11 +1,12 @@
 import React from "react"
+import Grid, { GridCell } from "components/Grid"
 import { wrapper } from './styles'
  
 function AppFooter(props) {
   return (
     <div className={wrapper}>
-      <div className="o-grid">
-        <div className="o-grid__cell u-1/1 u-1/2@l-wide">
+      <Grid>
+        <GridCell className="u-1/1 u-1/2@l-wide">
           <div className="u-margin-bottom u-margin-bottom-none@l-wide">
             <ul className="o-list-inline u-margin-bottom-none">
               <li className="o-list-inline__item u-margin-right u-margin-bottom-small u-margin-bottom-none@l-wide">
@@ -36,8 +37,8 @@ function AppFooter(props) {
               </li>
             </ul>
           </div>
-        </div>
-        <div className="o-grid__cell u-1/1 u-1/2@l-wide">
+        </GridCell>
+        <GridCell className="u-1/1 u-1/2@l-wide">
           <div className="u-text-align-right@l-wide">
             <span>
               Designed and Developed
@@ -46,8 +47,8 @@ function AppFooter(props) {
               </a>
             </span>
           </div>
-        </div>
-      </div>
+        </GridCell>
+      </Grid>
     </div>
   )
 }

@@ -36,9 +36,7 @@ export function FlagImg(props) {
   return <div {...props} className={cx(imgWrapper, props.className)} />
 }
 
-const bodyWrapper = css`
-
-`
+const bodyWrapper = css``
 FlagBody.propTypes = {
   className: PropTypes.string
 }
@@ -46,4 +44,3 @@ FlagBody.propTypes = {
 export function FlagBody(props) {
   return <div {...props} className={cx(bodyWrapper, props.className)} />
 }
-

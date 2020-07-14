@@ -7,7 +7,7 @@ const listWrapper = css`
   list-style: none;
 `
 ListInline.propTypes = {
-  className: PropTypes.string,
+  className: PropTypes.string
 }
 
 function ListInline(props) {

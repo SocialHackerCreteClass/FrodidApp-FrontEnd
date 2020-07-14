@@ -1,66 +1,86 @@
 import React from "react"
-import { useTable } from "react-table"
+import { useTable, useFlexLayout } from "react-table"
+// import { cx } from "emotion"
 import PropTypes from "prop-types"
+import { tr, th } from "./tableStyle"
 
-export const data = [
-  { firstName: "John", lastName: "Doe", age: "25" },
-  { firstName: "Mpampis", lastName: "Papadopoulos", age: "40" }
-]
+export const columns =
+  // useMemo(() =>
+  [
+    {
+      Header: "Patient",
+      accessor: "patient"
+    },
+    {
+      Header: "Location",
+      accessor: "location",
+      style: { hidden }
+    },
+    {
+      Header: "Last Visit",
+      accessor: "lastVisit"
+    },
+    {
+      Header: "Actions",
+      accessor: "actions"
+    }
+  ]
+// ,[])
 
-export const columns = [
-  {
-    Header: "First Name",
-    accessor: "firstName"
-  },
-  {
-    Header: "Last Name",
-    accessor: "lastName"
-  },
-  {
-    Header: "Age",
-    accessor: "age"
-  }
-]
+export const data =
+  // useMemo( () =>
+  [
+    {
+      patient: "John Doe",
+      location: "Ionias 35",
+      lastVisit: "27/07/2020",
+      actions: "view delete"
+    },
+    {
+      patient: "John Doe",
+      location: "Ionias 35",
+      lastVisit: "27/07/2020",
+      actions: "view delete"
+    }
+  ]
+// ,[])
 
 export const Table = ({ columns, data }) => {
-  const {
-    getTableProps,
-    getTableBodyProps,
-    headerGroups,
-    rows,
-    prepareRow
-  } = useTable({ columns, data })
+  const defaultColumn = React.useMemo(
+    () => ({
+      width: 100
+    }),
+    []
+  )
+
+  const { getTableProps, headerGroups, rows, prepareRow } = useTable(
+    {
+      columns,
+      data,
+      defaultColumn
+    },
+    {
+      useFlexLayout
+    }
+  )
 
   return (
-    <table {...getTableProps()}>
-      <thead>
+    <div {...getTableProps()}>
+      <div>
         {headerGroups.map((headerGroup, index) => (
-          <tr key={index} {...headerGroup.getHeaderGroupProps()}>
+          <div
+            key={index}
+            {...headerGroup.getHeaderGroupProps()}
+            className={tr}>
             {headerGroup.headers.map((column, index) => (
-              <th key={index} {...column.getHeaderProps()}>
+              <div key={index} {...column.getHeaderProps()} className={th}>
                 {column.render("Header")}
-              </th>
+              </div>
             ))}
-          </tr>
+          </div>
         ))}
-      </thead>
-      <tbody {...getTableBodyProps()}>
-        {rows.map((row, index) => {
-          prepareRow(row)
-          return (
-            <tr key={index} {...row.getRowProps()}>
-              {row.cells.map((cell) => {
-                return (
-                  <td key={index} {...cell.getCellProps()}>
-                    {cell.render("Cell")}
-                  </td>
-                )
-              })}
-            </tr>
-          )
-        })}
-      </tbody>
-    </table>
+      </div>
+    </div>
   )
 }
 

@@ -5,6 +5,8 @@ import Login from "./Pages/Auth/Login"
 import Register from "./Pages/Auth/Register"
 import I18nProvider from "./providers/I18n"
 import "./styles/globalStyles"
+import { useQuery } from "react-query"
+import { ReactQueryDevtools } from "react-query-devtools"
 import { css } from "emotion"
 import LayoutAuth from "./Layouts/Auth"
 
@@ -19,6 +21,7 @@ function App() {
 
   return (
     <Router>
+      <ReactQueryDevtools />
       <I18nProvider>
         <div className={wrapper}>
           <Switch>

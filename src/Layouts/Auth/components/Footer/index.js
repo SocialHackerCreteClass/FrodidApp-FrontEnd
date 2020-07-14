@@ -42,7 +42,7 @@ function Footer() {
           <div className="u-text-align-right-desktop">
             <span>
               Designed and Developed
-              <a href="#" className="u-white">
+              <a href="/#" className="u-white">
                 by&nbsp;SHA&nbsp;Heraklion
               </a>
             </span>

@@ -4,7 +4,7 @@ import Input from "../components/Input"
 import BreadcrumbsComponent from "../components/Breadcrumbs"
 import Avatar from "../components/Avatar"
 import Button from "../components/Button"
-import { Table, columns, data } from "../table"
+import Table, { columns, data } from "components/Table"
 
 function TestPage() {
   return (

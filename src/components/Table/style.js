@@ -7,7 +7,7 @@ export const tr = css`
   margin-bottom: 12px;
   border-radius: 6px;
   grid-template-columns: 2fr 1fr;
-  &:first-child: {
+  &:first-child {
     background: var(--primary-10);
   }
   @media (min-width: 46.25em) {
@@ -24,9 +24,7 @@ export const tr = css`
 
 export const th = css`
   background: var(--primary-10);
-  font-size: 15px;
   font-size: 0.94rem;
   line-height: 1.6;
-  text-color: var(--global-grey-90);
-  ${``}
+  color: var(--global-grey-90);
 `

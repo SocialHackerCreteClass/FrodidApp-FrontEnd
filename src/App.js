@@ -6,7 +6,6 @@ import Register from "./Pages/Auth/Register"
 import I18nProvider from "./providers/I18n"
 import LoginStatus from "./components/LoginStatus"
 import "./styles/globalStyles"
-import { useQuery } from "react-query"
 import { ReactQueryDevtools } from "react-query-devtools"
 
 function App() {

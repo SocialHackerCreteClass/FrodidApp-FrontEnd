@@ -47,7 +47,7 @@ function LinkButton({
 }) {
   return (
     <a
-      href="#"
+      href="/#"
       onClick={(ev) => {
         ev.preventDefault()
         onClick()

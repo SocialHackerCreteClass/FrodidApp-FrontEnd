@@ -24,6 +24,16 @@ function Login(props) {
   return (
     <div>
       <h1>This will be the Login page</h1>
+      <form>
+        <label>
+          Email
+          <input type="email" />
+        </label>
+        <label>
+          Password
+          <input type="password" />
+        </label>
+      </form>
 
       <button onClick={login}>Log In</button>
       <button onClick={logout}>Log Out</button>

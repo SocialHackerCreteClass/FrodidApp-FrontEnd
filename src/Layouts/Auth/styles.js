@@ -1,4 +1,5 @@
 import { css } from "emotion"
+import backgroundImg from "../../images/background.svg"
 
 export const wrapper = css`
   min-height: 100vh;
@@ -8,7 +9,7 @@ export const wrapper = css`
   background-color: var(--primary-10);
 
   @media (min-width: 46.25em) {
-    background-image: url(../../images/background.svg);
+    background-image: url(${backgroundImg});
     background-repeat: no-repeat;
     background-position: bottom;
   }

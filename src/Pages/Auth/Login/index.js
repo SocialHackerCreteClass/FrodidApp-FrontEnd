@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { useHistory } from "react-router-dom"
 import PropTypes from "prop-types"
-import { form, input } from "./styles"
+
 import { cx } from "emotion"
 import Input from "components/Input"
 import Button from "components/Button"
@@ -25,12 +25,7 @@ function Login(props) {
     history.push("/login")
   }
 
-  const [formData, setFormData] = useState({ email: "", password: "" })
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-  const [formData, updateFormData] = useState(initialFormData)
+  const [formData, updateFormData] = useState({ email: "", password: "" })
 
   const handleChange = (e) => {
     updateFormData({
@@ -42,24 +37,10 @@ function Login(props) {
     console.log(e.target.name, e.target.value)
   }
 
-  const handleSubmit = (event) => {
-    event.persist()
-    event.preventDefault()
-=======
   function handleSubmit(e) {
     e.preventDefault()
-    setFormData(([e.target.type]: e.target.value))
->>>>>>> parent of 8b2d2b7... latest update but not finished yet
-=======
-  function handleSubmit(e) {
-    e.preventDefault()
-    setFormData(([e.target.type]: e.target.value))
->>>>>>> parent of 8b2d2b7... latest update but not finished yet
-=======
-  function handleSubmit(e) {
-    e.preventDefault()
-    setFormData(([e.target.type]: e.target.value))
->>>>>>> parent of 8b2d2b7... latest update but not finished yet
+    updateFormData(([e.target.type]: e.target.value))
+
     console.log(formData)
   }
 

@@ -32,11 +32,6 @@ function Input({
         className
       })}
       type={search ? "search" : type}
-      onChange={(e) => {
-        e.preventDefault()
-        onChange(e.target.value)
-        console.log(e.target.type, e.target.value)
-      }}
       value={value}
       disabled={disabled ? "disabled" : ""}
     />

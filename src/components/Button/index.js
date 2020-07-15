@@ -48,6 +48,10 @@ function LinkButton({
   return (
     <a
       href="#"
+      onClick={(ev) => {
+        ev.preventDefault()
+        onClick()
+      }}
       className={cx(
         buttonCls,
         variant,

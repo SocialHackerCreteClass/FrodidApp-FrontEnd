@@ -29,6 +29,7 @@ function Login(props) {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   const [formData, updateFormData] = useState(initialFormData)
 
   const handleChange = (e) => {
@@ -44,6 +45,11 @@ function Login(props) {
   const handleSubmit = (event) => {
     event.persist()
     event.preventDefault()
+=======
+  function handleSubmit(e) {
+    e.preventDefault()
+    setFormData(([e.target.type]: e.target.value))
+>>>>>>> parent of 8b2d2b7... latest update but not finished yet
 =======
   function handleSubmit(e) {
     e.preventDefault()

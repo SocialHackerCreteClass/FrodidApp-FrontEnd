@@ -3,7 +3,8 @@ import { useHistory } from "react-router-dom"
 import PropTypes from "prop-types"
 import { form, input } from "./styles"
 import { cx } from "emotion"
-import Input from "../../../components/Input"
+import Input from "components/Input"
+import Button from "components/Button"
 
 Login.propTypes = {
   setLoggedStatus: PropTypes.func
@@ -24,18 +25,12 @@ function Login(props) {
     history.push("/login")
   }
 
+  const [formData, setFormData] = useState({ email: "", password: "" })
+
   function handleSubmit(e) {
     e.preventDefault()
+    setFormData(([e.target.type]: e.target.value))
     console.log(formData)
-  }
-
-  const [formData, setFormData] = useState({
-    email: "",
-    password: ""
-  })
-
-  function onChange(e) {
-    setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
   return (
@@ -44,15 +39,13 @@ function Login(props) {
       <form>
         <label>
           Email
-          <Input name="email" type="email" onChange={onChange} />
+          <Input name="email" type="email" />
         </label>
         <label>
           Password
-          <Input name="password" type="password" onChange={onChange} />
+          <Input name="password" type="password" />
         </label>
-        <button type="submit" onClick={handleSubmit}>
-          Submit
-        </button>
+        <Button onClick={handleSubmit}>Submit</Button>
       </form>
 
       <button onClick={login}>Log In</button>

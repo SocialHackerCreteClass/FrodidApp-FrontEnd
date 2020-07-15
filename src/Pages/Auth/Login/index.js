@@ -39,6 +39,7 @@ function Login(props) {
       // Trimming any whitespace
       [e.target.name]: e.target.value.trim()
     })
+    console.log(e.target.name, e.target.value)
   }
 
   const handleSubmit = (event) => {

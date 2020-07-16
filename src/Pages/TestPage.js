@@ -4,6 +4,13 @@ import Input from "../components/Input"
 import BreadcrumbsComponent from "../components/Breadcrumbs"
 import Avatar from "../components/Avatar"
 import Button from "../components/Button"
+import Phone from "components/Icons/Phone"
+import Mail from "components/Icons/Mail"
+import Patients from "components/Icons/Patients"
+import Professionals from "components/Icons/Professionals"
+import Visitations from "components/Icons/Visitations"
+import Analytics from "components/Icons/Analytics"
+import Logo from "components/Icons/Logo"
 function TestPage() {
   return (
     <div>
@@ -84,6 +91,24 @@ function TestPage() {
           <Button ghost variant="danger">
             Danger Ghost
           </Button>
+        </div>
+      </section>
+      <section>
+        <div>
+          <Phone></Phone>
+          <Phone color={"red"} size={"small"}></Phone>
+          <Mail></Mail>
+          <Mail color={"var(--secondary-70)"} size={"small"}></Mail>
+          <Patients></Patients>
+          <Patients type={"secondary"}></Patients>
+          <Professionals></Professionals>
+          <Professionals type={"secondary"}></Professionals>
+          <Visitations></Visitations>
+          <Visitations type={"secondary"}></Visitations>
+          <Analytics></Analytics>
+          <Logo></Logo>
+          <Logo type={"mobile"}></Logo>
+          <Logo display={"none"} type={"mobile"}></Logo>
         </div>
       </section>
     </div>

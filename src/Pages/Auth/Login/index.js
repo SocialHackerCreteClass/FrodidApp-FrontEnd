@@ -1,16 +1,17 @@
 import React, { useState } from "react"
 import { useHistory } from "react-router-dom"
 import PropTypes from "prop-types"
-
 import { cx } from "emotion"
 import Input from "components/Input"
 import Button from "components/Button"
+import { useI18n } from "providers/I18n"
 
 Login.propTypes = {
   setLoggedStatus: PropTypes.func
 }
 
 function Login(props) {
+  const { t } = useI18n()
   const history = useHistory()
 
   const { setLoggedStatus } = props
@@ -25,43 +26,37 @@ function Login(props) {
     history.push("/login")
   }
 
-  const [formData, updateFormData] = useState({ email: "", password: "" })
+  const [formData, setFormData] = useState({ email: "", password: "" })
 
-  const handleChange = (e) => {
-    updateFormData({
-      ...formData,
-
-      // Trimming any whitespace
-      [e.target.name]: e.target.value.trim()
-    })
-    console.log(e.target.name, e.target.value)
-  }
-
-  function handleSubmit(e) {
-    e.preventDefault()
-    updateFormData(([e.target.type]: e.target.value))
-
+  function handleSubmit() {
     console.log(formData)
   }
 
   return (
     <div>
-      <h1>Login page</h1>
+      <h3>{`${t("int.login")}`}</h3>
       <form>
         <label>
           Email
-          <Input name="email" type="email" />
+          <Input
+            name="email"
+            type="email"
+            onChange={(value) => setFormData({ ...formData, email: value })}
+          />
         </label>
         <label>
           Password
-          <Input name="password" type="password" />
+          <Input
+            onChange={(value) => setFormData({ ...formData, password: value })}
+            type="password"
+          />
         </label>
 
         <Button onClick={handleSubmit}>Submit</Button>
       </form>
 
-      <button onClick={login}>Log In</button>
-      <button onClick={logout}>Log Out</button>
+      <Button onClick={login}>Log In</Button>
+      <Button onClick={logout}>Log Out</Button>
       <hr />
 
       <br />

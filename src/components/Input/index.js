@@ -18,17 +18,12 @@ Input.propTypes = {
 function Input({
   className,
   onChange = () => {},
-  value,
   errorMessage,
   disabled,
   search,
-
   type = "text",
   name
 }) {
-  const [inputData, setInputData] = useState("")
-  const [inputName, setInputName] = useState(type)
-
   return (
     <input
       placeholder="Write here"
@@ -42,11 +37,7 @@ function Input({
       onChange={(e) => {
         e.preventDefault()
         onChange(e.target.value)
-        setInputData(e.target.value)
-        setInputName(e.target.name)
-        console.log("For input", inputName, "data is ", inputData)
       }}
-      value={value}
       disabled={disabled ? "disabled" : ""}
     />
   )

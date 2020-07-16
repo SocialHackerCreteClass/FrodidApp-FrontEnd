@@ -52,7 +52,7 @@ function Login(props) {
           />
         </label>
 
-        <Button onClick={handleSubmit}>Submit</Button>
+        <Button onClick={handleSubmit}>{`${t("int.submit")}`}</Button>
       </form>
 
       <Button onClick={login}>Log In</Button>

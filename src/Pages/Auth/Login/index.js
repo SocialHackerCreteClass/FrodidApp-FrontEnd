@@ -37,15 +37,14 @@ function Login(props) {
       <h3>{`${t("int.login")}`}</h3>
       <form>
         <label>
-          Email
+          {`${t("int.email")}`}
           <Input
-            name="email"
             type="email"
             onChange={(value) => setFormData({ ...formData, email: value })}
           />
         </label>
         <label>
-          Password
+          {`${t("int.password")}`}
           <Input
             onChange={(value) => setFormData({ ...formData, password: value })}
             type="password"

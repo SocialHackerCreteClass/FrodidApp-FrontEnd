@@ -12,7 +12,8 @@ Input.propTypes = {
   errorMessage: PropTypes.string,
   search: PropTypes.bool,
   type: PropTypes.string,
-  name: PropTypes.string
+  name: PropTypes.string,
+  value: PropTypes.string
 }
 
 function Input({
@@ -21,6 +22,7 @@ function Input({
   errorMessage,
   disabled,
   search,
+  value,
   type = "text",
   name
 }) {
@@ -38,6 +40,7 @@ function Input({
         e.preventDefault()
         onChange(e.target.value)
       }}
+      value={value}
       disabled={disabled ? "disabled" : ""}
     />
   )

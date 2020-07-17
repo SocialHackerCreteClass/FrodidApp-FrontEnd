@@ -4,16 +4,18 @@ import Input from "../components/Input"
 import BreadcrumbsComponent from "../components/Breadcrumbs"
 import Avatar from "../components/Avatar"
 import Button from "../components/Button"
-import Phone from "components/Icons/Phone"
-import Mail from "components/Icons/Mail"
-import Patients from "components/Icons/Patients"
-import Professionals from "components/Icons/Professionals"
-import Visitations from "components/Icons/Visitations"
-import Analytics from "components/Icons/Analytics"
-import Logo from "components/Icons/Logo"
+import PhoneIcon from "components/Icons/Phone"
+import MailIcon from "components/Icons/Mail"
+import PatientsIcon from "components/Icons/Patients"
+import ProfessionalsIcon from "components/Icons/Professionals"
+import VisitationsIcon from "components/Icons/Visitations"
+import AnalyticsIcon from "components/Icons/Analytics"
+import LogoIcon from "components/Icons/Logo"
+import { css } from "emotion"
+
 function TestPage() {
   return (
-    <div>
+    <div className={wrapper}>
       <hr />
       <section>
         <h3>Breadcrumbs Component</h3>
@@ -24,7 +26,6 @@ function TestPage() {
       <section>
         Normal badge: <Badge />
       </section>
-      ----------------
       <section>
         Active badge: <Badge active />
       </section>
@@ -36,7 +37,6 @@ function TestPage() {
         <Input search errorMessage={"there is an error"} />
         <Input disabled />
       </section>
-      ----------------
       <section>
         Avatar:{" "}
         <Avatar
@@ -94,21 +94,28 @@ function TestPage() {
         </div>
       </section>
       <section>
-        <div>
-          <Phone></Phone>
-          <Phone color={"red"} size={"small"}></Phone>
-          <Mail></Mail>
-          <Mail color={"var(--secondary-70)"} size={"small"}></Mail>
-          <Patients></Patients>
-          <Patients type={"secondary"}></Patients>
-          <Professionals></Professionals>
-          <Professionals type={"secondary"}></Professionals>
-          <Visitations></Visitations>
-          <Visitations type={"secondary"}></Visitations>
-          <Analytics></Analytics>
-          <Logo></Logo>
-          <Logo type={"mobile"}></Logo>
-          <Logo display={"none"} type={"mobile"}></Logo>
+        <div
+          style={{
+            display: "flex",
+            width: "70%",
+            justifyContent: "space-between",
+            alignItems: "center"
+          }}>
+          <PhoneIcon />
+          <PhoneIcon color={"red"} size={"small"} />
+          <MailIcon />
+          <MailIcon color={"var(--secondary-70)"} size={"small"} />
+          <PatientsIcon />
+          <PatientsIcon type={"secondary"} />
+          <ProfessionalsIcon />
+          <ProfessionalsIcon type={"secondary"} />
+          <VisitationsIcon />
+          <VisitationsIcon type={"secondary"} />
+          <AnalyticsIcon />
+          <AnalyticsIcon type={"secondary"} />
+          <LogoIcon />
+          <LogoIcon type={"mobile"} />
+          <LogoIcon display={"none"} type={"mobile"} />
         </div>
       </section>
     </div>
@@ -116,3 +123,11 @@ function TestPage() {
 }
 
 export default TestPage
+
+const wrapper = css`
+  section {
+    margin: 10px 0;
+    padding: 10px 0;
+    border-bottom: 5px #5691f0 dashed;
+  }
+`

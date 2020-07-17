@@ -3,13 +3,14 @@ import PropTypes from "prop-types"
 import { css, cx } from "emotion"
 
 Analytics.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
+  type: PropTypes.oneOf(["primary", "secondary"])
 }
 
-function Analytics({ className }) {
+function Analytics({ className, type = "primary" }) {
   return (
     <svg
-      className={cx(wrapper, className)}
+      className={cx(wrapper, type, className)}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 256 256">
       <g fill="currentColor">

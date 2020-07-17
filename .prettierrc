@@ -2,8 +2,8 @@
   "useTabs": false,
   "printWidth": 80,
   "tabWidth": 2,
-  "semi":false,
+  "semi": false,
   "singleQuote": false,
   "trailingComma": "none",
-  "jsxBracketSameLine": true,
+  "jsxBracketSameLine": true
 }

@@ -8,10 +8,10 @@ Mail.propTypes = {
   size: PropTypes.oneOf(["small", "default"])
 }
 
-function Mail({ color, size = "default", className }) {
+function Mail({ color, size, className }) {
   return (
     <svg
-      className={cx(wrapper, { small: size === "small" }, className)}
+      className={cx(wrapper, size, className)}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 256 256"
       style={{ color }}>

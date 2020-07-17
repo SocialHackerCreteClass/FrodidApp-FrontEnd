@@ -1,30 +1,11 @@
 import React, { useState } from "react"
-import { useHistory } from "react-router-dom"
-import PropTypes from "prop-types"
 import { cx } from "emotion"
 import Input from "components/Input"
 import Button from "components/Button"
 import { useI18n } from "providers/I18n"
 
-Login.propTypes = {
-  setLoggedStatus: PropTypes.func
-}
-
 function Login(props) {
   const { t } = useI18n()
-  const history = useHistory()
-
-  const { setLoggedStatus } = props
-
-  function login() {
-    setLoggedStatus(true)
-    history.push("/")
-  }
-
-  function logout() {
-    setLoggedStatus(false)
-    history.push("/login")
-  }
 
   const [formData, setFormData] = useState({ email: "", password: "" })
 
@@ -55,12 +36,6 @@ function Login(props) {
 
         <Button onClick={handleSubmit}>{`${t("int.submit")}`}</Button>
       </form>
-
-      <Button onClick={login}>Log In</Button>
-      <Button onClick={logout}>Log Out</Button>
-      <hr />
-
-      <br />
     </div>
   )
 }

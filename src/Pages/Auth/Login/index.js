@@ -41,6 +41,7 @@ function Login(props) {
           <Input
             type="email"
             onChange={(value) => setFormData({ ...formData, email: value })}
+            value={formData.email}
           />
         </label>
         <label>
@@ -48,6 +49,7 @@ function Login(props) {
           <Input
             onChange={(value) => setFormData({ ...formData, password: value })}
             type="password"
+            value={formData.password}
           />
         </label>
 

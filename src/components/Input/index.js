@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { inputCls } from "./styles"
 import { cx } from "emotion"
@@ -11,17 +11,20 @@ Input.propTypes = {
   disabled: PropTypes.bool,
   errorMessage: PropTypes.string,
   search: PropTypes.bool,
-  type: PropTypes.string
+  type: PropTypes.string,
+  name: PropTypes.string,
+  value: PropTypes.string
 }
 
 function Input({
   className,
   onChange = () => {},
-  value,
   errorMessage,
   disabled,
   search,
-  type = "text"
+  value,
+  type = "text",
+  name
 }) {
   return (
     <input
@@ -32,6 +35,7 @@ function Input({
         className
       })}
       type={search ? "search" : type}
+      name={name}
       onChange={(e) => {
         e.preventDefault()
         onChange(e.target.value)

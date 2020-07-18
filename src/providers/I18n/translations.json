@@ -15,7 +15,10 @@
     "int.professionals": "Professionals",
     "int.professional_details": "Professional Details",
     "int.professional_create_new": "Create New Professional",
-    "int.professional_edit": "Edit Professional"
+    "int.professional_edit": "Edit Professional",
+    "int.submit": "Submit",
+    "int.email": "Email",
+    "int.password": "Password"
   },
   "el": {
     "int.login": "Σύνδεση",
@@ -33,6 +36,9 @@
     "int.professionals": "Επαγγελματίες",
     "int.professional_details": "Λεπτομέρειες Επαγγελματία",
     "int.professional_create_new": "Καταχώρηση Επαγγελματία",
-    "int.professional_edit": "Επεξεργασία Επαγγελματία"
+    "int.professional_edit": "Επεξεργασία Επαγγελματία",
+    "int.submit": "Καταχώρηση",
+    "int.email": "Διεύθυνση Ηλ. Ταχυδρομείου",
+    "int.password": "Κωδικός Πρόσβασης"
   }
 }

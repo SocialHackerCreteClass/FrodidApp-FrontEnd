@@ -1,50 +1,15 @@
 import React from "react"
 import { useTable, useFlexLayout } from "react-table"
 import PropTypes from "prop-types"
-import { tr, th } from "./style"
-
-export const columns = [
-  {
-    Header: "Patient",
-    accessor: "patient"
-  },
-  {
-    Header: "Location",
-    accessor: "location"
-    /*style: { hidden }*/
-  },
-  {
-    Header: "Last Visit",
-    accessor: "lastVisit"
-  },
-  {
-    Header: "Actions",
-    accessor: "actions"
-  }
-]
-
-export const data = [
-  {
-    patient: "John Doe",
-    location: "Ionias 35",
-    lastVisit: "27/07/2020",
-    actions: "view delete"
-  },
-  {
-    patient: "John Doe",
-    location: "Ionias 35",
-    lastVisit: "27/07/2020",
-    actions: "view delete"
-  }
-]
+import { tr, th, tableStyle } from "./style"
 
 const Table = ({ columns, data }) => {
   const defaultColumn = React.useMemo(
     () => ({
       // When using the useFlexLayout:
       minWidth: 30, // minWidth is only used as a limit for resizing
-      width: 150, // width is used for both the flex-basis and flex-grow
-      maxWidth: 200 // maxWidth is only used as a limit for resizing
+      width: 200, // width is used for both the flex-basis and flex-grow 150
+      maxWidth: 250 // maxWidth is only used as a limit for resizing 200
     }),
     []
   )
@@ -70,18 +35,20 @@ const Table = ({ columns, data }) => {
   )
 
   return (
-    <div {...getTableProps()}>
+    <div {...getTableProps()} className={tableStyle}>
+      {/* TABLE HEAD */}
       <div>
         {headerGroups.map((headerGroup, i) => (
-          <div key={i} {...headerGroup.getHeaderGroupProps({})}>
+          <div key={i} {...headerGroup.getHeaderGroupProps({})} className={th}>
             {headerGroup.headers.map((column, j) => (
-              <div key={j} {...column.getHeaderProps()} className={th}>
+              <div key={j} {...column.getHeaderProps()}>
                 {column.render("Header")}
               </div>
             ))}
           </div>
         ))}
       </div>
+      {/* TABLE BODY */}
       <div>
         {rows.map((row, i) => {
           prepareRow(row)

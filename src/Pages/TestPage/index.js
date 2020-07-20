@@ -1,10 +1,11 @@
 import React from "react"
-import Badge from "../components/Badge"
-import Input from "../components/Input"
-import BreadcrumbsComponent from "../components/Breadcrumbs"
-import Avatar from "../components/Avatar"
-import Button from "../components/Button"
-import Table, { columns, data } from "components/Table"
+import Badge from "components/Badge"
+import Input from "components/Input"
+import BreadcrumbsComponent from "components/Breadcrumbs"
+import Avatar from "components/Avatar"
+import Button from "components/Button"
+import Table from "components/Table"
+import { columns, data } from "components/Table/PatientTable"
 
 function TestPage() {
   return (
@@ -91,7 +92,12 @@ function TestPage() {
       ----------------
       <section>
         Table:
-        <Table columns={columns} data={data} />
+        <div
+          style={{
+            borderStyle: "dotted"
+          }}>
+          <Table columns={columns} data={data} />
+        </div>
       </section>
     </div>
   )

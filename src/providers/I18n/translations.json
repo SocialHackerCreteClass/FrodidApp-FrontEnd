@@ -1,6 +1,9 @@
 {
   "en": {
     "int.login": "Login",
+    "int.pin_code": "Pin Code",
+    "int.pin": "Pin",
+    "int.already-user": "Already have an account? Sign in",
     "int.all-visit-header": "This page with host a list with all the {0}",
     "int.all-patients-header": "This page with host a list with all the {0}",
     "int.all-professional-header": "This page with host a list with all the {0}",
@@ -22,6 +25,9 @@
   },
   "el": {
     "int.login": "Σύνδεση",
+    "int.pin_code": "Κωδικός Pin",
+    "int.pin": "Pin",
+    "int.already-user": "Έχεις ήδη λογαριασμό; Συνδέσου.",
     "int.all-visit-header": "This page with host a list with all the {0}",
     "int.all-patients-header": "Αυτη η σελιδα θα δείχνει όλους τους {0}",
     "int.all-professional-header": "Αυτη η σελιδα θα δείχνει όλους τους {0}",

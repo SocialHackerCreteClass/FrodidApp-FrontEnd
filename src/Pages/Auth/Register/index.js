@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { useQuery } from "react-query"
 import { Link } from "react-router-dom"
 import Input from "components/Input"
@@ -29,14 +29,28 @@ function Register() {
   }
 
   const { status, data, error } = useQuery("userData", getUserData)
-  console.log("status ", status)
-  if (status === "success") {
-    console.log(data)
-  }
+
+  useEffect(() => {
+    if (status === "success") {
+      setFormData({
+        ...formData,
+        email: data.email,
+        firstName: data.name.first,
+        lastName: data.name.last,
+        dob: data.dob.date
+      })
+    }
+  }, [status, data])
 
   function handleSubmit() {
     if (formData.password !== formData.passwordConfirmed) {
       console.log("Make sure you typed the password correctly.")
+    } else if (
+      formData.password === "" ||
+      formData.dob === "" ||
+      formData.profession === ""
+    ) {
+      console.log("Please fill in all the required fields")
     } else {
       console.log(formData)
     }
@@ -45,7 +59,7 @@ function Register() {
   return (
     <div>
       <h3>{`${t("int.register")}`}</h3>
-      <button onClick={getUserData}>fetch random user data</button>
+
       <form>
         <label>
           {`${t("int.firstName")}`}

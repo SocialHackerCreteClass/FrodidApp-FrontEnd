@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import PropTypes from "prop-types"
 import { inputCls } from "./styles"
 import { cx } from "emotion"
@@ -13,7 +13,7 @@ Input.propTypes = {
   search: PropTypes.bool,
   type: PropTypes.string,
   name: PropTypes.string,
-  value: PropTypes.string
+  placeholder: PropTypes.string
 }
 
 function Input({
@@ -24,11 +24,12 @@ function Input({
   search,
   value,
   type = "text",
-  name
+  name,
+  placeholder
 }) {
   return (
     <input
-      placeholder="Write here"
+      placeholder={placeholder}
       className={cx(inputCls, {
         errorForm: Boolean(errorMessage),
         search,

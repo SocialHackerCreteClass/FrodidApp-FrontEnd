@@ -30,7 +30,9 @@ function Register() {
 
   const { status, data, error } = useQuery("userData", getUserData)
   console.log("status ", status)
-  console.log(data)
+  if (status === "success") {
+    console.log(data)
+  }
 
   function handleSubmit() {
     if (formData.password !== formData.passwordConfirmed) {

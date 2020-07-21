@@ -25,12 +25,12 @@ function Register() {
   const getUserData = async () => {
     const response = await fetch(`https://randomuser.me/api/`)
     const data = await response.json()
-    return data
+    return data.results[0]
   }
 
   const { status, data, error } = useQuery("userData", getUserData)
   console.log("status ", status)
-  console.log("data ", data)
+  console.log(data)
 
   function handleSubmit() {
     if (formData.password !== formData.passwordConfirmed) {

@@ -21,7 +21,7 @@ function Pin(props) {
           {`${t("int.pin")}`}
           <Input
             type="password"
-            onChange={(value) => setFormData({ ...formData, email: value })}
+            onChange={(value) => setFormData({ ...formData, pin: value })}
             value={formData.pin}
           />
         </label>

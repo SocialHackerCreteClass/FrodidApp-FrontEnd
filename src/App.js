@@ -35,10 +35,7 @@ function App() {
             </Route>
             <Route path="/pin">
               <LayoutAuth>
-                <Pin
-                  loggedStatus={loggedStatus}
-                  setLoggedStatus={setLoggedStatus}
-                />
+                <Pin />
               </LayoutAuth>
             </Route>
             <Route path="/register">

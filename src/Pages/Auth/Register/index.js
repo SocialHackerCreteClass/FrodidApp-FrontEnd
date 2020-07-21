@@ -10,6 +10,8 @@ Register.propTypes = {}
 function Register() {
   const { t } = useI18n()
 
+  const [urlUserCode, setUrlUserCode] = useState(window.location.href)
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -20,26 +22,15 @@ function Register() {
     passwordConfirmed: ""
   })
 
-  function getUserData() {
-    fetch("https://randomuser.me/api/")
-      .then((res) => res.json())
-      .then((data) => {
-        let person = data.results[0]
-        setFormData({
-          ...formData,
-          email: person.email,
-          firstName: person.name.first,
-          lastName: person.name.last,
-          dob: person.dob.date
-        })
-      })
+  const getUserData = async () => {
+    const response = await fetch(`https://randomuser.me/api/`)
+    const data = await response.json()
+    return data
   }
 
   const { status, data, error } = useQuery("userData", getUserData)
   console.log("status ", status)
   console.log("data ", data)
-
-  const [urlUserCode, setUrlUserCode] = useState(window.location.href)
 
   function handleSubmit() {
     if (formData.password !== formData.passwordConfirmed) {

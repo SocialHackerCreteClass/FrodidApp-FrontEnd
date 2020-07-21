@@ -12,8 +12,7 @@ Input.propTypes = {
   errorMessage: PropTypes.string,
   search: PropTypes.bool,
   type: PropTypes.string,
-  name: PropTypes.string,
-  value: PropTypes.string
+  name: PropTypes.string
 }
 
 function Input({

@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { useQuery } from "react-query"
 import { Link } from "react-router-dom"
 import Input from "components/Input"
 import Button from "components/Button"
@@ -19,6 +20,27 @@ function Register() {
     passwordConfirmed: ""
   })
 
+  function getUserData() {
+    fetch("https://randomuser.me/api/")
+      .then((res) => res.json())
+      .then((data) => {
+        let person = data.results[0]
+        setFormData({
+          ...formData,
+          email: person.email,
+          firstName: person.name.first,
+          lastName: person.name.last,
+          dob: person.dob.date
+        })
+      })
+  }
+
+  const { status, data, error } = useQuery("userData", getUserData)
+  console.log("status ", status)
+  console.log("data ", data)
+
+  const [urlUserCode, setUrlUserCode] = useState(window.location.href)
+
   function handleSubmit() {
     if (formData.password !== formData.passwordConfirmed) {
       console.log("Make sure you typed the password correctly.")
@@ -30,6 +52,7 @@ function Register() {
   return (
     <div>
       <h3>{`${t("int.register")}`}</h3>
+      <button onClick={getUserData}>fetch random user data</button>
       <form>
         <label>
           {`${t("int.firstName")}`}

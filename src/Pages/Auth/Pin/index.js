@@ -1,9 +1,9 @@
 import React, { useState } from "react"
-import { cx } from "emotion"
 import Input from "components/Input"
 import Button from "components/Button"
 import { Link } from "react-router-dom"
 import { useI18n } from "providers/I18n"
+import "./pin.css"
 
 function Pin(props) {
   const { t } = useI18n()
@@ -15,22 +15,39 @@ function Pin(props) {
 
   return (
     <div>
-      <h3>{`${t("int.pin_code")}`}</h3>
-      <form>
-        <label>
-          {`${t("int.pin")}`}
+      <div className="u-margin-bottom-large">
+        <div className="u-text-align-center">
+          <h2 className="h6">
+            <span>{`${t("int.pin_code")}`}</span>
+          </h2>
+        </div>
+      </div>
+      <div className="u-margin-bottom-large">
+        <div className="u-margin-bottom-tiny">
+          <label
+            htmlFor="pin"
+            className="c-label c-label--primary c-label--small">{`${t(
+            "int.pin"
+          )}`}</label>
+        </div>
+        <div>
           <Input
-            type="password"
+            placeholder={"Write Pin"}
             onChange={(value) => setFormData({ ...formData, pin: value })}
             value={formData.pin}
           />
-        </label>
-
-        <Button variant="secondary" size={"large"} onClick={handleSubmit}>{`${t(
-          "int.submit"
-        )}`}</Button>
-      </form>
-      <Link to="/login">{t("int.already-user")}</Link>
+        </div>
+      </div>
+      <div className="u-margin-bottom">
+        <Button variant="secondary" full size={"large"} onClick={handleSubmit}>
+          <span>{`${t("int.submit")}`}</span>
+        </Button>
+      </div>
+      <div className="u-text-align-center">
+        <Link to="/login">
+          <span>{t("int.already-user")}</span>
+        </Link>
+      </div>
     </div>
   )
 }

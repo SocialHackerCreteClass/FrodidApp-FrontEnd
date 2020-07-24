@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import Pages from "./Pages"
 import Login from "./Pages/Auth/Login"
+import Pin from "./Pages/Auth/Pin"
 import Register from "./Pages/Auth/Register"
 import I18nProvider from "./providers/I18n"
 import "./styles/globalStyles"
@@ -30,6 +31,11 @@ function App() {
                   loggedStatus={loggedStatus}
                   setLoggedStatus={setLoggedStatus}
                 />
+              </LayoutAuth>
+            </Route>
+            <Route path="/pin">
+              <LayoutAuth>
+                <Pin />
               </LayoutAuth>
             </Route>
             <Route path="/register">

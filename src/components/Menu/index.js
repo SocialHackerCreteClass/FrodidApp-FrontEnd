@@ -16,6 +16,9 @@ function Menu() {
           <Link to="/login">{t("int.login")}</Link>
         </li>
         <li>
+          <Link to="/pin">{t("int.pin_code")}</Link>
+        </li>
+        <li>
           <Link to="/register">Register</Link>
         </li>
         <li>

@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useMemo } from "react"
 import { useQuery } from "react-query"
-import { Link } from "react-router-dom"
 import Input from "components/Input"
 import Button from "components/Button"
 import { useI18n } from "providers/I18n"
@@ -10,7 +9,9 @@ Register.propTypes = {}
 function Register() {
   const { t } = useI18n()
 
-  const [urlUserCode, setUrlUserCode] = useState(window.location.href)
+  const urlUserCode = useMemo(() => {
+    return window.location.href
+  }, [window.location.href])
 
   const [formData, setFormData] = useState({
     email: "",
@@ -28,7 +29,7 @@ function Register() {
     return data.results[0]
   }
 
-  const { status, data, error } = useQuery("userData", getUserData)
+  const { status, data } = useQuery("userData", getUserData)
 
   useEffect(() => {
     if (status === "success") {

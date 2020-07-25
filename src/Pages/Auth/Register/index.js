@@ -3,8 +3,6 @@ import { Link } from "react-router-dom"
 
 Register.propTypes = {}
 
-//test comment please ignore
-
 function Register() {
   return (
     <div>

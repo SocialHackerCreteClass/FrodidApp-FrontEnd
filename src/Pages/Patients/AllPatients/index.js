@@ -3,6 +3,8 @@ import { useI18n } from "providers/I18n"
 
 AllPatients.propTypes = {}
 
+//test comment please ignore
+
 function AllPatients() {
   const { t } = useI18n()
   return (

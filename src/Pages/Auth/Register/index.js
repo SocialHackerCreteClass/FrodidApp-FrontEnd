@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react"
+import React, { useState, useEffect } from "react"
 import { useQuery } from "react-query"
 import Input from "components/Input"
 import Button from "components/Button"
@@ -9,9 +9,7 @@ Register.propTypes = {}
 function Register() {
   const { t } = useI18n()
 
-  const urlUserCode = useMemo(() => {
-    return window.location.href
-  }, [window.location.href])
+  //const userCode = window.location.href
 
   const [formData, setFormData] = useState({
     email: "",
@@ -41,6 +39,8 @@ function Register() {
         dob: data.dob.date
       })
     }
+    //the following line is disabled because eslint suggest us to add formData on dependencies array, which will lead to an infinite loop
+    // eslint-disable-next-line
   }, [status, data])
 
   function handleSubmit() {

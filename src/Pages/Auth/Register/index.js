@@ -11,7 +11,8 @@ function Register() {
 
   let userCode = useMemo(() => {
     return window.location.href
-  }, [])
+    // eslint-disable-next-line
+  }, [window.location.href])
 
   console.log(userCode)
 

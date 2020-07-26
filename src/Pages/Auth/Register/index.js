@@ -8,7 +8,7 @@ Register.propTypes = {}
 
 function Register() {
   const { t } = useI18n()
-
+  // eslint-disable-next-line
   let userCode = useMemo(() => {
     return window.location.href
     // eslint-disable-next-line

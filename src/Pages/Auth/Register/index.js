@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useMemo } from "react"
 import { useQuery } from "react-query"
 import Input from "components/Input"
 import Button from "components/Button"
@@ -9,7 +9,11 @@ Register.propTypes = {}
 function Register() {
   const { t } = useI18n()
 
-  //const userCode = window.location.href
+  let userCode = useMemo(() => {
+    return window.location.href
+  }, [window.location.href])
+
+  console.log(userCode)
 
   const [formData, setFormData] = useState({
     email: "",

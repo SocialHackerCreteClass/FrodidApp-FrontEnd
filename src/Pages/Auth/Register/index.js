@@ -14,8 +14,6 @@ function Register() {
     // eslint-disable-next-line
   }, [window.location.href])
 
-  console.log(userCode)
-
   const [formData, setFormData] = useState({
     email: "",
     password: "",

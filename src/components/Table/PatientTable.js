@@ -3,7 +3,9 @@ import { PatientType, VisitType } from "types"
 import { subrow } from "./style"
 import dayjs from "dayjs"
 import relativeTime from "dayjs/plugin/relativeTime"
+import localizedFormat from "dayjs/plugin/localizedFormat"
 dayjs.extend(relativeTime)
+dayjs.extend(localizedFormat)
 
 PatientColumn.propTypes = {
   value: PatientType
@@ -44,9 +46,10 @@ LastVisitColumn.propTypes = {
 
 function LastVisitColumn({ value }) {
   const { date, user } = value
+  const lastVisit = dayjs(date).format("ll")
   return (
     <div>
-      {date}
+      {lastVisit}
       <div className={subrow}>{user}</div>
     </div>
   )
@@ -86,7 +89,7 @@ export const data = [
       country: "Greece",
       state: "Heraklion"
     },
-    date: "Jul 27th, 2020",
+    date: "2019-12-27",
     user: "Mary Doe"
   },
   {
@@ -101,7 +104,7 @@ export const data = [
       country: "Greece",
       state: "Heraklion"
     },
-    date: "Jul 27th, 2020",
+    date: "2020-06-27",
     user: "Mary Doe"
   }
 ]

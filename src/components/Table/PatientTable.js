@@ -1,20 +1,23 @@
 import React from "react"
 import { PatientType, VisitType } from "types"
 import { subrow } from "./style"
+import moment from "moment"
 
 PatientColumn.propTypes = {
   value: PatientType
 }
-
 function PatientColumn({ value }) {
-  const { firstName, lastName, age } = value
+  console.log(value)
+  const { firstName, lastName, birthDate } = value.patient
   return (
     <div>
       {firstName} {lastName}
-      <div className={subrow}>{age} years old</div>
+      <div className={subrow}>{birthDate} years old</div>
     </div>
   )
 }
+
+console.log()
 
 LocationColumn.propTypes = {
   value: PatientType
@@ -47,7 +50,7 @@ function LastVisitColumn({ value }) {
 export const columns = [
   {
     Header: "Patient",
-    accessor: "patient",
+    accessor: (row) => row,
     Cell: PatientColumn
   },
   {
@@ -70,7 +73,10 @@ export const data = [
     patient: {
       firstName: "Giannis",
       lastName: "Doe",
-      age: 74
+      birthDate: (date) => {
+        date = "27/3/1985"
+        return moment(date).fromNow
+      }
     },
     location: {
       address: "Leoforos Ionias 35",
@@ -80,13 +86,17 @@ export const data = [
       date: "Jul 27th, 2020",
       assignedTo: "Mary Doe"
     },
-    actions: "view delete"
+    actions: "view delete",
+    id: "1"
   },
   {
     patient: {
       firstName: "John",
       lastName: "Doe",
-      age: 74
+      birthDate: (date) => {
+        date = "27/3/1975"
+        return moment(date).fromNow
+      }
     },
     location: {
       address: "Leoforos Ionias 35",

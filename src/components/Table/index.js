@@ -20,18 +20,7 @@ const Table = ({ columns, data }) => {
       data,
       defaultColumn
     },
-    useFlexLayout,
-    (hooks) => {
-      hooks.allColumns.push((columns) => [
-        // Let's make a column for selection
-        ...columns
-      ])
-      hooks.useInstanceBeforeDimensions.push(({ headerGroups }) => {
-        // fix the parent group of the selection button to not be resizable
-        const selectionGroupHeader = headerGroups[0].headers[0]
-        selectionGroupHeader.canResize = false
-      })
-    }
+    useFlexLayout
   )
 
   return (

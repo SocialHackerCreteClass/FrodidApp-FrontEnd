@@ -1,6 +1,7 @@
 import React from "react"
+import { NavLink } from "react-router-dom"
 import { PatientType, VisitType } from "types"
-import { subrow } from "./style"
+import { subrow, viewAction } from "./style"
 import dayjs from "dayjs"
 import relativeTime from "dayjs/plugin/relativeTime"
 import localizedFormat from "dayjs/plugin/localizedFormat"
@@ -55,6 +56,16 @@ function LastVisitColumn({ value }) {
   )
 }
 
+function ActionsColumn() {
+  return (
+    <div>
+      <NavLink to="patients/details/:id" className={viewAction}>
+        View
+      </NavLink>
+    </div>
+  )
+}
+
 export const columns = [
   {
     Header: "Patient",
@@ -73,7 +84,8 @@ export const columns = [
   },
   {
     Header: "Actions",
-    accessor: "actions"
+    accessor: (row) => row,
+    Cell: ActionsColumn
   }
 ]
 export const data = [
@@ -93,7 +105,7 @@ export const data = [
     user: "Mary Doe"
   },
   {
-    id: 1,
+    id: 2,
     firstName: "John",
     lastName: "Doe",
     birthDate: "1930-12-30",

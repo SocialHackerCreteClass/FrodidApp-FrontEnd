@@ -23,8 +23,6 @@ function PatientColumn({ value }) {
   )
 }
 
-console.log()
-
 LocationColumn.propTypes = {
   value: PatientType
 }
@@ -56,10 +54,15 @@ function LastVisitColumn({ value }) {
   )
 }
 
-function ActionsColumn() {
+ActionsColumn.propTypes = {
+  value: PatientType
+}
+
+function ActionsColumn({ value }) {
+  const { id } = value
   return (
     <div>
-      <NavLink to="patients/details/:id" className={viewAction}>
+      <NavLink to={`patients/details/${id}`} className={viewAction}>
         View
       </NavLink>
     </div>

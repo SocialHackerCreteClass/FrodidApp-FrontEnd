@@ -1,18 +1,21 @@
 import React from "react"
 import { PatientType, VisitType } from "types"
 import { subrow } from "./style"
-import moment from "moment"
+import dayjs from "dayjs"
+import relativeTime from "dayjs/plugin/relativeTime"
+dayjs.extend(relativeTime)
 
 PatientColumn.propTypes = {
   value: PatientType
 }
 function PatientColumn({ value }) {
-  console.log(value)
-  const { firstName, lastName, birthDate } = value.patient
+  const { firstName, lastName, birthDate } = value
+
+  const age = dayjs().from(dayjs(birthDate), true)
   return (
     <div>
       {firstName} {lastName}
-      <div className={subrow}>{birthDate} years old</div>
+      <div className={subrow}>{age} old</div>
     </div>
   )
 }
@@ -24,11 +27,13 @@ LocationColumn.propTypes = {
 }
 
 function LocationColumn({ value }) {
-  const { address, region } = value
+  const { street, streetNumber, region, state } = value.address
   return (
     <div>
-      {address}
-      <div className={subrow}>{region}</div>
+      {street} {streetNumber}
+      <div className={subrow}>
+        {region}, {state}
+      </div>
     </div>
   )
 }
@@ -38,11 +43,11 @@ LastVisitColumn.propTypes = {
 }
 
 function LastVisitColumn({ value }) {
-  const { date, assignedTo } = value
+  const { date, user } = value
   return (
     <div>
       {date}
-      <div className={subrow}>{assignedTo}</div>
+      <div className={subrow}>{user}</div>
     </div>
   )
 }
@@ -55,12 +60,12 @@ export const columns = [
   },
   {
     Header: "Location",
-    accessor: "location",
+    accessor: (row) => row,
     Cell: LocationColumn
   },
   {
     Header: "Last Visit",
-    accessor: "lastVisit",
+    accessor: (row) => row,
     Cell: LastVisitColumn
   },
   {
@@ -70,42 +75,33 @@ export const columns = [
 ]
 export const data = [
   {
-    patient: {
-      firstName: "Giannis",
-      lastName: "Doe",
-      birthDate: (date) => {
-        date = "27/3/1985"
-        return moment(date).fromNow
-      }
+    id: 1,
+    firstName: "Giannis",
+    lastName: "Doe",
+    birthDate: "1986-05-03",
+    address: {
+      street: "Leoforos Ionias",
+      streetNumber: "35",
+      region: "Mastampas",
+      country: "Greece",
+      state: "Heraklion"
     },
-    location: {
-      address: "Leoforos Ionias 35",
-      region: "Herakleion"
-    },
-    lastVisit: {
-      date: "Jul 27th, 2020",
-      assignedTo: "Mary Doe"
-    },
-    actions: "view delete",
-    id: "1"
+    date: "Jul 27th, 2020",
+    user: "Mary Doe"
   },
   {
-    patient: {
-      firstName: "John",
-      lastName: "Doe",
-      birthDate: (date) => {
-        date = "27/3/1975"
-        return moment(date).fromNow
-      }
+    id: 1,
+    firstName: "John",
+    lastName: "Doe",
+    birthDate: "1930-12-30",
+    address: {
+      street: "Leoforos Ionias",
+      streetNumber: "35",
+      region: "Mastampas",
+      country: "Greece",
+      state: "Heraklion"
     },
-    location: {
-      address: "Leoforos Ionias 35",
-      region: "Herakleion"
-    },
-    lastVisit: {
-      date: "Jul 27th, 2020",
-      assignedTo: "Mary Doe"
-    },
-    actions: "view delete"
+    date: "Jul 27th, 2020",
+    user: "Mary Doe"
   }
 ]

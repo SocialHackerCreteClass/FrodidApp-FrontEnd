@@ -26,7 +26,7 @@ export const PatientType = PropTypes.shape({
   id: PropTypes.number,
   firstName: PropTypes.string.isRequired,
   lastName: PropTypes.string.isRequired,
-  birthDate: PropTypes.number.isRequired,
+  birthDate: PropTypes.string.isRequired,
   telephone: PropTypes.number,
   mobile: PropTypes.number,
   amka: PropTypes.number.isRequired,

@@ -7,7 +7,7 @@ Input.propTypes = {
   className: PropTypes.string,
   onChange: PropTypes.func,
   label: PropTypes.string,
-  value: PropTypes.string,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   disabled: PropTypes.bool,
   errorMessage: PropTypes.string,
   search: PropTypes.bool,

@@ -21,7 +21,13 @@
     "int.professional_edit": "Edit Professional",
     "int.submit": "Submit",
     "int.email": "Email",
-    "int.password": "Password"
+    "int.password": "Password",
+    "int.firstName": "First Name",
+    "int.lastName": "Last Name",
+    "int.dateOfBirth": "Date of Birth",
+    "int.profession": "Profession",
+    "int.passwordConfirmed": "Confirm Password",
+    "int.register": "Register"
   },
   "el": {
     "int.login": "Σύνδεση",
@@ -45,6 +51,12 @@
     "int.professional_edit": "Επεξεργασία Επαγγελματία",
     "int.submit": "Καταχώρηση",
     "int.email": "Διεύθυνση Ηλ. Ταχυδρομείου",
-    "int.password": "Κωδικός Πρόσβασης"
+    "int.password": "Κωδικός Πρόσβασης",
+    "int.firstName": "Όνομα",
+    "int.lastName": "Επώνυμο",
+    "int.dateOfBirth": "Ημερομηνία Γέννησης",
+    "int.profession": "Ειδικότητα",
+    "int.passwordConfirmed": "Επιβεβαίωση Κωδικού Πρόσβασης",
+    "int.register": "Εγγραφή"
   }
 }

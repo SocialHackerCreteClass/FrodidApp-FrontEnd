@@ -3,7 +3,7 @@ import { useQuery } from "react-query"
 import Input from "components/Input"
 import Button from "components/Button"
 import { useI18n } from "providers/I18n"
-//import getUserData from "../../../api/auth"
+import { getUserData } from "../../../api/auth.js"
 
 Register.propTypes = {}
 
@@ -24,12 +24,6 @@ function Register() {
     profession: "",
     passwordConfirmed: ""
   })
-
-  const getUserData = async () => {
-    const response = await fetch(`https://randomuser.me/api/`)
-    const data = await response.json()
-    return data.results[0]
-  }
 
   const { status, data } = useQuery("userData", getUserData)
 

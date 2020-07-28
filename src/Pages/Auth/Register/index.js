@@ -1,52 +1,48 @@
-import React, { useState, useEffect, useMemo } from "react"
+import React, { useState, useMemo } from "react"
 import { useQuery } from "react-query"
 import Input from "components/Input"
 import Button from "components/Button"
 import { useI18n } from "providers/I18n"
 import { getUserData } from "../../../api/auth.js"
+import { useHistory } from "react-router"
 
 Register.propTypes = {}
 
 function Register() {
   const { t } = useI18n()
-  // eslint-disable-next-line
-  let userCode = useMemo(() => {
-    return window.location.href
-    // eslint-disable-next-line
-  }, [window.location.href])
+  const history = useHistory()
+
+  const pin = useMemo(() => {
+    const search = history.location.search
+    const searchParams = new URLSearchParams(search)
+    return searchParams.get("pin")
+  }, [history.location.search])
 
   const [formData, setFormData] = useState({
     email: "",
     password: "",
     firstName: "",
     lastName: "",
-    dob: "",
+    birthDate: "",
     profession: "",
     passwordConfirmed: ""
   })
 
-  const { status, data } = useQuery("userData", getUserData)
-
-  useEffect(() => {
-    if (status === "success") {
-      setFormData({
-        ...formData,
-        email: data.email,
-        firstName: data.name.first,
-        lastName: data.name.last,
-        dob: data.dob.date
-      })
+  useQuery(["userData", pin], getUserData, {
+    onSuccess: (data) => {
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        ...data
+      }))
     }
-    //the following line is disabled because eslint suggest us to add formData on dependencies array, which will lead to an infinite loop
-    // eslint-disable-next-line
-  }, [status, data])
+  })
 
   function handleSubmit() {
     if (formData.password !== formData.passwordConfirmed) {
       console.log("Make sure you typed the password correctly.")
     } else if (
       formData.password === "" ||
-      formData.dob === "" ||
+      formData.birthDate === "" ||
       formData.profession === ""
     ) {
       console.log("Please fill in all the required fields")
@@ -81,9 +77,10 @@ function Register() {
         <label>
           {`${t("int.dateOfBirth")}`}
           <Input
-            onChange={(value) => setFormData({ ...formData, dob: value })}
+            onChange={(value) => setFormData({ ...formData, birthDate: value })}
             type="date"
-            value={formData.dob}
+            disabled
+            value={formData.birthDate}
           />
         </label>
         <label>

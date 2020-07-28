@@ -3,6 +3,7 @@ import { useQuery } from "react-query"
 import Input from "components/Input"
 import Button from "components/Button"
 import { useI18n } from "providers/I18n"
+//import getUserData from "../../../api/auth"
 
 Register.propTypes = {}
 
@@ -70,6 +71,7 @@ function Register() {
           <Input
             onChange={(value) => setFormData({ ...formData, firstName: value })}
             type="text"
+            disabled
             value={formData.firstName}
           />
         </label>
@@ -78,6 +80,7 @@ function Register() {
           <Input
             onChange={(value) => setFormData({ ...formData, lastName: value })}
             type="text"
+            disabled
             value={formData.lastName}
           />
         </label>
@@ -96,6 +99,7 @@ function Register() {
               setFormData({ ...formData, profession: value })
             }
             type="text"
+            disabled
             value={formData.profession}
           />
         </label>
@@ -104,6 +108,7 @@ function Register() {
           <Input
             type="email"
             onChange={(value) => setFormData({ ...formData, email: value })}
+            disabled
             value={formData.email}
           />
         </label>

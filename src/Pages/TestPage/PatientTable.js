@@ -1,10 +1,10 @@
 import React from "react"
 import { NavLink } from "react-router-dom"
 import { PatientType, VisitType } from "types"
-import { subrow, viewAction } from "./style"
 import dayjs from "dayjs"
 import relativeTime from "dayjs/plugin/relativeTime"
 import localizedFormat from "dayjs/plugin/localizedFormat"
+import { css } from "emotion"
 dayjs.extend(relativeTime)
 dayjs.extend(localizedFormat)
 
@@ -28,7 +28,7 @@ LocationColumn.propTypes = {
 }
 
 function LocationColumn({ value }) {
-  const { street, streetNumber, region, state } = value.address
+  const { street, streetNumber, region, state } = value
   return (
     <div>
       {street} {streetNumber}
@@ -77,7 +77,7 @@ export const columns = [
   },
   {
     Header: "Location",
-    accessor: (row) => row,
+    accessor: "address",
     Cell: LocationColumn
   },
   {
@@ -123,3 +123,15 @@ export const data = [
     user: "Mary Doe"
   }
 ]
+
+const subrow = css`
+  color: var(--global-grey-60);
+  font-size: 15px;
+  font-size: 0.94rem;
+  line-height: 1.6;
+`
+const viewAction = css`
+  color: var(--primary-60);
+  font-size: 1.13rem;
+  line-height: 1.33;
+`

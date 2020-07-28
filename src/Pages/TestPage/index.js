@@ -13,8 +13,7 @@ import AnalyticsIcon from "components/Icons/Analytics"
 import LogoIcon from "components/Icons/Logo"
 import { css } from "emotion"
 import Table from "components/Table"
-import { columns, data } from "components/Table/PatientTable"
-
+import { columns, data } from "./PatientTable"
 
 function TestPage() {
   return (

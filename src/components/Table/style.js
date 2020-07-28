@@ -21,14 +21,3 @@ export const tableStyle = css`
   padding: 0;
   margin-bottom: 48px;
 `
-export const subrow = css`
-  color: var(--global-grey-60);
-  font-size: 15px;
-  font-size: 0.94rem;
-  line-height: 1.6;
-`
-export const viewAction = css`
-  color: var(--primary-60);
-  font-size: 1.13rem;
-  line-height: 1.33;
-`

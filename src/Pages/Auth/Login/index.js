@@ -1,35 +1,40 @@
-import React from "react"
-import { useHistory } from "react-router-dom"
-import PropTypes from "prop-types"
-
-Login.propTypes = {
-  setLoggedStatus: PropTypes.func
-}
+import React, { useState } from "react"
+import Input from "components/Input"
+import Button from "components/Button"
+import { useI18n } from "providers/I18n"
 
 function Login(props) {
-  const history = useHistory()
+  const { t } = useI18n()
 
-  const { setLoggedStatus } = props
+  const [formData, setFormData] = useState({ email: "", password: "" })
 
-  function login() {
-    setLoggedStatus(true)
-    history.push("/")
-  }
-
-  function logout() {
-    setLoggedStatus(false)
-    history.push("/login")
+  function handleSubmit() {
+    console.log(formData)
   }
 
   return (
     <div>
-      <h1>This will be the Login page</h1>
+      <h3>{`${t("int.login")}`}</h3>
+      <form>
+        <label>
+          {`${t("int.email")}`}
+          <Input
+            type="email"
+            onChange={(value) => setFormData({ ...formData, email: value })}
+            value={formData.email}
+          />
+        </label>
+        <label>
+          {`${t("int.password")}`}
+          <Input
+            onChange={(value) => setFormData({ ...formData, password: value })}
+            type="password"
+            value={formData.password}
+          />
+        </label>
 
-      <button onClick={login}>Log In</button>
-      <button onClick={logout}>Log Out</button>
-      <hr />
-
-      <br />
+        <Button onClick={handleSubmit}>{`${t("int.submit")}`}</Button>
+      </form>
     </div>
   )
 }

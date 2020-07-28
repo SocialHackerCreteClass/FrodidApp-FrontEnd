@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import Pages from "./Pages"
 import Login from "./Pages/Auth/Login"
+import Pin from "./Pages/Auth/Pin"
 import Register from "./Pages/Auth/Register"
 import I18nProvider from "./providers/I18n"
-import LoginStatus from "./components/LoginStatus"
 import "./styles/globalStyles"
 import { ReactQueryDevtools } from "react-query-devtools"
+import { css } from "emotion"
+import LayoutAuth from "./Layouts/Auth"
 
 function App() {
   const [loggedStatus, setLoggedStatus] = useState(
@@ -21,27 +23,47 @@ function App() {
     <Router>
       <ReactQueryDevtools />
       <I18nProvider>
-        <LoginStatus
-          loggedStatus={loggedStatus}
-          setLoggedStatus={setLoggedStatus}
-        />
-        <Switch>
-          <Route path="/login">
-            <Login
-              loggedStatus={loggedStatus}
-              setLoggedStatus={setLoggedStatus}
-            />
-          </Route>
-          <Route path="/register">
-            <Register />
-          </Route>
-          <Route path="/">
-            <Pages loggedStatus={loggedStatus} />
-          </Route>
-        </Switch>
+        <div className={wrapper}>
+          <Switch>
+            <Route path="/login">
+              <LayoutAuth>
+                <Login
+                  loggedStatus={loggedStatus}
+                  setLoggedStatus={setLoggedStatus}
+                />
+              </LayoutAuth>
+            </Route>
+            <Route path="/pin">
+              <LayoutAuth>
+                <Pin />
+              </LayoutAuth>
+            </Route>
+            <Route path="/register">
+              <LayoutAuth>
+                <Register />
+              </LayoutAuth>
+            </Route>
+            <Route path="/">
+              <Pages loggedStatus={loggedStatus} />
+            </Route>
+          </Switch>
+        </div>
       </I18nProvider>
     </Router>
   )
 }
+
+const wrapper = css`
+  padding-left: 0;
+  padding-right: 0;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1860px;
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+`
 
 export default App

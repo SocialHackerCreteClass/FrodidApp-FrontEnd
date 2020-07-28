@@ -1,9 +1,9 @@
 import React from "react"
-import Badge from "../components/Badge"
-import Input from "../components/Input"
-import BreadcrumbsComponent from "../components/Breadcrumbs"
-import Avatar from "../components/Avatar"
-import Button from "../components/Button"
+import Badge from "components/Badge"
+import Input from "components/Input"
+import BreadcrumbsComponent from "components/Breadcrumbs"
+import Avatar from "components/Avatar"
+import Button from "components/Button"
 import PhoneIcon from "components/Icons/Phone"
 import MailIcon from "components/Icons/Mail"
 import PatientsIcon from "components/Icons/Patients"
@@ -12,6 +12,8 @@ import VisitationsIcon from "components/Icons/Visitations"
 import AnalyticsIcon from "components/Icons/Analytics"
 import LogoIcon from "components/Icons/Logo"
 import { css } from "emotion"
+import Table from "components/Table"
+import { columns, data } from "./PatientTable"
 
 function TestPage() {
   return (
@@ -91,6 +93,16 @@ function TestPage() {
           <Button ghost variant="danger">
             Danger Ghost
           </Button>
+        </div>
+      </section>
+      ----------------
+      <section>
+        Table:
+        <div
+          style={{
+            borderStyle: "dotted"
+          }}>
+          <Table columns={columns} data={data} />
         </div>
       </section>
       <section>

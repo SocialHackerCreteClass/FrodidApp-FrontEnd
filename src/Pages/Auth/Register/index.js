@@ -8,6 +8,8 @@ import { useHistory } from "react-router"
 
 Register.propTypes = {}
 
+//test comment
+
 function Register() {
   const { t } = useI18n()
   const history = useHistory()

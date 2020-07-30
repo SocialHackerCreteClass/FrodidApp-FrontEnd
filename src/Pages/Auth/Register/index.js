@@ -5,10 +5,12 @@ import Button from "components/Button"
 import { useI18n } from "providers/I18n"
 import { getUserData } from "../../../api/auth.js"
 import { useHistory } from "react-router"
+import dayjs from "dayjs"
 
 Register.propTypes = {}
 
-//test comment
+const date = dayjs("2018-04-04T16:00:00.000Z")
+console.log("test", date)
 
 function Register() {
   const { t } = useI18n()
@@ -78,10 +80,11 @@ function Register() {
         </label>
         <label>
           {`${t("int.dateOfBirth")}`}
+
           <Input
             onChange={(value) => setFormData({ ...formData, birthDate: value })}
             type="date"
-            disabled
+            //disabled
             value={formData.birthDate}
           />
         </label>

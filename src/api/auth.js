@@ -2,16 +2,28 @@ export const getUserData = async (key, pin) => {
   const response = await fetch(`https://randomuser.me/api/`)
   const data = await response.json()
   const mockedUser = data.results[0]
-  const fullDate = mockedUser.dob.date
-  const inputDate = fullDate.slice(0, 10)
-  console.log(inputDate)
+  //Converting Timestamp values coming from backend into usable input format.
+
+  //Mocked Time stamp in milliseconds
+  const mockedDateTimestamp = new Date().getTime()
+  // initialize new Date object
+  var date_ob = new Date(mockedDateTimestamp)
+  // year as 4 digits (YYYY)
+  var year = date_ob.getFullYear()
+  // month as 2 digits (MM)
+  var month = ("0" + (date_ob.getMonth() + 1)).slice(-2)
+  // date as 2 digits (DD)
+  var date = ("0" + date_ob.getDate()).slice(-2)
+
+  const dateString = `${year}-${month}-${date}`
+  console.log(dateString)
 
   return {
     email: mockedUser.email,
     firstName: mockedUser.name.first,
     lastName: mockedUser.name.last,
     profession: `random profession${pin}`,
-    birthDate: inputDate
+    birthDate: dateString
     //birthDate: "1994-05-25"  ---> working date format
   }
 }

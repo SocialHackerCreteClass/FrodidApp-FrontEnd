@@ -58,6 +58,5 @@ export const submitBtn = css`
   border-radius: 6px;
   width: 100%;
   background-color: var(--secondary-70);
-
   color: var(--global-white);
 `

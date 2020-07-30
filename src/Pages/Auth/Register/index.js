@@ -158,7 +158,7 @@ function Register() {
           </label>
         </div>
         <div className={submitBtn}>
-          <Button variant="ghost" size="large" full onClick={handleSubmit}>
+          <Button variant="secondary" size="large" full onClick={handleSubmit}>
             {`${t("int.submit")}`}{" "}
           </Button>
         </div>

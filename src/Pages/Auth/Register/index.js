@@ -5,7 +5,7 @@ import Button from "components/Button"
 import { useI18n } from "providers/I18n"
 import { getUserData } from "../../../api/auth.js"
 import { useHistory } from "react-router"
-import { HeaderWrapper } from "./styles"
+import { HeaderWrapper, Email } from "./styles"
 
 Register.propTypes = {}
 
@@ -101,7 +101,7 @@ function Register() {
           <Input
             type="email"
             onChange={(value) => setFormData({ ...formData, email: value })}
-            disabled
+            className={true} // keep working on this
             value={formData.email}
           />
         </label>
@@ -111,6 +111,7 @@ function Register() {
             onChange={(value) => setFormData({ ...formData, password: value })}
             type="password"
             value={formData.password}
+            errorMessage
           />
         </label>
         <label>

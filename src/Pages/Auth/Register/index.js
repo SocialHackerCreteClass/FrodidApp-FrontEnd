@@ -5,7 +5,15 @@ import Button from "components/Button"
 import { useI18n } from "providers/I18n"
 import { getUserData } from "../../../api/auth.js"
 import { useHistory } from "react-router"
-import { HeaderWrapper, Email } from "./styles"
+import {
+  wrapper,
+  register,
+  input,
+  formClass,
+  submitBtn
+} from "../Register/styles"
+
+import { cx } from "emotion"
 
 Register.propTypes = {}
 
@@ -53,79 +61,107 @@ function Register() {
   }
 
   return (
-    <div>
-      <h3 className={HeaderWrapper}>{t("int.register")}</h3>
+    <div className={wrapper}>
+      <h3 className={register}>{t("int.register")}</h3>
 
-      <form>
-        <label>
-          {`${t("int.firstName")}`}
-          <Input
-            onChange={(value) => setFormData({ ...formData, firstName: value })}
-            type="text"
-            disabled
-            value={formData.firstName}
-          />
-        </label>
-        <label>
-          {`${t("int.lastName")}`}
-          <Input
-            onChange={(value) => setFormData({ ...formData, lastName: value })}
-            type="text"
-            disabled
-            value={formData.lastName}
-          />
-        </label>
-        <label>
-          {`${t("int.dateOfBirth")}`}
+      <form className={formClass}>
+        <div className={input}>
+          <label>
+            {`${t("int.firstName")}`}
 
-          <Input
-            onChange={(value) => setFormData({ ...formData, birthDate: value })}
-            type="date"
-            disabled
-            value={formData.birthDate}
-          />
-        </label>
-        <label>
-          {`${t("int.profession")}`}
-          <Input
-            onChange={(value) =>
-              setFormData({ ...formData, profession: value })
-            }
-            type="text"
-            disabled
-            value={formData.profession}
-          />
-        </label>
-        <label>
-          {`${t("int.email")}`}
-          <Input
-            type="email"
-            onChange={(value) => setFormData({ ...formData, email: value })}
-            className={true} // keep working on this
-            value={formData.email}
-          />
-        </label>
-        <label>
-          {`${t("int.password")}`}
-          <Input
-            onChange={(value) => setFormData({ ...formData, password: value })}
-            type="password"
-            value={formData.password}
-            errorMessage
-          />
-        </label>
-        <label>
-          {`${t("int.passwordConfirmed")}`}
-          <Input
-            onChange={(value) =>
-              setFormData({ ...formData, passwordConfirmed: value })
-            }
-            type="password"
-            value={formData.passwordConfirmed}
-          />
-        </label>
+            <Input
+              onChange={(value) =>
+                setFormData({ ...formData, firstName: value })
+              }
+              type="text"
+              disabled
+              value={formData.firstName}
+            />
+          </label>
+        </div>
+        <div className={input}>
+          <label>
+            {`${t("int.lastName")}`}
+            <Input
+              onChange={(value) =>
+                setFormData({ ...formData, lastName: value })
+              }
+              type="text"
+              disabled
+              value={formData.lastName}
+            />
+          </label>
+        </div>
+        <div className={input}>
+          <label>
+            {`${t("int.dateOfBirth")}`}
 
-        <Button onClick={handleSubmit}>{`${t("int.submit")}`}</Button>
+            <Input
+              onChange={(value) =>
+                setFormData({ ...formData, birthDate: value })
+              }
+              type="date"
+              disabled
+              value={formData.birthDate}
+            />
+          </label>
+        </div>
+        <div className={input}>
+          <label>
+            {`${t("int.profession")}`}
+            <Input
+              onChange={(value) =>
+                setFormData({ ...formData, profession: value })
+              }
+              type="text"
+              disabled
+              value={formData.profession}
+            />
+          </label>
+        </div>
+        <div className={input}>
+          <label>
+            {`${t("int.email")}`}
+            <div>
+              <Input
+                type="email"
+                onChange={(value) => setFormData({ ...formData, email: value })}
+                value={formData.email}
+                className=".focus"
+              />
+            </div>
+          </label>
+        </div>
+        <div className={input}>
+          <label>
+            {`${t("int.password")}`}
+            <Input
+              onChange={(value) =>
+                setFormData({ ...formData, password: value })
+              }
+              type="password"
+              value={formData.password}
+              errorMessage
+            />
+          </label>
+        </div>
+        <div className={input}>
+          <label>
+            {`${t("int.passwordConfirmed")}`}
+            <Input
+              onChange={(value) =>
+                setFormData({ ...formData, passwordConfirmed: value })
+              }
+              type="password"
+              value={formData.passwordConfirmed}
+            />
+          </label>
+        </div>
+        <div className={submitBtn}>
+          <Button variant="ghost" size="large" full onClick={handleSubmit}>
+            {`${t("int.submit")}`}{" "}
+          </Button>
+        </div>
       </form>
     </div>
   )

@@ -5,6 +5,7 @@ import Button from "components/Button"
 import { useI18n } from "providers/I18n"
 import { getUserData } from "../../../api/auth.js"
 import { useHistory } from "react-router"
+import { HeaderWrapper } from "./styles"
 
 Register.propTypes = {}
 
@@ -53,7 +54,7 @@ function Register() {
 
   return (
     <div>
-      <h3>{`${t("int.register")}`}</h3>
+      <h3 className={HeaderWrapper}>{`${t("int.register")}`}</h3>
 
       <form>
         <label>

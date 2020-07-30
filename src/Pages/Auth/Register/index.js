@@ -5,7 +5,6 @@ import Button from "components/Button"
 import { useI18n } from "providers/I18n"
 import { getUserData } from "../../../api/auth.js"
 import { useHistory } from "react-router"
-import dayjs from "dayjs"
 
 Register.propTypes = {}
 

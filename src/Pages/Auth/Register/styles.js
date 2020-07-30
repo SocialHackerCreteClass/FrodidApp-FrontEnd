@@ -44,6 +44,20 @@ export const input = css`
   font-weight: 700;
   letter-spacing: 0.75px;
 `
+export const emailInput = css`
+  margin-bottom: 24px !important;
+  font-size: 15px;
+  font-size: 0.94rem;
+  line-height: 1.6;
+  color: var(--global-grey-60);
+  color: var(--primary-90);
+  font-size: 12.5px;
+  font-size: 0.78rem;
+  line-height: 1.44;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.75px;
+`
 
 export const formClass = css`
   width: 100%;

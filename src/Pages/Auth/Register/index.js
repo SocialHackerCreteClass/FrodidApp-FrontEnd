@@ -5,12 +5,14 @@ import Button from "components/Button"
 import { useI18n } from "providers/I18n"
 import { getUserData } from "../../../api/auth.js"
 import { useHistory } from "react-router"
+
 import {
   wrapper,
   register,
   input,
   formClass,
-  submitBtn
+  submitBtn,
+  emailInput
 } from "../Register/styles"
 
 import { cx } from "emotion"
@@ -119,7 +121,7 @@ function Register() {
             />
           </label>
         </div>
-        <div className={input}>
+        <div className={emailInput}>
           <label>
             {`${t("int.email")}`}
             <div>
@@ -127,7 +129,6 @@ function Register() {
                 type="email"
                 onChange={(value) => setFormData({ ...formData, email: value })}
                 value={formData.email}
-                className=".focus"
               />
             </div>
           </label>

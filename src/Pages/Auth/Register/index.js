@@ -9,9 +9,6 @@ import dayjs from "dayjs"
 
 Register.propTypes = {}
 
-const date = dayjs("2018-04-04T16:00:00.000Z")
-console.log("test", date)
-
 function Register() {
   const { t } = useI18n()
   const history = useHistory()
@@ -84,7 +81,7 @@ function Register() {
           <Input
             onChange={(value) => setFormData({ ...formData, birthDate: value })}
             type="date"
-            //disabled
+            disabled
             value={formData.birthDate}
           />
         </label>

@@ -54,7 +54,7 @@ function Register() {
 
   return (
     <div>
-      <h3 className={HeaderWrapper}>{`${t("int.register")}`}</h3>
+      <h3 className={HeaderWrapper}>{t("int.register")}</h3>
 
       <form>
         <label>

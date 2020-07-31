@@ -55,7 +55,7 @@ function Login(props) {
           onClick={handleSubmit}
           variant="secondary"
           size="large"
-          full>{`${t("int.submit")}`}</Button>
+          full>{`${t("int.login")}`}</Button>
       </div>
 
       <div className={linkWrapper}>

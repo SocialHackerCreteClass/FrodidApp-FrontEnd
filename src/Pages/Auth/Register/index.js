@@ -139,6 +139,7 @@ function Register() {
                 type="email"
                 onChange={(value) => setFormData({ ...formData, email: value })}
                 value={formData.email}
+                placeholder="Enter your email"
               />
             </div>
           </label>
@@ -154,6 +155,7 @@ function Register() {
                 type="password"
                 value={formData.password}
                 errorMessage
+                placeholder="Enter your password"
               />
             </div>
           </label>

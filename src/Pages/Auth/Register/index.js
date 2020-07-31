@@ -16,8 +16,6 @@ import {
   inputComponentClass
 } from "../Register/styles"
 
-import { cx } from "emotion"
-
 Register.propTypes = {}
 
 function Register() {

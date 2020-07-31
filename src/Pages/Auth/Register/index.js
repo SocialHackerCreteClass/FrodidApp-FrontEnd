@@ -177,7 +177,7 @@ function Register() {
         </div>
       </form>
 
-      <a href="#">Already have an account? Sign in</a>
+      <a href="/login">Already have an account? Sign in</a>
     </div>
   )
 }

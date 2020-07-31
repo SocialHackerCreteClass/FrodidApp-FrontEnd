@@ -11,7 +11,7 @@ import {
   linkWrapper
 } from "./styles"
 
-function Login(props) {
+function Login() {
   const { t } = useI18n()
 
   const [formData, setFormData] = useState({ email: "", password: "" })
@@ -47,7 +47,7 @@ function Login(props) {
               placeholder="Enter your password..."
             />
           </label>
-          <a href="#">Forgot your password?</a>
+          <a href="/pin">Forgot your password?</a>
         </div>
       </form>
       <div className={buttonWrapper}>

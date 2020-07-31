@@ -57,11 +57,20 @@ export const emailInput = css`
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 0.75px;
+  input {
+    border-color: var(--global-success-70);
+    background-color: var(--global-success-10);
+    color: var(--global-success-70);
+  }
 `
 
 export const formClass = css`
   width: 100%;
 `
+export const inputComponentClass = css`
+  margin-top: 6px;
+`
+
 export const submitBtn = css`
   margin-bottom: 24px !important;
   font: inherit;
@@ -73,4 +82,5 @@ export const submitBtn = css`
   width: 100%;
   background-color: var(--secondary-70);
   color: var(--global-white);
+  margin-top: 48px;
 `

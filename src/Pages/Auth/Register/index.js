@@ -12,7 +12,8 @@ import {
   input,
   formClass,
   submitBtn,
-  emailInput
+  emailInput,
+  inputComponentClass
 } from "../Register/styles"
 
 import { cx } from "emotion"
@@ -71,60 +72,69 @@ function Register() {
           <label>
             {`${t("int.firstName")}`}
 
-            <Input
-              onChange={(value) =>
-                setFormData({ ...formData, firstName: value })
-              }
-              type="text"
-              disabled
-              value={formData.firstName}
-            />
+            <div className={inputComponentClass}>
+              <Input
+                onChange={(value) =>
+                  setFormData({ ...formData, firstName: value })
+                }
+                type="text"
+                disabled
+                value={formData.firstName}
+              />
+            </div>
           </label>
         </div>
         <div className={input}>
           <label>
             {`${t("int.lastName")}`}
-            <Input
-              onChange={(value) =>
-                setFormData({ ...formData, lastName: value })
-              }
-              type="text"
-              disabled
-              value={formData.lastName}
-            />
+            <div className={inputComponentClass}>
+              <Input
+                onChange={(value) =>
+                  setFormData({ ...formData, lastName: value })
+                }
+                type="text"
+                disabled
+                value={formData.lastName}
+              />
+            </div>
           </label>
         </div>
         <div className={input}>
           <label>
             {`${t("int.dateOfBirth")}`}
 
-            <Input
-              onChange={(value) =>
-                setFormData({ ...formData, birthDate: value })
-              }
-              type="date"
-              disabled
-              value={formData.birthDate}
-            />
+            <div className={inputComponentClass}>
+              <Input
+                onChange={(value) =>
+                  setFormData({ ...formData, birthDate: value })
+                }
+                type="date"
+                disabled
+                value={formData.birthDate}
+              />
+            </div>
           </label>
         </div>
         <div className={input}>
           <label>
             {`${t("int.profession")}`}
-            <Input
-              onChange={(value) =>
-                setFormData({ ...formData, profession: value })
-              }
-              type="text"
-              disabled
-              value={formData.profession}
-            />
+            <div className={inputComponentClass}>
+              {" "}
+              <Input
+                onChange={(value) =>
+                  setFormData({ ...formData, profession: value })
+                }
+                type="text"
+                disabled
+                value={formData.profession}
+              />
+            </div>
           </label>
         </div>
         <div className={emailInput}>
           <label>
             {`${t("int.email")}`}
-            <div>
+            <div className={inputComponentClass}>
               <Input
                 type="email"
                 onChange={(value) => setFormData({ ...formData, email: value })}
@@ -136,19 +146,21 @@ function Register() {
         <div className={input}>
           <label>
             {`${t("int.password")}`}
-            <Input
-              onChange={(value) =>
-                setFormData({ ...formData, password: value })
-              }
-              type="password"
-              value={formData.password}
-              errorMessage
-            />
+            <div className={inputComponentClass}>
+              <Input
+                onChange={(value) =>
+                  setFormData({ ...formData, password: value })
+                }
+                type="password"
+                value={formData.password}
+                errorMessage
+              />
+            </div>
           </label>
         </div>
         <div className={input}>
-          <label>
-            {`${t("int.passwordConfirmed")}`}
+          <label>{`${t("int.passwordConfirmed")}`}</label>
+          <div className={inputComponentClass}>
             <Input
               onChange={(value) =>
                 setFormData({ ...formData, passwordConfirmed: value })
@@ -156,7 +168,7 @@ function Register() {
               type="password"
               value={formData.passwordConfirmed}
             />
-          </label>
+          </div>
         </div>
         <div className={submitBtn}>
           <Button variant="secondary" size="large" full onClick={handleSubmit}>
@@ -164,6 +176,8 @@ function Register() {
           </Button>
         </div>
       </form>
+
+      <a href="#">Already have an account? Sign in</a>
     </div>
   )
 }

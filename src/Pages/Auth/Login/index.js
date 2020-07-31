@@ -2,8 +2,14 @@ import React, { useState } from "react"
 import Input from "components/Input"
 import Button from "components/Button"
 import { useI18n } from "providers/I18n"
-import { wrapper, header, email, password } from "./styles"
-import { input } from "../Register/styles"
+import {
+  wrapper,
+  header,
+  email,
+  password,
+  buttonWrapper,
+  linkWrapper
+} from "./styles"
 
 function Login(props) {
   const { t } = useI18n()
@@ -44,7 +50,22 @@ function Login(props) {
           <a href="#">Forgot your password?</a>
         </div>
       </form>
-      <Button onClick={handleSubmit}>{`${t("int.submit")}`}</Button>
+      <div className={buttonWrapper}>
+        <Button
+          onClick={handleSubmit}
+          variant="secondary"
+          size="large"
+          full>{`${t("int.submit")}`}</Button>
+      </div>
+
+      <div className={linkWrapper}>
+        <a href="/pin">
+          <span>
+            Don’t have an account?
+            <span c>Enter pin</span>
+          </span>
+        </a>
+      </div>
     </div>
   )
 }

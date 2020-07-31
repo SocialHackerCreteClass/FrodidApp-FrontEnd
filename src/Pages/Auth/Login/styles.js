@@ -8,11 +8,11 @@ export const wrapper = css`
   max-width: 1860px;
   padding-left: 0 !important;
   padding-right: 0 !important;
-  min-height: 100vh;
   background-color: var(--primary-10);
   padding: 0 6px;
   width: 100%;
   max-width: 426px;
+  margin-bottom: 0px !important;
 `
 
 export const header = css`
@@ -59,5 +59,15 @@ export const password = css`
     font-size: 1.13rem;
     font-weight: 400;
     letter-spacing: 0;
+    margin-top: 6px;
+    margin-bottom: 48px;
   }
+`
+
+export const buttonWrapper = css`
+  margin-bottom: 24px !important;
+`
+export const linkWrapper = css`
+  text-align: center;
+  margin-bottom: -20px !important;
 `

@@ -14,7 +14,7 @@ import {
   submitBtn,
   emailInput,
   inputComponentClass
-} from "../Register/styles"
+} from "./styles"
 
 Register.propTypes = {}
 

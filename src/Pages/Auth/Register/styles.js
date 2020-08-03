@@ -38,8 +38,6 @@ export const input = css`
 `
 export const emailInput = css`
   margin-bottom: 24px !important;
-  line-height: 1.6;
-  color: var(--global-grey-60);
   color: var(--primary-90);
   font-size: 0.78rem;
   line-height: 1.44;

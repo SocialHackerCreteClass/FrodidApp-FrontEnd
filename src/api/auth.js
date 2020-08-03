@@ -5,7 +5,11 @@ export const getUserData = async (key, pin) => {
   //Converting Timestamp values coming from backend into usable input format.
 
   //Mocked Time stamp in milliseconds
+  //Here i am using the new Date().getTime() as a placeholder for the timestamp
+  //that backend will serve us.
+  // I did so because the timestamp would be on the same format.
   const mockedDateTimestamp = new Date().getTime()
+
   // initialize new Date object
   var date_ob = new Date(mockedDateTimestamp)
   // year as 4 digits (YYYY)

@@ -1,8 +1,6 @@
 import { css } from "emotion"
 
 export const wrapper = css`
-  padding-right: 24px;
-  padding-left: 24px;
   margin-right: auto;
   margin-left: auto;
   max-width: 1860px;
@@ -25,19 +23,13 @@ export const wrapper = css`
 export const register = css`
   margin-bottom: 48px !important;
   text-align: center;
-  font-size: 31.1px;
   font-size: 1.94rem;
   line-height: 1.35;
 `
 
 export const input = css`
   margin-bottom: 24px !important;
-  font-size: 15px;
-  font-size: 0.94rem;
-  line-height: 1.6;
-  color: var(--global-grey-60);
   color: var(--primary-90);
-  font-size: 12.5px;
   font-size: 0.78rem;
   line-height: 1.44;
   text-transform: uppercase;
@@ -46,12 +38,9 @@ export const input = css`
 `
 export const emailInput = css`
   margin-bottom: 24px !important;
-  font-size: 15px;
-  font-size: 0.94rem;
   line-height: 1.6;
   color: var(--global-grey-60);
   color: var(--primary-90);
-  font-size: 12.5px;
   font-size: 0.78rem;
   line-height: 1.44;
   text-transform: uppercase;

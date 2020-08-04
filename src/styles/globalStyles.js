@@ -204,7 +204,6 @@ img {
   vertical-align: middle;
 }
 
-
 .u-1_1 {
   width: 100% !important;
 }
@@ -366,7 +365,7 @@ img {
   }
 }
 
-@media (min-width: 91.25em) {
+@media (min-width: 81.25em) {
   .u-margin-bottom-none-l-wide {
     margin-bottom: 0 !important;
   }

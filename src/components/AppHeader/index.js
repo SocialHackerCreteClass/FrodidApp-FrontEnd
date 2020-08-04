@@ -1,13 +1,18 @@
 import React from "react"
+import LogoIcon from "components/Icons/Logo"
+import ListBare from "components/ListBare"
+import PatientsIcon from "components/Icons/Patients"
+import ProfessionalsIcon from "components/Icons/Professionals"
+import VisitationsIcon from "components/Icons/Visitations"
+import AnalyticsIcon from "components/Icons/Analytics"
+import { TextIcon } from "components/Flag"
 
 function AppHeader() {
   return (
-    <div className="c-app-header c__app-header--desktop u-hide u-show@desktop">
+    <div className="c-app-header c__app-header--desktop u-hide u-show-desktop">
       <div className="u-padding-small u-margin-bottom-large">
         <a href="/" title="Frontidapp">
-          <svg className="c-logo">
-            <use href="#icon-logo"></use>
-          </svg>
+          <LogoIcon />
         </a>
       </div>
       <nav>
@@ -16,24 +21,15 @@ function AppHeader() {
           <h3 className="c-label c-label--small">Pages</h3>
         </div>
         <div className="u-margin-bottom-large">
-          <ul className="o-list-bare">
+          <ListBare>
             <li>
               <a
                 href="patients.html"
                 className="c-main-nav__link c-main-nav__link--primary c-main-nav__link--primary-active">
                 <div className="u-padding-vertical-small u-padding-left-small">
-                  <div className="o-flag o-flag--small">
-                    <div className="o-flag__img">
-                      <svg className="c-icon">
-                        <use
-                          className="c-icon--primary"
-                          href="#icon-patients"></use>
-                      </svg>
-                    </div>
-                    <div className="o-flag__body">
-                      <span className="c-main-nav__text">patients</span>
-                    </div>
-                  </div>
+                  <TextIcon icon={<PatientsIcon />}>
+                    <span className="c-main-nav__text">patients</span>
+                  </TextIcon>
                 </div>
               </a>
             </li>
@@ -42,18 +38,9 @@ function AppHeader() {
                 href="/professionals"
                 className="c-main-nav__link c-main-nav__link--primary">
                 <div className="u-padding-vertical-small u-padding-left-small">
-                  <div className="o-flag o-flag--small">
-                    <div className="o-flag__img">
-                      <svg className="c-icon">
-                        <use
-                          className="c-icon--primary"
-                          href="#icon-professionals"></use>
-                      </svg>
-                    </div>
-                    <div className="o-flag__body">
-                      <span className="c-main-nav__text">professionals</span>
-                    </div>
-                  </div>
+                  <TextIcon icon={<ProfessionalsIcon />}>
+                    <span className="c-main-nav__text">professionals</span>
+                  </TextIcon>
                 </div>
               </a>
             </li>
@@ -62,18 +49,9 @@ function AppHeader() {
                 href="/visitations"
                 className="c-main-nav__link c-main-nav__link--primary">
                 <div className="u-padding-vertical-small u-padding-left-small">
-                  <div className="o-flag o-flag--small">
-                    <div className="o-flag__img">
-                      <svg className="c-icon">
-                        <use
-                          className="c-icon--primary"
-                          href="#icon-visitations"></use>
-                      </svg>
-                    </div>
-                    <div className="o-flag__body">
-                      <span className="c-main-nav__text">visitations</span>
-                    </div>
-                  </div>
+                  <TextIcon icon={<VisitationsIcon />}>
+                    <span className="c-main-nav__text">visitations</span>
+                  </TextIcon>
                 </div>
               </a>
             </li>
@@ -82,44 +60,26 @@ function AppHeader() {
                 href="/analytics"
                 className="c-main-nav__link c-main-nav__link--primary">
                 <div className="u-padding-vertical-small u-padding-left-small">
-                  <div className="o-flag o-flag--small">
-                    <div className="o-flag__img">
-                      <svg className="c-icon">
-                        <use
-                          className="c-icon--primary"
-                          href="#icon-analytics"></use>
-                      </svg>
-                    </div>
-                    <div className="o-flag__body">
-                      <span className="c-main-nav__text">analytics</span>
-                    </div>
-                  </div>
+                  <TextIcon icon={<AnalyticsIcon />}>
+                    <span className="c-main-nav__text">Analytics</span>
+                  </TextIcon>
                 </div>
               </a>
             </li>
-          </ul>
+          </ListBare>
         </div>
         <div className="u-padding-left-small">
           <h3 className="c-label c-label--small">Actions</h3>
         </div>
-        <ul className="o-list-bare">
+        <ListBare>
           <li>
             <a
               href="/create-new/patients"
               className="c-main-nav__link c-main-nav__link--secondary">
               <div className="u-padding-vertical-small u-padding-left-small">
-                <div className="o-flag o-flag--small">
-                  <div className="o-flag__img">
-                    <svg className="c-icon">
-                      <use
-                        className="c-icon--secondary"
-                        href="#icon-patients"></use>
-                    </svg>
-                  </div>
-                  <div className="o-flag__body">
-                    <span className="c-main-nav__text">patients</span>
-                  </div>
-                </div>
+                <TextIcon icon={<PatientsIcon type={"secondary"} />}>
+                  <span className="c-main-nav__text">Patients</span>
+                </TextIcon>
               </div>
             </a>
           </li>
@@ -128,18 +88,9 @@ function AppHeader() {
               href="/create-new/professionals"
               className="c-main-nav__link c-main-nav__link--secondary">
               <div className="u-padding-vertical-small u-padding-left-small">
-                <div className="o-flag o-flag--small">
-                  <div className="o-flag__img">
-                    <svg className="c-icon">
-                      <use
-                        className="c-icon--secondary"
-                        href="#icon-professionals"></use>
-                    </svg>
-                  </div>
-                  <div className="o-flag__body">
-                    <span className="c-main-nav__text">professionals</span>
-                  </div>
-                </div>
+                <TextIcon icon={<ProfessionalsIcon type={"secondary"} />}>
+                  <span className="c-main-nav__text">Professionals</span>
+                </TextIcon>
               </div>
             </a>
           </li>
@@ -148,22 +99,13 @@ function AppHeader() {
               href="/create-new/visitations"
               className="c-main-nav__link c-main-nav__link--secondary">
               <div className="u-padding-vertical-small u-padding-left-small">
-                <div className="o-flag o-flag--small">
-                  <div className="o-flag__img">
-                    <svg className="c-icon">
-                      <use
-                        className="c-icon--secondary"
-                        href="#icon-visitations"></use>
-                    </svg>
-                  </div>
-                  <div className="o-flag__body">
-                    <span className="c-main-nav__text">visitations</span>
-                  </div>
-                </div>
+                <TextIcon icon={<VisitationsIcon type={"secondary"} />}>
+                  <span className="c-main-nav__text">visitations</span>
+                </TextIcon>
               </div>
             </a>
           </li>
-        </ul>
+        </ListBare>
       </nav>
     </div>
   )

@@ -5,7 +5,7 @@ import AppHeaderMobile from "components/AppHeaderMobile"
 
 import { wrapper } from "./styles"
 
-function LayoutDefault(props) {
+function LayoutDefault() {
   return (
     <div className={wrapper}>
       <AppHeaderMobile />

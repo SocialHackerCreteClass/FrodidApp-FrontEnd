@@ -1,6 +1,6 @@
 import React from "react"
 
-function AppHeader(props) {
+function AppHeader() {
   return (
     <div className="c-app-header c__app-header--desktop u-hide u-show@desktop">
       <div className="u-padding-small u-margin-bottom-large">

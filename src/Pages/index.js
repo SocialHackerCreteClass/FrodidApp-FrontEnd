@@ -8,6 +8,7 @@ import ProtectedRoute from "components/ProtectedRoute"
 import Patients from "./Patients"
 import TestPage from "./TestPage"
 import Breadcrumbs from "components/Breadcrumbs"
+import LayoutDefault from "Layouts/Default"
 
 Pages.propTypes = {
   loggedStatus: PropTypes.bool

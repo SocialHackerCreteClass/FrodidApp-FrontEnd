@@ -6,18 +6,20 @@ import ProfessionalsIcon from "components/Icons/Professionals"
 import VisitationsIcon from "components/Icons/Visitations"
 import AnalyticsIcon from "components/Icons/Analytics"
 import ListBare from "components/ListBare"
+import { wrapper } from "./styles"
+import { cx } from "emotion"
 
 function AppHeaderMobile() {
   return (
-    <div className="c-app-header c-app__header--mobile u-hide-desktop">
+    <div className={cx(wrapper, "u-hide-desktop")}>
       <div className="u-padding-horizontal-tiny u-padding-vertical-small u-text-align-center">
         <div className="u-margin-bottom">
           <a href="/" title="Frontidapp">
-            <LogoIcon />
+            <LogoIcon type="mobile" />
           </a>
         </div>
         <div className="u-margin-bottom">
-          <a href="#" title="Konstantinos Antoniadis">
+          <a href="/#" title="Konstantinos Antoniadis">
             <Avatar
               user={{ image: null, firstName: "John", lastName: "doe" }}
             />

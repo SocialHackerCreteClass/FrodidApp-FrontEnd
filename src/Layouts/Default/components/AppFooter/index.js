@@ -32,7 +32,7 @@ function AppFooter() {
           <div className="u-text-align-right-l-wide">
             <span>
               Designed and Developed by{" "}
-              <a href="#" className="u-white">
+              <a href="/#" className="u-white">
                 SHA&nbsp;Heraklion
               </a>
             </span>

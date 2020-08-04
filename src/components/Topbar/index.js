@@ -3,11 +3,12 @@ import Grid, { GridCell } from "components/Grid"
 import Avatar from "components/Avatar"
 import Flag, { FlagBody, FlagImg } from "components/Flag"
 import ListInline, { ListInlineItem } from "components/ListInline"
+import { alignItems, wrapper } from "./styles"
 
 function Topbar() {
   return (
-    <div className="c-app-topbar">
-      <Grid className="o-grid--middle">
+    <div className={wrapper}>
+      <Grid className={alignItems}>
         <GridCell className="u-1_1 u-2_3-desktop">
           {/* <form className="c-form c-form--search">
             <input
@@ -38,10 +39,10 @@ function Topbar() {
               <p className="u-margin-bottom-tiny">Konstantinos Antoniadis</p>
               <ListInline className="u-margin-bottom-none u-xsmall">
                 <ListInlineItem className="u-margin-right-tiny-tablet">
-                  <a href="#">Edit profile</a>
+                  <a href="/#">Edit profile</a>
                 </ListInlineItem>
                 <ListInlineItem className="u-hide u-display-inline-block-tablet">
-                  <a href="#">Logout</a>
+                  <a href="/#">Logout</a>
                 </ListInlineItem>
               </ListInline>
             </FlagBody>

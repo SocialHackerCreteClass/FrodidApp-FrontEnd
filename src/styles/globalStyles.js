@@ -204,96 +204,6 @@ img {
   vertical-align: middle;
 }
 
-/*! Main nav 
-
-IMPORTANT
-
-I imported the c-main-nav styles just to fix the styling. Need to componetize
-How do we add the transition for react component?
-
-*/
-.c-main-nav__link .c-icon {
-  transition: transform 0.15s ease-in-out;
-}
-
-.c-main-nav__link:hover .c-icon {
-  transform: translateX(-6px);
-}
-
-
-.c-main-nav__text {
-  font-size: 15px;
-  font-size: 0.94rem;
-  line-height: 1.6;
-  text-transform: uppercase;
-  letter-spacing: 0.75px;
-  font-weight: 700;
-}
-
-.c-main-nav__link {
-  display: block;
-  text-decoration: none;
-}
-
-.c-main-nav__link:hover {
-  border-right: 6px solid;
-}
-
-.c-main-nav__link--primary {
-  color: var(--primary-90);
-}
-
-.c-main-nav__link--primary-active,
-.c-main-nav__link--primary:hover {
-  background-color: var(--primary-20);
-  border-left-color: var(--primary-30);
-  border-bottom-color: var(--primary-30);
-  border-right: 6px solid;
-  border-right-color: var(--primary-30);
-  border-top-color: var(--primary-30);
-}
-
-.c-main-nav__link--secondary {
-  color: var(--secondary-80);
-}
-
-.c-main-nav__link--secondary:hover {
-  background-color: var(--secondary-20);
-  border-left-color: var(--secondary-30);
-  border-bottom-color: var(--secondary-30);
-  border-right: 6px solid;
-  border-right-color: var(--secondary-30);
-  border-top-color: var(--secondary-30);
-}
-
-.c-app-topbar {
-  padding: 24px 6px;
-  border-bottom: 1px solid var(--primary-10);
-  background-color: var(--global-white);
-}
-
-
-@media (min-width: 46.25em) {
-  .c-app-topbar {
-    padding: 24px 12px;
-  }
-}
-
-@media (min-width: 61.25em) {
-  .c-app-topbar {
-    padding: 24px;
-  }
-}
-
-@media (min-width: 81.25em) {
-  .c-app-topbar {
-    padding: 24px 48px;
-  }
-}
-
-
-
-
 .u-1_1 {
   width: 100% !important;
 }
@@ -455,7 +365,7 @@ How do we add the transition for react component?
   }
 }
 
-@media (min-width: 91.25em) {
+@media (min-width: 81.25em) {
   .u-margin-bottom-none-l-wide {
     margin-bottom: 0 !important;
   }

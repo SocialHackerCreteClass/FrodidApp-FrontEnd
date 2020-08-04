@@ -12,7 +12,6 @@ import VisitationsIcon from "components/Icons/Visitations"
 import AnalyticsIcon from "components/Icons/Analytics"
 import LogoIcon from "components/Icons/Logo"
 import { css } from "emotion"
-import LayoutDefault from "Layouts/Default"
 
 function TestPage() {
   return (
@@ -118,9 +117,6 @@ function TestPage() {
           <LogoIcon type={"mobile"} />
           <LogoIcon display={"none"} type={"mobile"} />
         </div>
-      </section>
-      <section>
-        <LayoutDefault />
       </section>
     </div>
   )

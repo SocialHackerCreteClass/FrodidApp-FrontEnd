@@ -72,10 +72,11 @@ export const submitBtn = css`
   color: var(--global-white);
   margin-top: 48px;
 `
-export const labelWrapper = css`
-  margin-bottom: 6px !important;
-`
+//export const labelWrapper = css`
+//  margin-bottom: 6px !important;
+//`
 
+// I was unable to add margin bottom to the labels of each input, so I added margin top on the input itself.
 export const inputWrapper = css`
   margin-top: 6px !important;
 `

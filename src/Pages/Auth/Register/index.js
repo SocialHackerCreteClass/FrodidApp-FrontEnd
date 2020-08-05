@@ -7,7 +7,7 @@ import { getUserData } from "../../../api/auth.js"
 import { useHistory } from "react-router"
 import { cx } from "emotion"
 
-import { submitBtn, emailInput, labelWrapper, inputWrapper } from "./styles"
+import { submitBtn, emailInput, inputWrapper } from "./styles"
 
 Register.propTypes = {}
 

@@ -3,7 +3,7 @@ import Input from "components/Input"
 import Button from "components/Button"
 import { useI18n } from "providers/I18n"
 import { cx } from "emotion"
-import { buttonWrapper, linkWrapper } from "./styles"
+import { buttonWrapper, linkWrapper, inputWrapper } from "./styles"
 
 function Login() {
   const { t } = useI18n()
@@ -21,7 +21,11 @@ function Login() {
       )}`}</h2>
       <form>
         <div className={"u-margin-bottom"}>
-          <label className={"c-label c-label--primary c-label--small"}>
+          <label
+            className={cx(
+              "c-label c-label--primary c-label--small",
+              inputWrapper
+            )}>
             {`${t("int.email")}`}
             <Input
               type="email"
@@ -32,7 +36,11 @@ function Login() {
           </label>
         </div>
         <div className={"u-margin-bottom"}>
-          <label className={"c-label c-label--primary c-label--small"}>
+          <label
+            className={cx(
+              "c-label c-label--primary c-label--small",
+              inputWrapper
+            )}>
             {`${t("int.password")}`}
             <Input
               onChange={(value) =>

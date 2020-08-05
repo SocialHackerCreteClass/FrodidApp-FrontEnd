@@ -72,3 +72,8 @@ export const linkWrapper = css`
   text-align: center;
   margin-top: 6px !important;
 `
+export const inputWrapper = css`
+  input {
+    margin-top: 6px !important;
+  }
+`

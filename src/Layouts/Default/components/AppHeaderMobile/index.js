@@ -9,14 +9,16 @@ import ListBare from "components/ListBare"
 import { wrapper } from "./styles"
 import { cx } from "emotion"
 
+import { Link, NavLink } from "react-router-dom"
+
 function AppHeaderMobile() {
   return (
     <div className={cx(wrapper, "u-hide-desktop")}>
       <div className="u-padding-horizontal-tiny u-padding-vertical-small u-text-align-center">
         <div className="u-margin-bottom">
-          <a href="/" title="Frontidapp">
+          <Link to="/" title="Frontidapp">
             <LogoIcon type="mobile" />
-          </a>
+          </Link>
         </div>
         <div className="u-margin-bottom">
           <a href="/#" title="Konstantinos Antoniadis">
@@ -30,42 +32,42 @@ function AppHeaderMobile() {
           <h3 className="u-hidden-visually">Pages</h3>
           <ListBare className="u-margin-bottom">
             <li className="u-margin-bottom-small">
-              <a href="patients.html">
+              <NavLink to="/patients">
                 <PatientsIcon />
-              </a>
+              </NavLink>
             </li>
             <li className="u-margin-bottom-small">
-              <a href="/professionals">
+              <NavLink to="/professionals">
                 <ProfessionalsIcon />
-              </a>
+              </NavLink>
             </li>
             <li className="u-margin-bottom-small">
-              <a href="/visitations">
+              <NavLink to="/visitations">
                 <VisitationsIcon />
-              </a>
+              </NavLink>
             </li>
             <li className="u-margin-bottom-small">
-              <a href="/analytics">
+              <NavLink to="/analytics">
                 <AnalyticsIcon />
-              </a>
+              </NavLink>
             </li>
           </ListBare>
           <h3 className="u-hidden-visually">Actions</h3>
           <ListBare className="u-margin-bottom">
             <li className="u-margin-bottom-small">
-              <a href="/patients/create-new">
+              <NavLink to="/patients/create-new">
                 <PatientsIcon type={"secondary"} />
-              </a>
+              </NavLink>
             </li>
             <li className="u-margin-bottom-small">
-              <a href="/professionals/create-new">
+              <NavLink to="/professionals/create-new">
                 <ProfessionalsIcon type={"secondary"} />
-              </a>
+              </NavLink>
             </li>
             <li className="u-margin-bottom-small">
-              <a href="/visitations/create-new">
+              <NavLink to="/visitations/create-new">
                 <VisitationsIcon type={"secondary"} />
-              </a>
+              </NavLink>
             </li>
           </ListBare>
         </nav>

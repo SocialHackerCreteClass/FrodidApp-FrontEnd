@@ -4,8 +4,10 @@ import Avatar from "components/Avatar"
 import Flag, { FlagBody, FlagImg } from "components/Flag"
 import ListInline, { ListInlineItem } from "components/ListInline"
 import { alignItems, wrapper } from "./styles"
+import { useAuth } from "providers/Auth"
 
 function Topbar() {
+  const { logout } = useAuth()
   return (
     <div className={wrapper}>
       <Grid className={alignItems}>
@@ -24,7 +26,7 @@ function Topbar() {
           {/* Need to insert the form component */}
         </GridCell>
         <GridCell className="u-hide u-show-desktop u-1_3-desktop">
-          <Flag gapSize={"small"} direction={"right"}>
+          <Flag direction={"right"}>
             <FlagImg className="u-hide u-show-l-desktop">
               <Avatar
                 user={{
@@ -42,7 +44,9 @@ function Topbar() {
                   <a href="/#">Edit profile</a>
                 </ListInlineItem>
                 <ListInlineItem className="u-hide u-display-inline-block-tablet">
-                  <a href="/#">Logout</a>
+                  <a href={"#/"} onClick={logout}>
+                    Logout
+                  </a>
                 </ListInlineItem>
               </ListInline>
             </FlagBody>

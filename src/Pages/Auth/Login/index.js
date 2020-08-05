@@ -1,17 +1,29 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import Input from "components/Input"
 import Button from "components/Button"
 import { useI18n } from "providers/I18n"
 import { useAuth } from "providers/Auth"
+import { useHistory } from "react-router"
 
-function Login(props) {
+function Login() {
   const { t } = useI18n()
-  const { login } = useAuth()
+  const history = useHistory()
+  const { login, user } = useAuth()
   const [formData, setFormData] = useState({ email: "", password: "" })
 
-  function handleSubmit() {
-    console.log(formData)
+  async function handleSubmit() {
+    try {
+      await login(formData)
+    } catch (e) {
+      console.error(e.message)
+    }
   }
+
+  useEffect(() => {
+    if (user) {
+      history.push("/")
+    }
+  }, [user, history])
 
   return (
     <div>

@@ -1,6 +1,4 @@
-function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms))
-}
+import { sleep } from "utils"
 
 export const getPatients = async () => {
   await sleep(2000)

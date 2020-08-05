@@ -19,11 +19,7 @@ function AppHeaderMobile() {
           </a>
         </div>
         <div className="u-margin-bottom">
-          <a href="/#" title="Konstantinos Antoniadis">
-            <Avatar
-              user={{ image: null, firstName: "John", lastName: "doe" }}
-            />
-          </a>
+          <Avatar user={{ image: null, firstName: "John", lastName: "doe" }} />
         </div>
         <nav>
           <h2 className="u-hidden-visually">Navigation</h2>

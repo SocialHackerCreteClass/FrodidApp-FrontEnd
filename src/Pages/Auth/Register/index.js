@@ -7,15 +7,7 @@ import { getUserData } from "../../../api/auth.js"
 import { useHistory } from "react-router"
 import { cx } from "emotion"
 
-import {
-  wrapper,
-  register,
-  input,
-  formClass,
-  submitBtn,
-  emailInput,
-  inputComponentClass
-} from "./styles"
+import { submitBtn, emailInput, labelWrapper, inputWrapper } from "./styles"
 
 Register.propTypes = {}
 
@@ -64,14 +56,16 @@ function Register() {
 
   return (
     <div>
-      <h3>{t("int.register")}</h3>
+      <h3 className={"u-margin-bottom-large u-text-align-center h6"}>
+        {t("int.register")}
+      </h3>
 
       <form>
-        <div>
-          <label>
+        <div className={"u-margin-bottom u-margin-bottom-tiny"}>
+          <label className={cx("c-label c-label--primary c-label--small")}>
             {`${t("int.firstName")}`}
 
-            <div>
+            <div className={cx("u-margin-bottom", inputWrapper)}>
               <Input
                 onChange={(value) =>
                   setFormData({ ...formData, firstName: value })
@@ -83,10 +77,10 @@ function Register() {
             </div>
           </label>
         </div>
-        <div>
-          <label>
+        <div className={cx("u-margin-bottom u-margin-bottom-tiny")}>
+          <label className={"c-label c-label--primary c-label--small"}>
             {`${t("int.lastName")}`}
-            <div>
+            <div className={cx("u-margin-bottom", inputWrapper)}>
               <Input
                 onChange={(value) =>
                   setFormData({ ...formData, lastName: value })
@@ -98,11 +92,11 @@ function Register() {
             </div>
           </label>
         </div>
-        <div>
-          <label>
+        <div className={cx("u-margin-bottom u-margin-bottom-tiny")}>
+          <label className={"c-label c-label--primary c-label--small"}>
             {`${t("int.dateOfBirth")}`}
 
-            <div>
+            <div className={cx("u-margin-bottom", inputWrapper)}>
               <Input
                 onChange={(value) =>
                   setFormData({ ...formData, birthDate: value })
@@ -114,10 +108,10 @@ function Register() {
             </div>
           </label>
         </div>
-        <div>
-          <label>
+        <div className={cx("u-margin-bottom u-margin-bottom-tiny")}>
+          <label className={"c-label c-label--primary c-label--small"}>
             {`${t("int.profession")}`}
-            <div>
+            <div className={cx("u-margin-bottom", inputWrapper)}>
               {" "}
               <Input
                 onChange={(value) =>
@@ -130,23 +124,23 @@ function Register() {
             </div>
           </label>
         </div>
-        <div>
-          <label>
+        <div className={cx("u-margin-bottom u-margin-bottom-tiny")}>
+          <label className={"c-label c-label--primary c-label--small"}>
             {`${t("int.email")}`}
-            <div>
+            <div className={cx("u-margin-bottom", emailInput, inputWrapper)}>
               <Input
                 type="email"
                 onChange={(value) => setFormData({ ...formData, email: value })}
-                value={formData.email}
-                placeholder="Enter your email"
+                //value={formData.email}
+                placeholder="Enter your email..."
               />
             </div>
           </label>
         </div>
-        <div>
-          <label>
+        <div className={cx("u-margin-bottom u-margin-bottom-tiny")}>
+          <label className={"c-label c-label--primary c-label--small"}>
             {`${t("int.password")}`}
-            <div>
+            <div className={cx("u-margin-bottom", inputWrapper)}>
               <Input
                 onChange={(value) =>
                   setFormData({ ...formData, password: value })
@@ -154,31 +148,36 @@ function Register() {
                 type="password"
                 value={formData.password}
                 errorMessage
-                placeholder="Enter your password"
+                placeholder="Enter your password..."
               />
             </div>
           </label>
         </div>
-        <div>
-          <label>{`${t("int.passwordConfirmed")}`}</label>
-          <div className={inputComponentClass}>
+        <div className={cx("u-margin-bottom u-margin-bottom-tiny")}>
+          <label className={"c-label c-label--primary c-label--small"}>{`${t(
+            "int.passwordConfirmed"
+          )}`}</label>
+          <div className={cx("u-margin-bottom", inputWrapper)}>
             <Input
               onChange={(value) =>
                 setFormData({ ...formData, passwordConfirmed: value })
               }
               type="password"
               value={formData.passwordConfirmed}
+              placeholder="Confirm your password..."
             />
           </div>
         </div>
-        <div>
+        <div className={cx("u-margin-bottom", submitBtn)}>
           <Button variant="secondary" size="large" full onClick={handleSubmit}>
             {`${t("int.submit")}`}{" "}
           </Button>
         </div>
       </form>
 
-      <a href="/login">Already have an account? Sign in</a>
+      <div className={"u-text-align-center"}>
+        <a href="/login">Already have an account? Sign in</a>
+      </div>
     </div>
   )
 }

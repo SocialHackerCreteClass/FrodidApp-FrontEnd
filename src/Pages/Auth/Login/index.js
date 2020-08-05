@@ -3,14 +3,7 @@ import Input from "components/Input"
 import Button from "components/Button"
 import { useI18n } from "providers/I18n"
 import { cx } from "emotion"
-import {
-  wrapper,
-  header,
-  email,
-  password,
-  buttonWrapper,
-  linkWrapper
-} from "./styles"
+import { buttonWrapper, linkWrapper } from "./styles"
 
 function Login() {
   const { t } = useI18n()

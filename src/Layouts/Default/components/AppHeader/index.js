@@ -6,12 +6,19 @@ import ProfessionalsIcon from "components/Icons/Professionals"
 import VisitationsIcon from "components/Icons/Visitations"
 import AnalyticsIcon from "components/Icons/Analytics"
 import { TextIcon } from "components/Flag"
-import { activeLink, navIcon, navLinkPrimary, navLinkSecondary } from "./styles"
+import {
+  activeLink,
+  navIcon,
+  navLinkPrimary,
+  navLinkSecondary,
+  wrapper
+} from "./styles"
 import { Link, NavLink } from "react-router-dom"
+import { cx } from "emotion"
 
 function AppHeader() {
   return (
-    <div className="c-app-header c__app-header--desktop u-hide u-show-desktop">
+    <div className={cx(wrapper, "u-hide u-show-desktop")}>
       <div className="u-padding-small u-margin-bottom-large">
         <Link to="/" title="Frontidapp">
           <LogoIcon />

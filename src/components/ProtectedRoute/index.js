@@ -2,19 +2,15 @@ import React from "react"
 import { Redirect, Route } from "react-router-dom"
 import PropTypes from "prop-types"
 import AccessDenied from "components/AccessDenied"
+import { useAuth } from "providers/Auth"
 
 ProtectedRoute.propTypes = {
   component: PropTypes.func,
-  user: PropTypes.bool,
   redirect: PropTypes.bool
 }
 
-function ProtectedRoute({
-  component: Component,
-  user,
-  redirect = true,
-  ...rest
-}) {
+function ProtectedRoute({ component: Component, redirect = true, ...rest }) {
+  const { user } = useAuth()
   return (
     <Route
       {...rest}

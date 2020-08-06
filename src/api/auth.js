@@ -20,7 +20,6 @@ export const getUserData = async (key, pin) => {
   var date = ("0" + date_ob.getDate()).slice(-2)
 
   const dateString = `${year}-${month}-${date}`
-  console.log(dateString)
 
   return {
     email: mockedUser.email,
@@ -30,4 +29,17 @@ export const getUserData = async (key, pin) => {
     birthDate: dateString
     //birthDate: "1994-05-25"  ---> working date format
   }
+}
+
+export const convertToDate = (timestamp) => {
+  // initialize new Date object
+  var date_ob = new Date(timestamp)
+  // year as 4 digits (YYYY)
+  var year = date_ob.getFullYear()
+  // month as 2 digits (MM)
+  var month = ("0" + (date_ob.getMonth() + 1)).slice(-2)
+  // date as 2 digits (DD)
+  var date = ("0" + date_ob.getDate()).slice(-2)
+  const dateString = `${year}-${month}-${date}`
+  return dateString
 }

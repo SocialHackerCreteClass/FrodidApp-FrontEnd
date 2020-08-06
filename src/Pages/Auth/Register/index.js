@@ -4,7 +4,7 @@ import Input from "components/Input"
 import Button from "components/Button"
 import { useI18n } from "providers/I18n"
 import { getUserData } from "../../../api/auth.js"
-//import { convertToDate } from "../../../api/auth"
+import { convertToDate } from "../../../api/auth"
 import { useHistory } from "react-router"
 import { cx } from "emotion"
 
@@ -104,7 +104,7 @@ function Register() {
                 }
                 type="date"
                 disabled
-                value={formData.birthDate}
+                value={convertToDate(formData.birthDate)}
               />
             </div>
           </label>

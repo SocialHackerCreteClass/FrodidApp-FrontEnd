@@ -3,7 +3,7 @@ import { useQuery } from "react-query"
 import Input from "components/Input"
 import Button from "components/Button"
 import { useI18n } from "providers/I18n"
-import { getUserData, convertToDate } from "../../../api/auth.js"
+import { getUserData, convertToDate } from "api/auth.js"
 import { useHistory } from "react-router"
 import { cx } from "emotion"
 

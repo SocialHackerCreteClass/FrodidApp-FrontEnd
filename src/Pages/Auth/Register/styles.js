@@ -1,42 +1,5 @@
 import { css } from "emotion"
 
-//export const wrapper = css`
-//  margin-right: auto;
-//  margin-left: auto;
-//  max-width: 1860px;
-//  padding-left: 0 !important;
-//  padding-right: 0 !important;
-//  min-height: 100vh;
-//  display: flex;
-//  flex-direction: column;
-//  align-items: center;
-//  background-color: var(--primary-10);
-//  padding: 0 6px;
-//  width: 100%;
-//  max-width: 426px;
-//  flex: 1;
-//  padding-top: 24px !important;
-//  padding-bottom: 24px !important;
-//  margin-bottom: 48px !important;
-//`
-//
-//export const register = css`
-//  margin-bottom: 48px !important;
-//  text-align: center;
-//  font-size: 1.94rem;
-//  line-height: 1.35;
-//`
-
-//export const input = css`
-//  margin-bottom: 24px !important;
-//  color: var(--primary-90);
-//  font-size: 0.78rem;
-//  line-height: 1.44;
-//  text-transform: uppercase;
-//  font-weight: 700;
-//  letter-spacing: 0.75px;
-//`
-
 export const emailInput = css`
   margin-bottom: 24px !important;
   color: var(--primary-90);
@@ -52,13 +15,6 @@ export const emailInput = css`
   }
 `
 
-//export const formClass = css`
-//  width: 100%;
-//`
-//export const inputComponentClass = css`
-//  margin-top: 6px;
-//`
-
 export const submitBtn = css`
   margin-bottom: 24px !important;
   font: inherit;
@@ -72,9 +28,6 @@ export const submitBtn = css`
   color: var(--global-white);
   margin-top: 48px;
 `
-//export const labelWrapper = css`
-//  margin-bottom: 6px !important;
-//`
 
 // I was unable to add margin bottom to the labels of each input, so I added margin top on the input itself.
 export const inputWrapper = css`

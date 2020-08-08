@@ -34,11 +34,7 @@ function Login() {
       )}`}</h2>
       <form>
         <div className={"u-margin-bottom"}>
-          <label
-            className={cx(
-              "c-label c-label--primary c-label--small",
-              inputWrapper
-            )}>
+          <label className={inputWrapper}>
             {`${t("int.email")}`}
             <Input
               type="email"
@@ -69,11 +65,8 @@ function Login() {
           </div>
         </div>
       </form>
-      <div
-        className={
-          "u-margin-bottom c-btn c-btn--large c-btn--full c-btn--secondary"
-        }>
-        <div style={{}} className={cx("u-margin-bottom", buttonWrapper)}>
+      <div className={"u-margin-bottom"}>
+        <div className={cx("u-margin-bottom", buttonWrapper)}>
           <Button onClick={handleSubmit} variant="secondary" size="large" full>
             <span className={"t-xlarge"}>{`${t("int.login")}`}</span>
           </Button>
@@ -84,7 +77,7 @@ function Login() {
         <a href="/pin">
           <span>
             Don’t have an account?
-            <span c>Enter pin</span>
+            <span>Enter pin</span>
           </span>
         </a>
       </div>

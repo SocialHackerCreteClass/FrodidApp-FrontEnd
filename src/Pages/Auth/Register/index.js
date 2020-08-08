@@ -66,14 +66,7 @@ function Register() {
             {`${t("int.firstName")}`}
 
             <div className={cx("u-margin-bottom", inputWrapper)}>
-              <Input
-                onChange={(value) =>
-                  setFormData({ ...formData, firstName: value })
-                }
-                type="text"
-                disabled
-                value={formData.firstName}
-              />
+              <Input disabled value={formData.firstName} />
             </div>
           </label>
         </div>
@@ -81,14 +74,7 @@ function Register() {
           <label className={"c-label c-label--primary c-label--small"}>
             {`${t("int.lastName")}`}
             <div className={cx("u-margin-bottom", inputWrapper)}>
-              <Input
-                onChange={(value) =>
-                  setFormData({ ...formData, lastName: value })
-                }
-                type="text"
-                disabled
-                value={formData.lastName}
-              />
+              <Input disabled value={formData.lastName} />
             </div>
           </label>
         </div>
@@ -98,9 +84,6 @@ function Register() {
 
             <div className={cx("u-margin-bottom", inputWrapper)}>
               <Input
-                onChange={(value) =>
-                  setFormData({ ...formData, birthDate: value })
-                }
                 type="date"
                 disabled
                 value={convertToDate(formData.birthDate)}
@@ -113,14 +96,7 @@ function Register() {
             {`${t("int.profession")}`}
             <div className={cx("u-margin-bottom", inputWrapper)}>
               {" "}
-              <Input
-                onChange={(value) =>
-                  setFormData({ ...formData, profession: value })
-                }
-                type="text"
-                disabled
-                value={formData.profession}
-              />
+              <Input disabled value={formData.profession} />
             </div>
           </label>
         </div>

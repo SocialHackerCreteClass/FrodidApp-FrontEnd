@@ -17,11 +17,6 @@ export const emailInput = css`
 
 export const submitBtn = css`
   margin-bottom: 24px !important;
-  font: inherit;
-  text-align: center;
-  margin: 0;
-  cursor: pointer;
-  transition: background-color 0.15s ease-in-out;
   border-radius: 6px;
   width: 100%;
   background-color: var(--secondary-70);

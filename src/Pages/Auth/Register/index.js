@@ -3,7 +3,8 @@ import { useQuery } from "react-query"
 import Input from "components/Input"
 import Button from "components/Button"
 import { useI18n } from "providers/I18n"
-import { getUserData, convertToDate } from "api/auth.js"
+import { getUserData } from "api/auth.js"
+import { convertToDate } from "utils/index.js"
 import { useHistory } from "react-router"
 import { cx } from "emotion"
 
@@ -86,6 +87,7 @@ function Register() {
               <Input
                 type="date"
                 disabled
+                //value={formData.birthDate}
                 value={convertToDate(formData.birthDate)}
               />
             </div>

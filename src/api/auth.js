@@ -20,8 +20,6 @@ export const getUserData = async (key, pin) => {
 //that backend will serve us.
 // I did so because the timestamp would be on the same format.
 
-const dayjs = require("dayjs")
-
 export const convertToDate = (timestamp) => {
   // initialize new Date object
   var date_ob = new Date(timestamp)
@@ -35,6 +33,13 @@ export const convertToDate = (timestamp) => {
   return dateString
 }
 
-//const customParseFormat = require('dayjs/plugin/customParseFormat')
-//dayjs.extend(customParseFormat)
-//dayjs(new Date().getTime(), 'YYYY-MM-DD')
+let timestamp = new Date().getTime()
+console.log(timestamp)
+
+const dayjs = require("dayjs")
+const customParseFormat = require("dayjs/plugin/customParseFormat")
+
+dayjs.extend(customParseFormat)
+
+let testDate = dayjs(timestamp, "YYYY-MM-DD", "es")
+console.log(testDate)

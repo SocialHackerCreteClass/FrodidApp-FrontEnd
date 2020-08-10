@@ -8,10 +8,13 @@ import AnalyticsIcon from "components/Icons/Analytics"
 import ListBare from "components/ListBare"
 import { wrapper } from "./styles"
 import { cx } from "emotion"
+import { useI18n } from "providers/I18n"
 
 import { Link, NavLink } from "react-router-dom"
 
 function AppHeaderMobile() {
+  const { t } = useI18n()
+
   return (
     <div className={cx(wrapper, "u-hide-desktop")}>
       <div className="u-padding-horizontal-tiny u-padding-vertical-small u-text-align-center">
@@ -28,8 +31,8 @@ function AppHeaderMobile() {
           </a>
         </div>
         <nav>
-          <h2 className="u-hidden-visually">Navigation</h2>
-          <h3 className="u-hidden-visually">Pages</h3>
+          <h2 className="u-hidden-visually">{`${t("int.navigation")}`}</h2>
+          <h3 className="u-hidden-visually">{`${t("int.pagesCap")}`}</h3>
           <ListBare className="u-margin-bottom">
             <li className="u-margin-bottom-small">
               <NavLink to="/patients">
@@ -52,7 +55,7 @@ function AppHeaderMobile() {
               </NavLink>
             </li>
           </ListBare>
-          <h3 className="u-hidden-visually">Actions</h3>
+          <h3 className="u-hidden-visually">{`${t("int.actionsCap")}`}</h3>
           <ListBare className="u-margin-bottom">
             <li className="u-margin-bottom-small">
               <NavLink to="/patients/create-new">

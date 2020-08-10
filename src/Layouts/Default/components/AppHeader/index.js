@@ -15,8 +15,11 @@ import {
 } from "./styles"
 import { Link, NavLink } from "react-router-dom"
 import { cx } from "emotion"
+import { useI18n } from "providers/I18n"
 
 function AppHeader() {
+  const { t } = useI18n()
+
   return (
     <div className={cx(wrapper, "u-hide u-show-desktop")}>
       <div className="u-padding-small u-margin-bottom-large">
@@ -25,9 +28,9 @@ function AppHeader() {
         </Link>
       </div>
       <nav>
-        <h2 className="u-hidden-visually">Navigation</h2>
+        <h2 className="u-hidden-visually">{`${t("int.navigation")}`}</h2>
         <div className="u-padding-left-small">
-          <h3 className="c-label c-label--small">Pages</h3>
+          <h3 className="c-label c-label--small">{`${t("int.pagesCap")}`}</h3>
         </div>
         <div className="u-margin-bottom-large">
           <ListBare>
@@ -38,7 +41,7 @@ function AppHeader() {
                 className={navLinkPrimary}>
                 <div className="u-padding-vertical-small u-padding-left-small">
                   <TextIcon icon={<PatientsIcon className={navIcon} />}>
-                    patients
+                    {`${t("int.patientsCap")}`}
                   </TextIcon>
                 </div>
               </NavLink>
@@ -50,7 +53,7 @@ function AppHeader() {
                 className={navLinkPrimary}>
                 <div className="u-padding-vertical-small u-padding-left-small">
                   <TextIcon icon={<ProfessionalsIcon className={navIcon} />}>
-                    professionals
+                    {`${t("int.professionalsCap")}`}
                   </TextIcon>
                 </div>
               </NavLink>
@@ -62,7 +65,7 @@ function AppHeader() {
                 className={navLinkPrimary}>
                 <div className="u-padding-vertical-small u-padding-left-small">
                   <TextIcon icon={<VisitationsIcon className={navIcon} />}>
-                    visitations
+                    {`${t("int.visitsCap")}`}
                   </TextIcon>
                 </div>
               </NavLink>
@@ -74,7 +77,7 @@ function AppHeader() {
                 className={navLinkPrimary}>
                 <div className="u-padding-vertical-small u-padding-left-small">
                   <TextIcon icon={<AnalyticsIcon className={navIcon} />}>
-                    Analytics
+                    {`${t("int.analyticsCap")}`}
                   </TextIcon>
                 </div>
               </NavLink>
@@ -82,7 +85,7 @@ function AppHeader() {
           </ListBare>
         </div>
         <div className="u-padding-left-small">
-          <h3 className="c-label c-label--small">Actions</h3>
+          <h3 className="c-label c-label--small">{`${t("int.actionsCap")}`}</h3>
         </div>
         <ListBare>
           <li>
@@ -95,7 +98,7 @@ function AppHeader() {
                   icon={
                     <PatientsIcon type={"secondary"} className={navIcon} />
                   }>
-                  Patients
+                  {`${t("int.patientsCap")}`}
                 </TextIcon>
               </div>
             </NavLink>
@@ -110,7 +113,7 @@ function AppHeader() {
                   icon={
                     <ProfessionalsIcon type={"secondary"} className={navIcon} />
                   }>
-                  Professionals
+                  {`${t("int.professionalsCap")}`}
                 </TextIcon>
               </div>
             </NavLink>
@@ -125,7 +128,7 @@ function AppHeader() {
                   icon={
                     <VisitationsIcon type={"secondary"} className={navIcon} />
                   }>
-                  visitations
+                  {`${t("int.visitsCap")}`}
                 </TextIcon>
               </div>
             </NavLink>

@@ -13,13 +13,15 @@ function AllPatients() {
     <div>
       <div className={headerContainer}>
         <div className={cx("u-margin-bottom-large u-margin-bottom-huge@wide")}>
-          <h1 className={"h3 u-margin-bottom-none"}>Patients</h1>
+          <h1 className={"h3 u-margin-bottom-none"}>{`${t(
+            "int.patients"
+          )}`}</h1>
           <p>## entries</p>
         </div>
         <div className={buttonWrapper}>
           <Button variant="secondary" size="large">
             <span className={"u-large u-uppercase u-letter-spacing u-bold"}>
-              NEW PATIENT
+              {`${t("int.patient_new")}`}
             </span>
           </Button>
         </div>

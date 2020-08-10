@@ -11,11 +11,7 @@ export const headerContainer = css`
 `
 
 export const buttonWrapper = css`
-  padding-left: 24px;
-
-  @media (min-width: 46.25em) {
-    .u-1\/2\@tablet {
-      width: 50% !important;
-    }
-  }
+  padding-left: 0px;
+  background-color: blue;
+  border-radius: 6px;
 `

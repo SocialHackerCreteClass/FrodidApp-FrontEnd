@@ -10,7 +10,7 @@ export const headerContainer = css`
   width: 100%;
 `
 
-export const headerSide = css`
+export const buttonWrapper = css`
   padding-left: 24px;
 
   @media (min-width: 46.25em) {

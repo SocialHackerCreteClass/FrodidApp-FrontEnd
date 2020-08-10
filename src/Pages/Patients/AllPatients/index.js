@@ -1,28 +1,26 @@
 import React from "react"
 import { useI18n } from "providers/I18n"
-import { headerContainer, headerSide } from "./styles"
+import { headerContainer, buttonWrapper } from "./styles"
 import Button from "../../../../src/components/Button/index.js"
 import { cx } from "emotion"
 
 AllPatients.propTypes = {}
 
 function AllPatients() {
-  //const { t } = useI18n()
+  const { t } = useI18n()
 
   return (
     <div>
       <div className={headerContainer}>
-        <div
-          className={cx(
-            headerSide,
-            "u-margin-bottom-large u-margin-bottom-huge@wide"
-          )}>
-          <h1>Patients</h1>
+        <div className={cx("u-margin-bottom-large u-margin-bottom-huge@wide")}>
+          <h1 className={"h3 u-margin-bottom-none"}>Patients</h1>
           <p>## entries</p>
         </div>
-        <div className={headerSide}>
+        <div className={buttonWrapper}>
           <Button variant="secondary" size="large">
-            NEW PATIENT
+            <span className={"u-large u-uppercase u-letter-spacing u-bold"}>
+              NEW PATIENT
+            </span>
           </Button>
         </div>
       </div>

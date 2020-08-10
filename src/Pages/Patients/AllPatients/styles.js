@@ -7,6 +7,7 @@ export const headerContainer = css`
   padding: 0;
   align-items: start;
   justify-content: space-between;
+  width: 100%;
 `
 
 export const headerSide = css`

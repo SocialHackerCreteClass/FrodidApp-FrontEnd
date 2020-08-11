@@ -25,15 +25,11 @@ export const pagination = css`
   display: flex;
   list-style: none;
   margin-left: 0;
-  margin-right: 550px;
+  margin-right: 100px;
   & :first-child {
-    color: var(--global-grey-60);
     margin-left: 0;
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
-  }
-  & :nth-child(2) {
-    color: var(--global-grey-60);
   }
   & :last-child {
     border-top-right-radius: 6px;
@@ -52,11 +48,16 @@ export const pageBut = css`
   &:hover {
     color: var(--global-white);
     background-color: var(--primary-80);
+    cursor: pointer;
   }
 `
 export const activeBut = css`
   color: var(--global-white);
   background-color: var(--primary-90);
+`
+
+export const noActiveBut = css`
+  color: var(--global-grey-60);
 `
 
 export const orderingPagination = css`

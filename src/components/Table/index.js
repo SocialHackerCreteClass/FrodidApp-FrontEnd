@@ -8,7 +8,8 @@ import {
   orderingPagination,
   pagination,
   pageBut,
-  activeBut
+  activeBut,
+  noActiveBut
 } from "./style"
 import { cx } from "emotion"
 
@@ -121,13 +122,13 @@ const Table = ({
         <div>
           <ol className={pagination}>
             <li
-              className={pageBut}
+              className={cx(pageBut, { [noActiveBut]: !canPreviousPage })}
               onClick={() => gotoPage(0)}
               disabled={!canPreviousPage}>
               {"«"}
             </li>
             <li
-              className={pageBut}
+              className={cx(pageBut, { [noActiveBut]: !canPreviousPage })}
               onClick={() => previousPage()}
               disabled={!canPreviousPage}>
               {"‹"}
@@ -146,13 +147,13 @@ const Table = ({
               {"..."}
             </li> */}
             <li
-              className={pageBut}
+              className={cx(pageBut, { [noActiveBut]: !canNextPage })}
               onClick={() => nextPage()}
               disabled={!canNextPage}>
               {"›"}
             </li>
             <li
-              className={pageBut}
+              className={cx(pageBut, { [noActiveBut]: !canNextPage })}
               onClick={() => gotoPage(pageCount - 1)}
               disabled={!canNextPage}>
               {"»"}

@@ -175,7 +175,7 @@ body {
   font-family: Nunito, sans-serif;
   font-size: 1.13rem;
   line-height: 1.33;
-  background-color: var(--primary-10);
+  background-color: var(--primary-100);
   color: var(--primary-90);
 }
 body,

@@ -27,7 +27,17 @@
     "int.dateOfBirth": "Date of Birth",
     "int.profession": "Profession",
     "int.passwordConfirmed": "Confirm Password",
-    "int.register": "Register"
+    "int.register": "Register",
+
+    "int.navigation": "Navigation",
+    "int.pagesCap": "Pages",
+    "int.actionsCap": "Actions",
+    "int.patientsCap": "Patients",
+    "int.professionalsCap": "Professionals",
+    "int.visitsCap": "Visits",
+    "int.analyticsCap": "Analytics",
+    "int.signature": "Designed and developed by",
+    "int.heraklion": "Heraklion"
   },
   "el": {
     "int.login": "Σύνδεση",
@@ -57,6 +67,16 @@
     "int.dateOfBirth": "Ημερομηνία Γέννησης",
     "int.profession": "Ειδικότητα",
     "int.passwordConfirmed": "Επιβεβαίωση Κωδικού Πρόσβασης",
-    "int.register": "Εγγραφή"
+    "int.register": "Εγγραφή",
+
+    "int.navigation": "ΠΛΟΗΓΗΣΗ",
+    "int.pagesCap": "ΣΕΛΙΔΕΣ",
+    "int.actionsCap": "ΕΝΕΡΓΕΙΕΣ",
+    "int.patientsCap": "ΑΣΘΕΝΕΙΣ",
+    "int.professionalsCap": "ΕΠΑΓΓΕΛΜΑΤΙΕΣ",
+    "int.visitsCap": "ΕΠΙΣΚΕΨΕΙΣ",
+    "int.analyticsCap": "ΑΝΑΛΥΣΕΙΣ",
+    "int.signature": "Σχεδιασμός και ανάπτυξη από",
+    "int.heraklion": "Ηράκλειο"
   }
 }

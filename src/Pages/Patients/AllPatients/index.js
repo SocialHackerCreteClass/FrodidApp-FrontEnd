@@ -5,7 +5,7 @@ import Button from "../../../../src/components/Button/index.js"
 import { cx } from "emotion"
 import Table from "components/Table/index.js"
 import { data, columns } from "Pages/TestPage/PatientTable"
-//test comment
+
 AllPatients.propTypes = {}
 
 function AllPatients() {

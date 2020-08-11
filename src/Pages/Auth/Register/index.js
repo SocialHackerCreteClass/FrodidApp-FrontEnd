@@ -87,7 +87,6 @@ function Register() {
               <Input
                 type="date"
                 disabled
-                //value={formData.birthDate}
                 value={convertToDate(formData.birthDate)}
               />
             </div>
@@ -109,8 +108,7 @@ function Register() {
               <Input
                 type="email"
                 onChange={(value) => setFormData({ ...formData, email: value })}
-                //value={formData.email}
-                placeholder="Enter your email..."
+                placeholder={t("int.placeholder_enterEmail")}
               />
             </div>
           </label>
@@ -126,7 +124,7 @@ function Register() {
                 type="password"
                 value={formData.password}
                 errorMessage
-                placeholder="Enter your password..."
+                placeholder={t("int.placeholder_password")}
               />
             </div>
           </label>
@@ -142,7 +140,7 @@ function Register() {
               }
               type="password"
               value={formData.passwordConfirmed}
-              placeholder="Confirm your password..."
+              placeholder={t("int.passwordConfirmed")}
             />
           </div>
         </div>
@@ -154,7 +152,7 @@ function Register() {
       </form>
 
       <div className={"u-text-align-center"}>
-        <a href="/login">Already have an account? Sign in</a>
+        <a href="/login">{t("int.already-user")}</a>
       </div>
     </div>
   )

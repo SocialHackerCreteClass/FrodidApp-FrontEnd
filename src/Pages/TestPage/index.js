@@ -12,8 +12,7 @@ import VisitationsIcon from "components/Icons/Visitations"
 import AnalyticsIcon from "components/Icons/Analytics"
 import LogoIcon from "components/Icons/Logo"
 import { css } from "emotion"
-import Table from "components/Table"
-import { columns, data } from "./PatientTable"
+import { PatientTable } from "./PatientTable"
 
 function TestPage() {
   return (
@@ -102,7 +101,7 @@ function TestPage() {
           style={{
             borderStyle: "dotted"
           }}>
-          <Table columns={columns} data={data} />
+          <PatientTable />
         </div>
       </section>
       <section>

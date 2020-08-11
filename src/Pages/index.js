@@ -16,8 +16,8 @@ function Pages() {
         <ProtectedRoute path="/visits" component={Visits} />
         <ProtectedRoute path="/patients" component={Patients} />
         <ProtectedRoute path="/professionals" component={Professionals} />
-        <ProtectedRoute path="/" component={Patients} />
         <Route path="/test" component={TestPage} />
+        <ProtectedRoute path="/" component={Patients} />
       </Switch>
     </LayoutDefault>
   )

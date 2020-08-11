@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { useTable, useFlexLayout, usePagination } from "react-table"
 import PropTypes from "prop-types"
 import {
@@ -12,7 +12,14 @@ import {
 } from "./style"
 import { cx } from "emotion"
 
-const Table = ({ columns, data, dataLength }) => {
+const Table = ({
+  columns,
+  data,
+  total,
+  pageSize = 10,
+  pageIndex = 0,
+  onChange
+}) => {
   const defaultColumn = React.useMemo(
     () => ({
       // When using the useFlexLayout:
@@ -30,22 +37,28 @@ const Table = ({ columns, data, dataLength }) => {
     prepareRow,
     canPreviousPage,
     canNextPage,
-    pageOptions,
     pageCount,
     gotoPage,
     nextPage,
     previousPage,
-    state: { pageIndex, pageSize }
+    state
   } = useTable(
     {
       columns,
       data,
+      manualPagination: true,
       defaultColumn,
-      initialState: { pageIndex: 0, pageSize: 5 }
+      initialState: { pageIndex, pageSize },
+      pageCount: Math.ceil(total / pageSize)
     },
     useFlexLayout,
     usePagination
   )
+
+  useEffect(() => {
+    const { pageSize, pageIndex } = state
+    onChange({ pageSize, pageIndex })
+  }, [onChange, state])
 
   return (
     <>
@@ -102,7 +115,7 @@ const Table = ({ columns, data, dataLength }) => {
       <div className={orderingPagination}>
         <div>
           <p>
-            Displaying {page.length} entries of {dataLength}
+            Displaying {page.length} entries of {total}
           </p>
         </div>
         <div>
@@ -122,7 +135,9 @@ const Table = ({ columns, data, dataLength }) => {
             {[...Array(pageCount).keys()].map((index) => (
               <li
                 key={index}
-                className={cx(pageBut, { [activeBut]: pageIndex === index })}
+                className={cx(pageBut, {
+                  [activeBut]: state.pageIndex === index
+                })}
                 onClick={() => gotoPage(index)}>
                 {index + 1}
               </li>
@@ -151,8 +166,11 @@ const Table = ({ columns, data, dataLength }) => {
 
 Table.propTypes = {
   columns: PropTypes.string,
-  data: PropTypes.string,
-  dataLength: PropTypes.number
+  data: PropTypes.array,
+  total: PropTypes.number,
+  pageIndex: PropTypes.number,
+  pageSize: PropTypes.number,
+  onChange: PropTypes.func
 }
 
 export default Table

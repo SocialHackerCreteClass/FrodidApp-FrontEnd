@@ -12,16 +12,12 @@ const flagWrapper = css`
 
 Flag.propTypes = {
   className: PropTypes.string,
-  gapSize: PropTypes.oneOf(["small"]),
   direction: PropTypes.oneOf(["right"])
 }
 
-function Flag(props) {
+function Flag({ className, direction, ...restProps }) {
   return (
-    <div
-      {...props}
-      className={cx(flagWrapper, props.direction, props.className)}
-    />
+    <div {...restProps} className={cx(flagWrapper, direction, className)} />
   )
 }
 

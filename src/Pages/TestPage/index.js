@@ -102,7 +102,7 @@ function TestPage() {
           style={{
             borderStyle: "dotted"
           }}>
-          <Table columns={columns} data={data} />
+          <Table columns={columns} data={data} dataLength={data.length} />
         </div>
       </section>
       <section>

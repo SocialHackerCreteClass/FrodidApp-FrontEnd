@@ -21,3 +21,45 @@ export const tableStyle = css`
   padding: 0;
   margin-bottom: 48px;
 `
+export const pagination = css`
+  display: flex;
+  list-style: none;
+  margin-left: 0;
+  margin-right: 550px;
+  & :first-child {
+    color: var(--global-grey-60);
+    margin-left: 0;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+  }
+  & :nth-child(2) {
+    color: var(--global-grey-60);
+  }
+  & :last-child {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }
+`
+
+export const pageBut = css`
+  text-decoration: none;
+  position: relative;
+  display: block;
+  padding: 6px 12px;
+  border: 1px solid;
+  margin-left: -1px;
+  color: var(--primary-90);
+  &:hover {
+    color: var(--global-white);
+    background-color: var(--primary-80);
+  }
+`
+export const activeBut = css`
+  color: var(--global-white);
+  background-color: var(--primary-90);
+`
+
+export const orderingPagination = css`
+  display: flex;
+  justify-content: space-between;
+`

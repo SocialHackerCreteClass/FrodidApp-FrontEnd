@@ -74,8 +74,6 @@ function ActionsColumn({ value }) {
 export function PatientTable() {
   const [pageInfo, setPageInfo] = useState({ pageSize: 5, pageIndex: 0 })
   const [data, setData] = useState({
-    pageSize: 5,
-    pageIndex: 0,
     total: 0,
     data: []
   })
@@ -90,8 +88,8 @@ export function PatientTable() {
       columns={columns}
       data={data.data}
       total={data.total}
-      pageIndex={data.pageIndex}
-      pageSize={data.pageSize}
+      pageIndex={pageInfo.pageIndex}
+      pageSize={pageInfo.pageSize}
     />
   )
 }
@@ -134,8 +132,6 @@ const getData = async ({ pageSize, pageIndex }) => {
 
 export const patientData = {
   total: 22,
-  pageIndex: 1,
-  pageSize: 5,
   data: [
     {
       id: 1,

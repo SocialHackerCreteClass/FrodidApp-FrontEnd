@@ -40,6 +40,7 @@ const Table = ({
     canNextPage,
     pageCount,
     gotoPage,
+    pageOptions,
     nextPage,
     previousPage,
     state
@@ -63,21 +64,6 @@ const Table = ({
 
   return (
     <>
-      <pre>
-        <code>
-          {JSON.stringify(
-            {
-              pageIndex,
-              pageSize,
-              pageCount,
-              canNextPage,
-              canPreviousPage
-            },
-            null,
-            2
-          )}
-        </code>
-      </pre>
       <div {...getTableProps()} className={tableStyle}>
         {/* TABLE HEAD */}
         <div>
@@ -115,51 +101,43 @@ const Table = ({
       {/* PAGINATION */}
       <div className={orderingPagination}>
         <div>
-          <p>
-            Displaying {page.length} entries of {total}
-          </p>
+          Displaying {page.length} entries of {total}
         </div>
-        <div>
-          <ol className={pagination}>
+        <ol className={pagination}>
+          <li
+            className={cx(pageBut, { [noActiveBut]: !canPreviousPage })}
+            onClick={() => gotoPage(0)}>
+            «
+          </li>
+          <li
+            className={cx(pageBut, { [noActiveBut]: !canPreviousPage })}
+            onClick={() => previousPage()}>
+            ‹
+          </li>
+          {pageOptions.map((index) => (
             <li
-              className={cx(pageBut, { [noActiveBut]: !canPreviousPage })}
-              onClick={() => gotoPage(0)}
-              disabled={!canPreviousPage}>
-              {"«"}
+              key={index}
+              className={cx(pageBut, {
+                [activeBut]: state.pageIndex === index
+              })}
+              onClick={() => gotoPage(index)}>
+              {index + 1}
             </li>
-            <li
-              className={cx(pageBut, { [noActiveBut]: !canPreviousPage })}
-              onClick={() => previousPage()}
-              disabled={!canPreviousPage}>
-              {"‹"}
-            </li>
-            {[...Array(pageCount).keys()].map((index) => (
-              <li
-                key={index}
-                className={cx(pageBut, {
-                  [activeBut]: state.pageIndex === index
-                })}
-                onClick={() => gotoPage(index)}>
-                {index + 1}
-              </li>
-            ))}
-            {/* <li className={pageBut} onClick={() => gotoPage()}>
+          ))}
+          {/* <li className={pageBut} onClick={() => gotoPage()}>
               {"..."}
             </li> */}
-            <li
-              className={cx(pageBut, { [noActiveBut]: !canNextPage })}
-              onClick={() => nextPage()}
-              disabled={!canNextPage}>
-              {"›"}
-            </li>
-            <li
-              className={cx(pageBut, { [noActiveBut]: !canNextPage })}
-              onClick={() => gotoPage(pageCount - 1)}
-              disabled={!canNextPage}>
-              {"»"}
-            </li>
-          </ol>
-        </div>
+          <li
+            className={cx(pageBut, { [noActiveBut]: !canNextPage })}
+            onClick={() => nextPage()}>
+            ›
+          </li>
+          <li
+            className={cx(pageBut, { [noActiveBut]: !canNextPage })}
+            onClick={() => gotoPage(pageCount - 1)}>
+            »
+          </li>
+        </ol>
       </div>
     </>
   )

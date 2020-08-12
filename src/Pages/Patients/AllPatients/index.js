@@ -13,12 +13,14 @@ function AllPatients() {
 
   return (
     <div>
-      <div className={headerContainer}>
+      <div className={cx(headerContainer, "o-grid o-grid--middle")}>
         <div className={cx("u-margin-bottom-large u-margin-bottom-huge@wide")}>
           <h1 className={"h3 u-margin-bottom-none"}>{`${t(
             "int.patients"
           )}`}</h1>
-          <p>{patientData.data.length} entries</p>
+          <p className={"u-small u-grey u-margin-bottom-none"}>
+            {patientData.data.length} entries
+          </p>
         </div>
         <div>
           <Button variant="secondary" size="large">

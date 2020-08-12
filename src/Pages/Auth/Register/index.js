@@ -124,7 +124,6 @@ function Register() {
                 }
                 type="password"
                 value={formData.password}
-                errorMessage
                 placeholder={t("int.placeholderPassword")}
               />
             </div>

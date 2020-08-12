@@ -9,6 +9,11 @@ export const linkWrapper = css`
   margin-top: 6px !important;
 `
 export const inputWrapper = css`
+  font-size: 0.78rem;
+  line-height: 1.44;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.75px;
   input {
     margin-top: 6px !important;
   }

@@ -23,7 +23,7 @@ function AllPatients() {
         <div>
           <Button variant="secondary" size="large">
             <span className={"u-large u-uppercase u-letter-spacing u-bold"}>
-              {`${t("int.patient_new")}`}
+              {t("int.patients_create_new")}
             </span>
           </Button>
         </div>

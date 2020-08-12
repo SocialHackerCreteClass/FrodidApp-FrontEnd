@@ -12,4 +12,6 @@ function AllPatients() {
   )
 }
 
+//test comment
+
 export default AllPatients

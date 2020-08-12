@@ -40,16 +40,12 @@ function Login() {
               type="email"
               onChange={(value) => setFormData({ ...formData, email: value })}
               value={formData.email}
-              placeholder="Enter your email..."
+              placeholder={t("int.placeholderEmail")}
             />
           </label>
         </div>
         <div className={"u-margin-bottom"}>
-          <label
-            className={cx(
-              "c-label c-label--primary c-label--small",
-              inputWrapper
-            )}>
+          <label className={inputWrapper}>
             {`${t("int.password")}`}
             <Input
               onChange={(value) =>
@@ -57,11 +53,11 @@ function Login() {
               }
               type="password"
               value={formData.password}
-              placeholder="Enter your password..."
+              placeholder={t("int.placeholderPassword")}
             />
           </label>
           <div className={cx("u-text-align-right", linkWrapper)}>
-            <a href="/pin">Forgot your password?</a>
+            <a href="/pin">{t("int.password_forgot")}</a>
           </div>
         </div>
       </form>
@@ -75,10 +71,7 @@ function Login() {
 
       <div className={linkWrapper}>
         <a href="/pin">
-          <span>
-            Don’t have an account?
-            <span>Enter pin</span>
-          </span>
+          <span>{t("int.no_account")}</span>
         </a>
       </div>
     </div>

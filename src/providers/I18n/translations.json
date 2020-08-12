@@ -28,7 +28,11 @@
     "int.profession": "Profession",
     "int.passwordConfirmed": "Confirm Password",
     "int.register": "Register",
-    "int.patient_new": "New Patient"
+    "int.patient_new": "New Patient",
+    "int.placeholderEmail": "Enter your email...",
+    "int.placeholderPassword": "Εnter your password...",
+    "int.password_forgot": "Forgot your password?",
+    "int.no_account": "Don't have an account? Enter pin"
   },
   "el": {
     "int.login": "Σύνδεση",
@@ -59,6 +63,10 @@
     "int.profession": "Ειδικότητα",
     "int.passwordConfirmed": "Επιβεβαίωση Κωδικού Πρόσβασης",
     "int.register": "Εγγραφή",
-    "int.patient_new": "Προσθήκη Ασθενούς"
+    "int.patient_new": "Προσθήκη Ασθενούς",
+    "int.placeholderEmail": "Εισάγετε διέυθυνση ηλ.ταχυδρομείου...",
+    "int.placeholderPassword": "Εισάγετε κωδικό πρόσβασης",
+    "int.password_forgot": "Ξεχάσατε τον κωδικό σας;",
+    "int.no_account": "Δεν έχετε λογαριασμό; Είσοδος με Pin"
   }
 }

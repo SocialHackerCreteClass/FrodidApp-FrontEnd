@@ -110,7 +110,7 @@ function Register() {
                 type="email"
                 onChange={(value) => setFormData({ ...formData, email: value })}
                 //value={formData.email}
-                placeholder="Enter your email..."
+                placeholder={t("int.placeholderEmail")}
               />
             </div>
           </label>
@@ -126,7 +126,7 @@ function Register() {
                 type="password"
                 value={formData.password}
                 errorMessage
-                placeholder="Enter your password..."
+                placeholder={t("int.placeholderPassword")}
               />
             </div>
           </label>
@@ -154,7 +154,7 @@ function Register() {
       </form>
 
       <div className={"u-text-align-center"}>
-        <a href="/login">Already have an account? Sign in</a>
+        <a href="/login">{t("int.already-user")}</a>
       </div>
     </div>
   )

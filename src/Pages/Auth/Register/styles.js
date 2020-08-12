@@ -8,10 +8,7 @@ export const emailInput = css`
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 0.75px;
-  input {
-    border-color: var(--global-success-70);
-    background-color: var(--global-success-10);
-    color: var(--global-success-70);
+   color: var(--global-success-70);
   }
 `
 
@@ -24,7 +21,6 @@ export const submitBtn = css`
   margin-top: 48px;
 `
 
-// I was unable to add margin bottom to the labels of each input, so I added margin top on the input itself.
 export const inputWrapper = css`
   margin-top: 6px !important;
 `

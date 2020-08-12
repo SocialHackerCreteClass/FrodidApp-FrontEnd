@@ -26,7 +26,7 @@
     "int.lastName": "Last Name",
     "int.dateOfBirth": "Date of Birth",
     "int.profession": "Profession",
-    "int.passwordConfirmed": "Confirm Password",
+    "int.passwordConfirmed": "Confirm password...",
     "int.register": "Register",
     "int.patient_new": "New Patient",
     "int.placeholderEmail": "Enter your email...",

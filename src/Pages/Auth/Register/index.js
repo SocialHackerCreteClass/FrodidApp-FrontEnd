@@ -87,7 +87,6 @@ function Register() {
               <Input
                 type="date"
                 disabled
-                //value={formData.birthDate}
                 value={convertToDate(formData.birthDate)}
               />
             </div>
@@ -109,8 +108,8 @@ function Register() {
               <Input
                 type="email"
                 onChange={(value) => setFormData({ ...formData, email: value })}
-                //value={formData.email}
                 placeholder={t("int.placeholderEmail")}
+                value={formData.email}
               />
             </div>
           </label>
@@ -142,7 +141,7 @@ function Register() {
               }
               type="password"
               value={formData.passwordConfirmed}
-              placeholder="Confirm your password..."
+              placeholder={t("int.passwordConfirmed")}
             />
           </div>
         </div>

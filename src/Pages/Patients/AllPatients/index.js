@@ -13,9 +13,7 @@ function AllPatients() {
 
   return (
     <div>
-      <div
-        className={cx("u-margin-bottom-large", headerContainer)}
-        style={{ backgroundColor: "blue", padding: "10px" }}>
+      <div className={cx("u-margin-bottom-large", headerContainer)}>
         <div className={cx(containerHalf, "o-grid__cell u-1/1 u-1/2@tablet")}>
           <h1 className="h3 u-margin-bottom-none">{`${t("int.patients")}`}</h1>
           <p className="u-small u-grey u-margin-bottom-none">

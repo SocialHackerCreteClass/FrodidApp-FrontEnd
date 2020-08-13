@@ -13,23 +13,22 @@ function AllPatients() {
 
   return (
     <div>
-      <div className={cx(headerContainer, "o-grid o-grid--middle")}>
-        <div className={"o-grid__cell u-1/1 u-1/2@tablet"}>
-          <div
-            className={cx("u-margin-bottom-large u-margin-bottom-huge@wide")}>
-            <h1 className={"h3 u-margin-bottom-none"}>{`${t(
+      <div className={cx("u-margin-bottom-large", headerContainer)}>
+        <div>
+          <div>
+            <h1 className="h3 u-margin-bottom-none">{`${t(
               "int.patients"
             )}`}</h1>
-            <p className={"u-small u-grey u-margin-bottom-none"}>
+            <p className="u-small u-grey u-margin-bottom-none">
               {patientData.data.length} entries
             </p>
           </div>
         </div>
         <div>
-          <div className={"o-grid__cell u-1/1 u-1/2@tablet"}>
+          <div>
             {" "}
             <Button variant="secondary" size="large">
-              <span className={"u-large u-uppercase u-letter-spacing u-bold"}>
+              <span className="u-large u-uppercase u-letter-spacing u-bold">
                 {t("int.patients_create_new")}
               </span>
             </Button>

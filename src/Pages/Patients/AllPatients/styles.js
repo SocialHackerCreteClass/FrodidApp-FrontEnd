@@ -5,7 +5,13 @@ export const headerContainer = css`
   flex-flow: row wrap;
   list-style: none;
   padding: 0;
-  align-items: start;
+  align-items: center;
   justify-content: space-between;
-  width: 100%;
+  min-width: none;
+
+  @media (max-width: 56.25em) {
+    flex-direction: column;
+    align-items: start;
+    margin-bottom: 24px;
+  }
 `

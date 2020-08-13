@@ -7,11 +7,9 @@ export const headerContainer = css`
   padding: 0;
   align-items: center;
   justify-content: space-between;
-  min-width: none;
-
-  @media (max-width: 56.25em) {
-    flex-direction: column;
-    align-items: start;
-    margin-bottom: 24px;
-  }
+  width: 100%;
+`
+export const containerHalf = css`
+  background-color: red;
+  padding: 2px;
 `

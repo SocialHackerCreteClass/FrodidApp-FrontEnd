@@ -61,7 +61,7 @@ export const noActiveBut = css`
 `
 
 export const orderingPagination = css`
-  @media (min-width: 61.25em) {
+  @media (min-width: 61.24em) {
     display: flex;
     justify-content: space-between;
   }

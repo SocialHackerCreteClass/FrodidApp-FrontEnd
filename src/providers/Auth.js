@@ -3,8 +3,6 @@ import { loadFromStorage, saveToStorage } from "utils/storage"
 import { useHistory } from "react-router"
 import PropTypes from "prop-types"
 
-const SERVER_URL = "http://ec2-18-217-60-252.us-east-2.compute.amazonaws.com"
-
 const createAppFetch = (access_token) => {
   window.appFetch = async (url, init) => {
     const options = init ?? {}
@@ -13,10 +11,11 @@ const createAppFetch = (access_token) => {
       headers.set("content-type", "application/json")
     }
 
-    if (access_token) headers.set("Authorization", access_token)
+    if (access_token) headers.set("Authorization", `${access_token}`)
 
-    const response = await fetch(`${SERVER_URL}${url}`, {
+    const response = await fetch(url, {
       ...options,
+      credentials: "same-origin",
       headers
     })
 
@@ -43,7 +42,6 @@ function AuthProvider(props) {
       method: "POST",
       body: JSON.stringify(loginData)
     })
-    response.headers.forEach(console.log)
     const authData = await response.json()
     setAuthData(authData)
     saveToStorage(STORAGE_KEY, authData)

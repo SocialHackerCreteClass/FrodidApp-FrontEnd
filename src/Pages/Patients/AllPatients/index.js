@@ -1,13 +1,17 @@
 import React from "react"
 import { useI18n } from "providers/I18n"
+<<<<<<< HEAD
 import { headerContainer, buttonWrapper } from "./styles"
 import Button from "../../../../src/components/Button/index.js"
 import { cx } from "emotion"
+=======
+>>>>>>> parent of 68efac8... .
 
 AllPatients.propTypes = {}
 
 function AllPatients() {
   const { t } = useI18n()
+<<<<<<< HEAD
 
   return (
     <div>
@@ -26,6 +30,11 @@ function AllPatients() {
           </Button>
         </div>
       </div>
+=======
+  return (
+    <div>
+      <h1>{t("int.all-patients-header", "patients")}</h1>
+>>>>>>> parent of 68efac8... .
     </div>
   )
 }

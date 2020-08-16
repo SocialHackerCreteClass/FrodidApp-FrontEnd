@@ -3,6 +3,7 @@ import { useI18n } from "providers/I18n"
 import { headerContainer } from "./styles"
 import Button from "../../../../src/components/Button/index.js"
 import { cx } from "emotion"
+
 import Table from "components/Table/index.js"
 import { data, columns } from "Pages/TestPage/PatientTable"
 
@@ -18,7 +19,7 @@ function AllPatients() {
           <h1 className={"h3 u-margin-bottom-none"}>{`${t(
             "int.patients"
           )}`}</h1>
-          <p>{data.length} entries</p>
+          <p>## entries</p>
         </div>
         <div>
           <Button variant="secondary" size="large">
@@ -28,7 +29,7 @@ function AllPatients() {
           </Button>
         </div>
       </div>
-      {<Table columns={columns} data={data} />}
+      <Table />
     </div>
   )
 }

@@ -9,3 +9,9 @@ export const headerContainer = css`
   justify-content: space-between;
   width: 100%;
 `
+
+export const buttonWrapper = css`
+  padding-left: 0px;
+  background-color: blue;
+  border-radius: 6px;
+`

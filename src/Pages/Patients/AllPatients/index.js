@@ -1,11 +1,8 @@
 import React from "react"
 import { useI18n } from "providers/I18n"
-import { headerContainer } from "./styles"
+import { headerContainer, buttonWrapper } from "./styles"
 import Button from "../../../../src/components/Button/index.js"
 import { cx } from "emotion"
-
-import Table from "components/Table/index.js"
-import { data, columns } from "Pages/TestPage/PatientTable"
 
 AllPatients.propTypes = {}
 
@@ -21,7 +18,7 @@ function AllPatients() {
           )}`}</h1>
           <p>## entries</p>
         </div>
-        <div>
+        <div className={buttonWrapper}>
           <Button variant="secondary" size="large">
             <span className={"u-large u-uppercase u-letter-spacing u-bold"}>
               {`${t("int.patient_new")}`}
@@ -29,7 +26,6 @@ function AllPatients() {
           </Button>
         </div>
       </div>
-      <Table />
     </div>
   )
 }

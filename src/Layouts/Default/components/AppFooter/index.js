@@ -5,8 +5,11 @@ import { TextIcon } from "components/Flag"
 import MailIcon from "components/Icons/Mail"
 import PhoneIcon from "components/Icons/Phone"
 import { wrapper } from "./styles"
+import { useI18n } from "providers/I18n"
 
 function AppFooter() {
+  const { t } = useI18n()
+
   return (
     <div className={wrapper}>
       <Grid>
@@ -31,9 +34,9 @@ function AppFooter() {
         <GridCell className="u-1_1 u-1_2-l-wide">
           <div className="u-text-align-right-l-wide">
             <span>
-              Designed and Developed by{" "}
+              {`${t("int.signature")}`}{" "}
               <a href="/#" className="u-white">
-                SHA&nbsp;Heraklion
+                SHA&nbsp;{`${t("int.heraklion")}`}
               </a>
             </span>
           </div>

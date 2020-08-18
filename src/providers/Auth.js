@@ -1,52 +1,71 @@
-import React, { useCallback, useState } from "react"
-import { sleep } from "utils"
+import React, { useCallback, useEffect, useState } from "react"
 import { loadFromStorage, saveToStorage } from "utils/storage"
 import { useHistory } from "react-router"
+import PropTypes from "prop-types"
+
+const createAppFetch = (access_token) => {
+  window.appFetch = async (url, init) => {
+    const options = init ?? {}
+    const headers = new Headers(options.headers)
+    if (!headers.has("content-type")) {
+      headers.set("content-type", "application/json")
+    }
+
+    if (access_token) headers.set("Authorization", `${access_token}`)
+
+    const response = await fetch(url, {
+      ...options,
+      credentials: "same-origin",
+      headers
+    })
+
+    if (!response.ok) throw response
+
+    return response
+  }
+}
 
 const STORAGE_KEY = "auth"
 const AuthContext = React.createContext()
 
+AuthProvider.propTypes = {
+  children: PropTypes.node
+}
+
 function AuthProvider(props) {
   const history = useHistory()
-  const [user, setUser] = useState(loadFromStorage(STORAGE_KEY))
+  const [authData, setAuthData] = useState(loadFromStorage(STORAGE_KEY))
+  const [isReady, setIsReady] = useState(false)
 
   const login = useCallback(async (loginData) => {
-    await sleep(2000)
-    if (
-      loginData.email === "admin@gmail.com" &&
-      loginData.password === "admin"
-    ) {
-      const mockedUser = {
-        id: 123,
-        firstName: "admin",
-        lastName: "adminopoulos",
-        email: "admin@gmail.com",
-        birthDate: 12344,
-        createdDate: 12334,
-        afm: 123234435,
-        amka: 123123123,
-        role: "admin"
-      }
-      saveToStorage(STORAGE_KEY, mockedUser)
-      setUser(mockedUser)
-    } else {
-      throw new Error("invalid credentials")
-    }
+    const response = await window.appFetch("/auth/login", {
+      method: "POST",
+      body: JSON.stringify(loginData)
+    })
+    const authData = await response.json()
+    setAuthData(authData)
+    saveToStorage(STORAGE_KEY, authData)
   }, [])
 
   const register = () => {} // register the user
 
   const logout = useCallback(() => {
-    setUser(undefined)
+    setAuthData(undefined)
     saveToStorage(STORAGE_KEY, undefined)
     history.push("/login")
   }, [history])
 
+  const { user, token } = authData || {}
+
+  useEffect(() => {
+    createAppFetch(token)
+    setIsReady(true)
+  }, [token])
+
   return (
-    <AuthContext.Provider
-      value={{ user, login, logout, register }}
-      {...props}
-    />
+    <AuthContext.Provider value={{ user, login, logout, register }}>
+      {isReady && props.children}
+    </AuthContext.Provider>
   )
 }
 

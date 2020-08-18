@@ -24,8 +24,7 @@ export const tableStyle = css`
 export const pagination = css`
   display: flex;
   list-style: none;
-  margin-left: 0;
-  margin-right: 100px;
+  margin: 0;
   & :first-child {
     margin-left: 0;
     border-top-left-radius: 6px;
@@ -48,20 +47,23 @@ export const pageBut = css`
   &:hover {
     color: var(--global-white);
     background-color: var(--primary-80);
+    border-color: var(--primary-80);
     cursor: pointer;
   }
 `
 export const activeBut = css`
   color: var(--global-white);
   background-color: var(--primary-90);
+  border-color: var(--primary-90);
 `
 
 export const noActiveBut = css`
   color: var(--global-grey-60);
+  pointer-events: none;
 `
 
 export const orderingPagination = css`
-  @media (min-width: 61.24em) {
+  @media (min-width: 61.25em) {
     display: flex;
     justify-content: space-between;
   }

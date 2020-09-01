@@ -63,7 +63,8 @@ export const noActiveBut = css`
 `
 
 export const orderingPagination = css`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @media (min-width: 61.25em) {
+    display: flex;
+    justify-content: space-between;
+  }
 `

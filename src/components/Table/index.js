@@ -9,7 +9,9 @@ import {
   pagination,
   pageBut,
   activeBut,
-  noActiveBut
+  noActiveBut,
+  trCell,
+  thCell
 } from "./style"
 import { cx } from "emotion"
 
@@ -25,7 +27,6 @@ const Table = ({
     () => ({
       // When using the useFlexLayout:
       minWidth: 30, // minWidth is only used as a limit for resizing
-      width: 200, // width is used for both the flex-basis and flex-grow 150
       maxWidth: 250 // maxWidth is only used as a limit for resizing 200
     }),
     []
@@ -73,7 +74,7 @@ const Table = ({
               {...headerGroup.getHeaderGroupProps({})}
               className={th}>
               {headerGroup.headers.map((column, j) => (
-                <div key={j} {...column.getHeaderProps()}>
+                <div key={j} {...column.getHeaderProps()} className={thCell}>
                   {column.render("Header")}
                 </div>
               ))}
@@ -88,7 +89,7 @@ const Table = ({
               <div key={i} {...row.getRowProps()} className={tr}>
                 {row.cells.map((cell, j) => {
                   return (
-                    <div key={j} {...cell.getCellProps()}>
+                    <div key={j} {...cell.getCellProps()} className={trCell}>
                       {cell.render("Cell")}
                     </div>
                   )

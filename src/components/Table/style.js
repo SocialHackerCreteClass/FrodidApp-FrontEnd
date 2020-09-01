@@ -6,6 +6,18 @@ export const tr = css`
   background-color: white;
 `
 
+export const trCell = css`
+  &:last-child {
+    text-align: right;
+  }
+`
+
+export const thCell = css`
+  &:last-child {
+    text-align: right;
+  }
+`
+
 export const th = css`
   background-color: var(--primary-10);
   // var(--primary-10); that's the original background color for table head
@@ -63,8 +75,9 @@ export const noActiveBut = css`
 `
 
 export const orderingPagination = css`
-  @media (min-width: 61.25em) {
+  @media (min-width: 46.25em) {
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 `

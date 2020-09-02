@@ -1,11 +1,11 @@
 import React from "react"
-import Button from "../../../components/Button/index"
-import { ul, li, dl, dt, dd } from "./style"
+import Button from "components/Button/index"
+import { ul, li, dl, dt, dd, wrapper } from "./style"
 import { UserType } from "types"
 
 const Information = ({ birthDate, profession, createdDate }) => {
   return (
-    <div>
+    <div className={wrapper}>
       <header style={{ paddingBottom: 48 }}>
         <h2 style={{ fontSize: 37.33, lineHeight: 1.29 }}>Information</h2>
         <div>

@@ -1,6 +1,7 @@
 import React from "react"
 import Title from "./Title"
 import Information from "./Information"
+import Visitations from "./Visitations"
 
 const Professional = () => {
   const user = {
@@ -28,6 +29,7 @@ const Professional = () => {
         createdDate={user.createdDate}
         profession={user.profession}
       />
+      <Visitations />
     </>
   )
 }

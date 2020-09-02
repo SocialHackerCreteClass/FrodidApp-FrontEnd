@@ -1,8 +1,8 @@
 import React from "react"
 import { box, wrapper, titleInfo } from "./style"
-import Avatar from "../../../components/Avatar/index"
-import Badge from "../../../components/Badge/index"
-import { UserType } from "../../../types/index"
+import Avatar from "components/Avatar"
+import Badge from "components/Badge"
+import { UserType } from "types"
 
 const Title = ({ firstName, lastName, image }) => {
   return (

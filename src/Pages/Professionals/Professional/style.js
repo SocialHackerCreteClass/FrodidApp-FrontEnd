@@ -49,3 +49,8 @@ export const dt = css`
 export const dd = css`
   margin-left: 0;
 `
+export const titles = css`
+  font-size: 37.33px;
+  line-height: 1.29;
+  // padding-bottom: 24px;
+`

@@ -1,5 +1,5 @@
 import React from "react"
-import Button from "../Button/index"
+import Button from "../../../components/Button/index"
 import { ul, li, dl, dt, dd } from "./style"
 import { UserType } from "types"
 

@@ -1,9 +1,34 @@
 import React from "react"
 import Button from "components/Button/index"
-import { ul, li, dl, dt, dd, wrapper } from "./style"
+import { ul, li, dls, dts, dds, wrapper } from "./style"
 import { UserType } from "types"
 
 const Information = ({ birthDate, profession, createdDate }) => {
+  const personalInfo = [
+    {
+      name: "Birthday",
+      value: birthDate
+    },
+    {
+      name: "Profession",
+      value: profession
+    },
+    {
+      name: "Contact number",
+      value: "6954823581"
+    }
+  ]
+
+  const additionalInfo = [
+    {
+      name: "Registered",
+      value: createdDate
+    },
+    {
+      name: "Status",
+      value: "Active"
+    }
+  ]
   return (
     <div className={wrapper}>
       <header style={{ paddingBottom: 48 }}>
@@ -18,41 +43,27 @@ const Information = ({ birthDate, profession, createdDate }) => {
         Personal Information
       </h3>
       <ul className={ul}>
-        <li className={li}>
-          <dl className={dl}>
-            <dt className={dt}>Birthday</dt>
-            <dd className={dd}>{birthDate}</dd>
-          </dl>
-        </li>
-        <li className={li}>
-          <dl className={dl}>
-            <dt className={dt}>Profession</dt>
-            <dd className={dd}>{profession}</dd>
-          </dl>
-        </li>
-        <li className={li}>
-          <dl className={dl}>
-            <dt className={dt}>Contact number</dt>
-            <dd className={dd}>6954823581</dd>
-          </dl>
-        </li>
+        {personalInfo.map((item, i) => (
+          <li key={i} className={li}>
+            <dl className={dls}>
+              <dt className={dts}>{item.name}</dt>
+              <dd className={dds}>{item.value}</dd>
+            </dl>
+          </li>
+        ))}
       </ul>
       <h3 style={{ fontSize: "1.35rem", lineHeight: 1.39, marginBottom: 24 }}>
         Additional Information
       </h3>
       <ul className={ul}>
-        <li className={li}>
-          <dl className={dl}>
-            <dt className={dt}>Registered</dt>
-            <dd className={dd}>{createdDate}</dd>
-          </dl>
-        </li>
-        <li className={li}>
-          <dl className={dl}>
-            <dt className={dt}>Status</dt>
-            <dd className={dd}>Active</dd>
-          </dl>
-        </li>
+        {additionalInfo.map((item, i) => (
+          <li key={i} className={li}>
+            <dl className={dls}>
+              <dt className={dts}>{item.name}</dt>
+              <dd className={dds}>{item.value}</dd>
+            </dl>
+          </li>
+        ))}
       </ul>
     </div>
   )

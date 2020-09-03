@@ -34,19 +34,19 @@ export const li = css`
   flex: 0 1 auto;
   width: 33.33%;
 `
-export const dl = css`
+export const dls = css`
   margin-left: 0;
   margin-bottom: 24px;
   margin: 0;
   padding: 0;
 `
-export const dt = css`
+export const dts = css`
   font-size: 15px;
   font-size: 0.94rem;
   line-height: 1.6;
   color: var(--global-grey-60);
 `
-export const dd = css`
+export const dds = css`
   margin-left: 0;
 `
 export const titles = css`

@@ -77,12 +77,10 @@ export const columns = [
   {
     Header: "Date",
     accessor: "date"
-    //    Cell: DateColumn
   },
   {
     Header: "Patient",
     accessor: "patient"
-    //    Cell: PatientColumn
   },
   {
     Header: "Duration",

@@ -4,6 +4,7 @@ import { VisitType } from "types"
 import Table from "components/Table"
 import { sleep } from "utils"
 import { css } from "emotion"
+import { useI18n } from "providers/I18n"
 import dayjs from "dayjs"
 import relativeTime from "dayjs/plugin/relativeTime"
 import customParseFormat from "dayjs/plugin/customParseFormat"
@@ -67,29 +68,36 @@ function ActionsColumn({ value }) {
   return (
     <div>
       <NavLink to={`patients/details/${id}`} className={viewAction}>
-        View
+        <Translate arg={"int.view"} />
       </NavLink>
     </div>
   )
 }
 
+const Translate = ({ arg }) => {
+  const { t } = useI18n()
+  return t(`${arg}`)
+}
+
 export const columns = [
   {
-    Header: "Date",
+    Header: <Translate arg={"int.date"} />,
     accessor: "date"
   },
   {
-    Header: "Patient",
+    Header: <Translate arg={"int.patient"} />,
     accessor: "patient"
   },
   {
-    Header: "Duration",
+    Header: <Translate arg={"int.duration"} />,
+    id: 1,
     accessor: (row) => row,
     Cell: DurationColumn
   },
   {
-    Header: "Actions",
+    Header: <Translate arg={"int.actions"} />,
     accessor: (row) => row,
+    id: 2,
     Cell: ActionsColumn
   }
 ]

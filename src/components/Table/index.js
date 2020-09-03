@@ -14,6 +14,7 @@ import {
   thCell
 } from "./style"
 import { cx } from "emotion"
+import { useI18n } from "providers/I18n"
 
 const Table = ({
   columns,
@@ -23,6 +24,7 @@ const Table = ({
   pageIndex = 0,
   onChange
 }) => {
+  const { t } = useI18n()
   const defaultColumn = React.useMemo(
     () => ({
       // When using the useFlexLayout:
@@ -102,7 +104,8 @@ const Table = ({
       {/* PAGINATION */}
       <div className={orderingPagination}>
         <div>
-          Displaying {page.length} entries of {total}
+          {t("int.pagination", `${page.length}`, `${total}`)}
+          {/* Displaying {page.length} entries of {total} */}
         </div>
         <ol className={pagination}>
           <li

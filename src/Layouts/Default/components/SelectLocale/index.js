@@ -2,8 +2,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useI18n } from "providers/I18n"
 import { css } from "emotion"
-import elLogo from "../../../../utils/lang_images/greece.png"
-import enLogo from "../../../../utils/lang_images/uk.png"
+import elLogo from "images/lang_images/el.png"
+import enLogo from "images/lang_images/en.png"
 
 SelectLocale.propTypes = {
   className: PropTypes.string
@@ -20,12 +20,11 @@ function SelectLocale({ className }) {
             key={locale}
             className={localeWrapper}
             onClick={() => updateLocale(locale)}>
-            {lang !== "el" ? (
+            {locale === "el" ? (
               <img className={langLogo} alt="el logo" src={elLogo} />
             ) : (
               <img className={langLogo} alt="en logo" src={enLogo} />
             )}
-            {console.log(`Locale is: ${locale}, lang is: ${lang}`)}
           </div>
         ))}
     </div>

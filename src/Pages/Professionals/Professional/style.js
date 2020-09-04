@@ -54,3 +54,18 @@ export const titles = css`
   line-height: 1.29;
   // padding-bottom: 24px;
 `
+export const paddingBot = css`
+  padding-bottom: 48px;
+`
+export const h3 = css`
+  font-size: 1.35rem;
+  line-height: 1.39;
+  margin-bottom: 24px;
+`
+export const h2 = css`
+  font-size: 37.33px;
+  line-height: 1.29;
+`
+export const marginBot = css`
+  margin-bottom: 48px;
+`

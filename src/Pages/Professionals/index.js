@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { Route, Switch } from "react-router-dom"
 import AllProfessionals from "./AllProfessionals"
 import Edit from "./Edit"
-import Professional from "./Professional"
+import Professional from "./Professional/"
 
 Professionals.propTypes = {
   match: PropTypes.object

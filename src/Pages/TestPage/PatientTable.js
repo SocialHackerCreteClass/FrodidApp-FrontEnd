@@ -7,6 +7,8 @@ import localizedFormat from "dayjs/plugin/localizedFormat"
 import { css } from "emotion"
 import Table from "components/Table"
 import { sleep } from "utils"
+import { useI18n } from "providers/I18n"
+
 dayjs.extend(relativeTime)
 dayjs.extend(localizedFormat)
 
@@ -65,7 +67,7 @@ function ActionsColumn({ value }) {
   return (
     <div>
       <NavLink to={`patients/details/${id}`} className={viewAction}>
-        View
+        <Translate arg={"int.view"} />
       </NavLink>
     </div>
   )
@@ -94,24 +96,33 @@ export function PatientTable() {
   )
 }
 
+const Translate = ({ arg }) => {
+  const { t } = useI18n()
+  return t(`${arg}`)
+}
+
 export const columns = [
   {
-    Header: "Patient",
+    Header: <Translate arg={"int.patient"} />,
+    id: 1,
     accessor: (row) => row,
     Cell: PatientColumn
   },
   {
-    Header: "Location",
+    Header: <Translate arg={"int.location"} />,
+    id: 2,
     accessor: "address",
     Cell: LocationColumn
   },
   {
-    Header: "Last Visit",
+    Header: <Translate arg={"int.lastVisit"} />,
+    id: 3,
     accessor: (row) => row,
     Cell: LastVisitColumn
   },
   {
-    Header: "Actions",
+    Header: <Translate arg={"int.actions"} />,
+    id: 4,
     accessor: (row) => row,
     Cell: ActionsColumn
   }

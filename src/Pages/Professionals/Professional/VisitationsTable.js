@@ -1,50 +1,37 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import { NavLink } from "react-router-dom"
-import { VisitType } from "types"
+import { UserType, VisitType } from "types"
 import Table from "components/Table"
-import { sleep } from "utils"
 import { css } from "emotion"
 import { useI18n } from "providers/I18n"
 import dayjs from "dayjs"
 import relativeTime from "dayjs/plugin/relativeTime"
 import customParseFormat from "dayjs/plugin/customParseFormat"
+import { usePaginatedQuery } from "react-query"
+import { getProfessionalVisits } from "api/visits"
 dayjs.extend(relativeTime)
 dayjs.extend(customParseFormat)
 
-export default function VisitationsTable() {
-  const [pageInfo, setPageInfo] = useState({ pageSize: 5, pageIndex: 0 })
-  const [data, setData] = useState({
-    total: 0,
-    data: []
-  })
+VisitationsTable.propTypes = { user: UserType }
 
-  useEffect(() => {
-    getData(pageInfo).then(setData)
-  }, [pageInfo])
+export default function VisitationsTable({ user }) {
+  const [pageInfo, setPageInfo] = useState({ pageSize: 5, pageIndex: 0 })
+
+  const { resolvedData = {} } = usePaginatedQuery(
+    ["professionalVisits", { id: user.id, ...pageInfo }],
+    getProfessionalVisits
+  )
 
   return (
     <Table
       onChange={setPageInfo}
       columns={columns}
-      data={data.data}
-      total={data.total}
+      data={resolvedData.data}
+      total={resolvedData.total}
       pageIndex={pageInfo.pageIndex}
       pageSize={pageInfo.pageSize}
     />
   )
-}
-
-const getData = async ({ pageSize, pageIndex }) => {
-  await sleep(3000)
-  return {
-    total: visitData.total,
-    pageIndex,
-    pageSize,
-    data: visitData.data.slice(
-      pageIndex * pageSize,
-      Math.min(visitData.data.length, pageIndex * pageSize + pageSize)
-    )
-  }
 }
 
 DurationColumn.propTypes = {
@@ -101,82 +88,6 @@ export const columns = [
     Cell: ActionsColumn
   }
 ]
-
-export const visitData = {
-  total: 10,
-  data: [
-    {
-      id: 1,
-      date: "12/3/2020",
-      startTime: "1990-12-01 13:00",
-      endTime: "1990-12-01 14:45",
-      patient: "Mary White"
-    },
-    {
-      id: 2,
-      date: "12/3/2020",
-      startTime: "1990-12-01 13:25",
-      endTime: "1990-12-01 15:45",
-      patient: "Mary White"
-    },
-    {
-      id: 3,
-      date: "12/3/2020",
-      startTime: "1990-12-01 09:00",
-      endTime: "1990-12-01 11:00",
-      patient: "Mary White"
-    },
-    {
-      id: 4,
-      date: "12/3/2020",
-      startTime: "1990-12-01 13:00",
-      endTime: "1990-12-01 15:45",
-      patient: "Mary White"
-    },
-    {
-      id: 5,
-      date: "12/3/2020",
-      startTime: "1990-12-01 13:00",
-      endTime: "1990-12-01 15:45",
-      patient: "Mary White"
-    },
-    {
-      id: 6,
-      date: "12/3/2020",
-      startTime: "1990-12-01 13:00",
-      endTime: "1990-12-01 15:45",
-      patient: "Mary White"
-    },
-    {
-      id: 7,
-      date: "12/3/2020",
-      startTime: "1990-12-01 13:00",
-      endTime: "1990-12-01 15:45",
-      patient: "Mary White"
-    },
-    {
-      id: 8,
-      date: "12/3/2020",
-      startTime: "1990-12-01 13:00",
-      endTime: "1990-12-01 15:45",
-      patient: "Mary White"
-    },
-    {
-      id: 9,
-      date: "12/3/2020",
-      startTime: "1990-12-01 13:00",
-      endTime: "1990-12-01 15:45",
-      patient: "Mary White"
-    },
-    {
-      id: 10,
-      date: "12/3/2020",
-      startTime: "1990-12-01 13:00",
-      endTime: "1990-12-01 15:45",
-      patient: "Mary White"
-    }
-  ]
-}
 
 const viewAction = css`
   color: var(--primary-60);

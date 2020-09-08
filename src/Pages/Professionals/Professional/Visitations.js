@@ -3,8 +3,11 @@ import Button from "components/Button/"
 import VisitationTable from "./VisitationsTable"
 import { titles, marginBot } from "./style"
 import { useI18n } from "providers/I18n"
+import { UserType } from "types"
 
-const Visitations = () => {
+Visitations.propTypes = { user: UserType }
+
+function Visitations({ user }) {
   const { t } = useI18n()
   return (
     <div>
@@ -16,7 +19,7 @@ const Visitations = () => {
           </Button>
         </div>
       </header>
-      <VisitationTable />
+      <VisitationTable user={user} />
     </div>
   )
 }

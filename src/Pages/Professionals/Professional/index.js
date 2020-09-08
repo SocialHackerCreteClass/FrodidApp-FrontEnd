@@ -19,7 +19,7 @@ const Professional = () => {
     <>
       <Title user={data} />
       <Information user={data} />
-      <Visitations />
+      <Visitations user={data} />
     </>
   )
 }

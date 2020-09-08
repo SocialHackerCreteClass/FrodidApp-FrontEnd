@@ -18,8 +18,8 @@ import { useI18n } from "providers/I18n"
 
 const Table = ({
   columns,
-  data,
-  total,
+  data = [],
+  total = 0,
   pageSize = 10,
   pageIndex = 0,
   onChange

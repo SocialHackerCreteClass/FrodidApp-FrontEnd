@@ -3,9 +3,24 @@ import Button from "components/Button/index"
 import { ul, li, dls, dts, dds, wrapper, paddingBot, h3, h2 } from "./style"
 import { UserType } from "types"
 import { useI18n } from "providers/I18n"
+import * as PropTypes from "prop-types"
 
-const Information = ({ birthDate, profession, createdDate }) => {
+function LabelInfo({ label, value }) {
+  return (
+    <li className={li}>
+      <dl className={dls}>
+        <dt className={dts}>{label}</dt>
+        <dd className={dds}>{value}</dd>
+      </dl>
+    </li>
+  )
+}
+
+LabelInfo.propTypes = { label: PropTypes.string, value: PropTypes.string }
+
+const Information = ({ user }) => {
   const { t } = useI18n()
+  const { birthDate, profession, createdDate } = user
   const personalInfo = [
     {
       name: t("int.dateOfBirth"),
@@ -44,29 +59,19 @@ const Information = ({ birthDate, profession, createdDate }) => {
       <h3 className={h3}>{t("int.personal_information")}</h3>
       <ul className={ul}>
         {personalInfo.map((item, i) => (
-          <li key={i} className={li}>
-            <dl className={dls}>
-              <dt className={dts}>{item.name}</dt>
-              <dd className={dds}>{item.value}</dd>
-            </dl>
-          </li>
+          <LabelInfo key={i} label={item.name} value={item.value} />
         ))}
       </ul>
       <h3 className={h3}>{t("int.additional_information")}</h3>
       <ul className={ul}>
         {additionalInfo.map((item, i) => (
-          <li key={i} className={li}>
-            <dl className={dls}>
-              <dt className={dts}>{item.name}</dt>
-              <dd className={dds}>{item.value}</dd>
-            </dl>
-          </li>
+          <LabelInfo key={i} label={item.name} value={item.value} />
         ))}
       </ul>
     </div>
   )
 }
 
-Information.propTypes = UserType
+Information.propTypes = { user: UserType }
 
 export default Information

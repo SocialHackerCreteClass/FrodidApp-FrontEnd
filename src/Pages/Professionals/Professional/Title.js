@@ -4,20 +4,13 @@ import Avatar from "components/Avatar"
 import Badge from "components/Badge"
 import { UserType } from "types"
 
-const Title = ({ firstName, lastName, image }) => {
+const Title = ({ user }) => {
   return (
     <div className={wrapper}>
       <div className={box}>
-        <Avatar
-          size={"large"}
-          user={{
-            image,
-            firstName,
-            lastName
-          }}
-        />
+        <Avatar size={"large"} user={user} />
         <div className={titleInfo}>
-          {firstName} {lastName}
+          {user.firstName} {user.lastName}
           <div>
             <Badge active />
           </div>
@@ -27,6 +20,8 @@ const Title = ({ firstName, lastName, image }) => {
   )
 }
 
-Title.propTypes = UserType
+Title.propTypes = {
+  user: UserType
+}
 
 export default Title

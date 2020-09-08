@@ -407,6 +407,10 @@ img {
   .u-show-desktop {
     display: block !important;
   }
+  
+  .u-show-desktop-flex {
+    display: flex !important;
+  }
 }
 
 @media (min-width: 75em) {

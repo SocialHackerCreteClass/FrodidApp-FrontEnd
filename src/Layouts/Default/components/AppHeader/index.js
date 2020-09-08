@@ -8,6 +8,7 @@ import AnalyticsIcon from "components/Icons/Analytics"
 import { TextIcon } from "components/Flag"
 import {
   activeLink,
+  localeCls,
   navIcon,
   navLinkPrimary,
   navLinkSecondary,
@@ -16,12 +17,13 @@ import {
 import { Link, NavLink } from "react-router-dom"
 import { cx } from "emotion"
 import { useI18n } from "providers/I18n"
+import SelectLocale from "../SelectLocale"
 
 function AppHeader() {
   const { t } = useI18n()
 
   return (
-    <div className={cx(wrapper, "u-hide u-show-desktop")}>
+    <div className={cx(wrapper, "u-hide u-show-desktop-flex")}>
       <div className="u-padding-small u-margin-bottom-large">
         <Link to="/" title="Frontidapp">
           <LogoIcon />
@@ -135,6 +137,7 @@ function AppHeader() {
           </li>
         </ListBare>
       </nav>
+      <SelectLocale className={localeCls} />
     </div>
   )
 }

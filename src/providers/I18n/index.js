@@ -52,7 +52,8 @@ function I18nProvider({ children }) {
   }, [lang])
 
   return (
-    <I18nContext.Provider value={{ lang, t, updateLocale: setLang }}>
+    <I18nContext.Provider
+      value={{ lang, t, updateLocale: setLang, availableLangs }}>
       {children}
     </I18nContext.Provider>
   )

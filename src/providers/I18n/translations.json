@@ -18,6 +18,7 @@
     "int.professionals": "Professionals",
     "int.professional_details": "Professional Details",
     "int.professional_create_new": "Create New Professional",
+    "int.new_professional": "New Professional",
     "int.professional_edit": "Edit Professional",
     "int.submit": "Submit",
     "int.email": "Email",
@@ -47,6 +48,9 @@
     "int.location": "Location",
     "int.lastVisit": "Last Visit",
     "int.pagination": "Display {0} entries of {1}",
+    "int.entries": "entries",
+
+    "int.name": "Name",
 
     "int.navigation": "Navigation",
     "int.pagesCap": "Pages",
@@ -77,6 +81,7 @@
     "int.professionals": "Επαγγελματίες",
     "int.professional_details": "Λεπτομέρειες Επαγγελματία",
     "int.professional_create_new": "Καταχώρηση Επαγγελματία",
+    "int.new_professional": "Νeος Επαγγελματιας",
     "int.professional_edit": "Επεξεργασία Επαγγελματία",
     "int.submit": "Καταχώρηση",
     "int.email": "Διεύθυνση Ηλ. Ταχυδρομείου",
@@ -106,6 +111,9 @@
     "int.location": "Τοποθεσία",
     "int.lastVisit": "Τελευταία Επίσκεψη",
     "int.pagination": "Εμφανίζονται {0} καταχωρήσεις από τις {1}",
+    "int.entries": "καταχωρήσεις",
+
+    "int.name": "'Ονομα",
 
     "int.navigation": "ΠΛΟΗΓΗΣΗ",
     "int.pagesCap": "ΣΕΛΙΔΕΣ",

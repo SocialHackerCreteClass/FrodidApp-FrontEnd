@@ -15,6 +15,7 @@
     "int.patient_details": "Patient Details",
     "int.patients_create_new": "Create new Patients",
     "int.patient_edit": "Patient Edit",
+    "int.professional": "Professional",
     "int.professionals": "Professionals",
     "int.professional_details": "Professional Details",
     "int.professional_create_new": "Create New Professional",
@@ -39,6 +40,8 @@
     "int.personal_information": "Personal Information",
     "int.visitations": "Visitations",
     "int.add_visitation": "Add visitation",
+    "int.add_visitation_btn": "Add visitation",
+    "int.date_duration": "Date/Duration",
 
     "int.view": "View",
     "int.date": "Date",
@@ -83,6 +86,7 @@
     "int.professional_create_new": "Καταχώρηση Επαγγελματία",
     "int.new_professional": "Νeος Επαγγελματιας",
     "int.professional_edit": "Επεξεργασία Επαγγελματία",
+    "int.professional": "Επαγγελματίας",
     "int.submit": "Καταχώρηση",
     "int.email": "Διεύθυνση Ηλ. Ταχυδρομείου",
     "int.password": "Κωδικός Πρόσβασης",
@@ -102,6 +106,8 @@
     "int.personal_information": "Προσωπικές Πληροφορίες",
     "int.visitations": "Επισκέψεις",
     "int.add_visitation": "Προσθέστε επίσκεψη",
+    "int.add_visitation_btn": "Νεα Επισκεψη",
+    "int.date_duration": "Ημερομηνία/Διάρκεια",
 
     "int.view": "Προβολή",
     "int.date": "Ημερομηνία",

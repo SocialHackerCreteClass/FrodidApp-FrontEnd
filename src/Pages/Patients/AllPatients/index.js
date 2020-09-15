@@ -11,10 +11,10 @@ AllPatients.propTypes = {}
 function AllPatients() {
   const [pageInfo, setPageInfo] = useState({ pageSize: 10, pageIndex: 0 })
   const { resolvedData = {}, isLoading } = usePaginatedQuery(
-    ["allPatientsData", { ...pageInfo }],
+    ["allPatientsData", pageInfo],
     getPatients
   )
-  console.log(resolvedData)
+
   const { t } = useI18n()
   if (isLoading) return "Loading..."
 

@@ -30,5 +30,7 @@ export const btnLetters = css`
   font-weight: 700;
   font-size: 1.35rem;
   line-height: 1.39;
-  cursor: pointer;
+`
+export const btnAlign = css`
+  text-align: left;
 `

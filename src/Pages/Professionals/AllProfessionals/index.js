@@ -14,7 +14,7 @@ function AllProfessionals() {
   const [pageInfo, setPageInfo] = useState({ pageSize: 10, pageIndex: 0 })
 
   const { isLoading, resolvedData = {} } = usePaginatedQuery(
-    ["allProfessionals", { ...pageInfo }],
+    ["allProfessionals", pageInfo],
     getProfessionals
   )
 

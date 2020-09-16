@@ -8,16 +8,14 @@ import { useI18n } from "providers/I18n"
 
 const ProfessionalsTable = ({ resolvedData, pageInfo, setPageInfo }) => {
   return (
-    <div>
-      <Table
-        onChange={setPageInfo}
-        columns={columns}
-        data={resolvedData.data}
-        total={resolvedData.total}
-        pageIndex={pageInfo.pageIndex}
-        pageSize={pageInfo.pageSize}
-      />
-    </div>
+    <Table
+      onChange={setPageInfo}
+      columns={columns}
+      data={resolvedData.data}
+      total={resolvedData.total}
+      pageIndex={pageInfo.pageIndex}
+      pageSize={pageInfo.pageSize}
+    />
   )
 }
 
@@ -63,7 +61,7 @@ function ActionsColumn({ value }) {
   return (
     <div>
       <NavLink to={`professionals/details/${id}`} className={viewAction}>
-        View
+        <Translate arg={"int.view"} />
       </NavLink>
     </div>
   )

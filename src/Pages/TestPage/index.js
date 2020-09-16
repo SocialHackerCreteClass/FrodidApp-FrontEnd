@@ -12,7 +12,7 @@ import VisitationsIcon from "components/Icons/Visitations"
 import AnalyticsIcon from "components/Icons/Analytics"
 import LogoIcon from "components/Icons/Logo"
 import { css } from "emotion"
-import { PatientTable } from "./PatientTable"
+import PatientTable from "../Patients/AllPatients/PatientTable"
 
 function TestPage() {
   return (

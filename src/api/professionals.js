@@ -18,11 +18,20 @@ export async function getProfessionals(key, { pageSize, pageIndex }) {
   }
 }
 
+export async function getProfessional(key, id) {
+  // const response = await fetch(
+  //   "https://api.github.com/repos/tannerlinsley/react-query"
+  // )
+  // return response.json()
+  await sleep(2000)
+  return mockProfessionals.data.find((pr) => pr.id === id)
+}
+
 export const mockProfessionals = {
   total: 23,
   data: [
     {
-      id: 1,
+      id: "1",
       firstName: "John",
       lastName: "Doe1",
       email: "johndoe@gmail.com",
@@ -39,7 +48,7 @@ export const mockProfessionals = {
       }
     },
     {
-      id: 2,
+      id: "2",
       firstName: "John",
       lastName: "Doe",
       email: "johndoe@gmail.com",
@@ -56,7 +65,7 @@ export const mockProfessionals = {
       }
     },
     {
-      id: 3,
+      id: "3",
       firstName: "John",
       lastName: "Doe",
       email: "johndoe@gmail.com",
@@ -73,7 +82,7 @@ export const mockProfessionals = {
       }
     },
     {
-      id: 4,
+      id: "4",
       firstName: "John",
       lastName: "Doe",
       email: "johndoe@gmail.com",
@@ -90,7 +99,7 @@ export const mockProfessionals = {
       }
     },
     {
-      id: 5,
+      id: "5",
       firstName: "John",
       lastName: "Doe5",
       email: "johndoe@gmail.com",
@@ -107,7 +116,7 @@ export const mockProfessionals = {
       }
     },
     {
-      id: 6,
+      id: "6",
       firstName: "John",
       lastName: "Doe",
       email: "johndoe@gmail.com",
@@ -124,7 +133,7 @@ export const mockProfessionals = {
       }
     },
     {
-      id: 7,
+      id: "7",
       firstName: "John",
       lastName: "Doe",
       email: "johndoe@gmail.com",
@@ -141,7 +150,7 @@ export const mockProfessionals = {
       }
     },
     {
-      id: 8,
+      id: "8",
       firstName: "John",
       lastName: "Doe",
       email: "johndoe@gmail.com",
@@ -158,7 +167,7 @@ export const mockProfessionals = {
       }
     },
     {
-      id: 9,
+      id: "9",
       firstName: "John",
       lastName: "Doe",
       email: "johndoe@gmail.com",
@@ -175,7 +184,7 @@ export const mockProfessionals = {
       }
     },
     {
-      id: 10,
+      id: "10",
       firstName: "John",
       lastName: "Doe10",
       email: "johndoe@gmail.com",
@@ -192,7 +201,7 @@ export const mockProfessionals = {
       }
     },
     {
-      id: 11,
+      id: "11",
       firstName: "John",
       lastName: "Doe11",
       email: "johndoe@gmail.com",
@@ -209,7 +218,7 @@ export const mockProfessionals = {
       }
     },
     {
-      id: 12,
+      id: "12",
       firstName: "John",
       lastName: "Doe",
       email: "johndoe@gmail.com",
@@ -226,7 +235,7 @@ export const mockProfessionals = {
       }
     },
     {
-      id: 13,
+      id: "13",
       firstName: "John",
       lastName: "Doe",
       email: "johndoe@gmail.com",
@@ -243,7 +252,7 @@ export const mockProfessionals = {
       }
     },
     {
-      id: 14,
+      id: "14",
       firstName: "John",
       lastName: "Doe",
       email: "johndoe@gmail.com",
@@ -260,7 +269,7 @@ export const mockProfessionals = {
       }
     },
     {
-      id: 15,
+      id: "15",
       firstName: "John",
       lastName: "Doe15",
       email: "johndoe@gmail.com",
@@ -277,7 +286,7 @@ export const mockProfessionals = {
       }
     },
     {
-      id: 16,
+      id: "16",
       firstName: "John",
       lastName: "Doe",
       email: "johndoe@gmail.com",
@@ -294,7 +303,7 @@ export const mockProfessionals = {
       }
     },
     {
-      id: 17,
+      id: "17",
       firstName: "John",
       lastName: "Doe",
       email: "johndoe@gmail.com",
@@ -311,7 +320,7 @@ export const mockProfessionals = {
       }
     },
     {
-      id: 18,
+      id: "18",
       firstName: "John",
       lastName: "Doe",
       email: "johndoe@gmail.com",
@@ -328,7 +337,7 @@ export const mockProfessionals = {
       }
     },
     {
-      id: 19,
+      id: "19",
       firstName: "John",
       lastName: "Doe",
       email: "johndoe@gmail.com",
@@ -345,7 +354,7 @@ export const mockProfessionals = {
       }
     },
     {
-      id: 20,
+      id: "20",
       firstName: "John",
       lastName: "Doe20",
       email: "johndoe@gmail.com",
@@ -362,7 +371,7 @@ export const mockProfessionals = {
       }
     },
     {
-      id: 21,
+      id: "21",
       firstName: "John",
       lastName: "Doe21",
       email: "johndoe@gmail.com",
@@ -379,7 +388,7 @@ export const mockProfessionals = {
       }
     },
     {
-      id: 22,
+      id: "22",
       firstName: "John",
       lastName: "Doe",
       email: "johndoe@gmail.com",
@@ -396,7 +405,7 @@ export const mockProfessionals = {
       }
     },
     {
-      id: 23,
+      id: "23",
       firstName: "John",
       lastName: "Doe",
       email: "johndoe@gmail.com",

@@ -62,7 +62,7 @@ function AppHeader() {
             </li>
             <li>
               <NavLink
-                to="/visitations"
+                to="/visits"
                 activeClassName={activeLink}
                 className={navLinkPrimary}>
                 <div className="u-padding-vertical-small u-padding-left-small">
@@ -122,7 +122,7 @@ function AppHeader() {
           </li>
           <li>
             <NavLink
-              to="/visitations/create-new"
+              to="/visits/create-new"
               activeClassName={activeLink}
               className={navLinkSecondary}>
               <div className="u-padding-vertical-small u-padding-left-small">

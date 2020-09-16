@@ -45,7 +45,7 @@ export const PatientType = PropTypes.shape({
 
 export const VisitType = PropTypes.shape({
   id: PropTypes.number,
-  date: PropTypes.number,
+  date: PropTypes.string,
   comment: PropTypes.string,
   startTime: PropTypes.string,
   endTime: PropTypes.string,

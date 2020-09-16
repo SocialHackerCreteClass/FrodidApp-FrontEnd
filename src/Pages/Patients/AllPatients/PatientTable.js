@@ -1,10 +1,14 @@
 import React from "react"
 import { NavLink } from "react-router-dom"
+import PropTypes from "prop-types"
 import { PatientType, VisitType } from "types"
 import dayjs from "dayjs"
 import relativeTime from "dayjs/plugin/relativeTime"
 import localizedFormat from "dayjs/plugin/localizedFormat"
 import { css } from "emotion"
+import Table from "components/Table"
+import { useI18n } from "providers/I18n"
+
 dayjs.extend(relativeTime)
 dayjs.extend(localizedFormat)
 
@@ -63,64 +67,60 @@ function ActionsColumn({ value }) {
   return (
     <div>
       <NavLink to={`patients/details/${id}`} className={viewAction}>
-        View
+        <Translate arg={"int.view"} />
       </NavLink>
     </div>
   )
 }
 
+PatientTable.propTypes = {
+  setPageInfo: PropTypes.func,
+  resolvedData: PropTypes.object,
+  pageInfo: PropTypes.object
+}
+
+export default function PatientTable({ setPageInfo, resolvedData, pageInfo }) {
+  return (
+    <Table
+      onChange={setPageInfo}
+      columns={columns}
+      data={resolvedData.data}
+      total={resolvedData.total}
+      pageIndex={pageInfo.pageIndex}
+      pageSize={pageInfo.pageSize}
+    />
+  )
+}
+
+const Translate = ({ arg }) => {
+  const { t } = useI18n()
+  return t(`${arg}`)
+}
+
 export const columns = [
   {
-    Header: "Patient",
+    Header: <Translate arg={"int.patient"} />,
+    id: 1,
     accessor: (row) => row,
     Cell: PatientColumn
   },
   {
-    Header: "Location",
+    Header: <Translate arg={"int.location"} />,
+    id: 2,
     accessor: "address",
     Cell: LocationColumn
   },
   {
-    Header: "Last Visit",
+    Header: <Translate arg={"int.lastVisit"} />,
+    id: 3,
     accessor: (row) => row,
     Cell: LastVisitColumn
   },
   {
-    Header: "Actions",
+    Header: <Translate arg={"int.actions"} />,
+    id: 4,
     accessor: (row) => row,
     Cell: ActionsColumn
-  }
-]
-export const data = [
-  {
-    id: 1,
-    firstName: "Giannis",
-    lastName: "Doe",
-    birthDate: "1986-05-03",
-    address: {
-      street: "Leoforos Ionias",
-      streetNumber: "35",
-      region: "Mastampas",
-      country: "Greece",
-      state: "Heraklion"
-    },
-    date: "2019-12-27",
-    user: "Mary Doe"
-  },
-  {
-    id: 2,
-    firstName: "John",
-    lastName: "Doe",
-    birthDate: "1930-12-30",
-    address: {
-      street: "Leoforos Ionias",
-      streetNumber: "35",
-      region: "Mastampas",
-      country: "Greece",
-      state: "Heraklion"
-    },
-    date: "2020-06-27",
-    user: "Mary Doe"
   }
 ]
 

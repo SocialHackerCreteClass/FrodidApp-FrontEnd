@@ -1,5 +1,11 @@
 import { css } from "emotion"
 
+export const wrapper = css`
+  background-color: var(--primary-10);
+  display: flex;
+  flex-direction: column;
+`
+
 const navLink = css`
   display: block;
   text-decoration: none;
@@ -49,4 +55,9 @@ export const navIcon = css`
   .${navLinkSecondary}:hover & {
     transform: translateX(-6px);
   }
+`
+
+export const localeCls = css`
+  margin-top: auto;
+  margin-bottom: 20px;
 `

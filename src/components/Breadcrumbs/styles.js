@@ -5,6 +5,7 @@ export const wrapperCls = css`
   list-style: none;
   margin-left: 0;
   margin-bottom: 0;
+  text-transform: capitalize;
 `
 
 export const itemCls = css`

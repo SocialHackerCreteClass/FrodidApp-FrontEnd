@@ -1,12 +1,26 @@
 import React from "react"
+import Title from "./Title"
+import Information from "./Information"
+import Visitations from "./Visitations"
+import { useQuery } from "react-query"
+import { getProfessional } from "api/professionals"
+import { useParams } from "react-router"
 
-Professional.propTypes = {}
+const Professional = () => {
+  const { id } = useParams()
+  const { isLoading, data } = useQuery(
+    ["professionalData", id],
+    getProfessional
+  )
 
-function Professional() {
+  if (isLoading) return "Loading..."
+
   return (
-    <div>
-      <h1>This page will display the details of a professional</h1>
-    </div>
+    <>
+      <Title user={data} />
+      <Information user={data} />
+      <Visitations user={data} />
+    </>
   )
 }
 

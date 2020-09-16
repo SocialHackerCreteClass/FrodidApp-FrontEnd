@@ -3,7 +3,7 @@ import Title from "./Title"
 import Information from "./Information"
 import Visitations from "./Visitations"
 import { useQuery } from "react-query"
-import { getProfessional } from "api/professional"
+import { getProfessional } from "api/professionals"
 import { useParams } from "react-router"
 
 const Professional = () => {

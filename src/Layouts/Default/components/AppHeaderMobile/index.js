@@ -42,7 +42,7 @@ function AppHeaderMobile() {
               </NavLink>
             </li>
             <li className="u-margin-bottom-small">
-              <NavLink to="/visitations">
+              <NavLink to="/visits">
                 <VisitationsIcon />
               </NavLink>
             </li>
@@ -65,7 +65,7 @@ function AppHeaderMobile() {
               </NavLink>
             </li>
             <li className="u-margin-bottom-small">
-              <NavLink to="/visitations/create-new">
+              <NavLink to="/visits/create-new">
                 <VisitationsIcon type={"secondary"} />
               </NavLink>
             </li>

@@ -13,7 +13,7 @@ function Pages() {
     <LayoutDefault>
       <Breadcrumbs />
       <Switch>
-        <ProtectedRoute path="/visitations" component={Visits} />
+        <ProtectedRoute path="/visits" component={Visits} />
         <ProtectedRoute path="/patients" component={Patients} />
         <ProtectedRoute path="/professionals" component={Professionals} />
         <Route path="/test" component={TestPage} />

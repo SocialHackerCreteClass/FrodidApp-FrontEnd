@@ -54,7 +54,7 @@ function ActionsColumn({ value }) {
   const { id } = value
   return (
     <div>
-      <NavLink to={`patients/details/${id}`} className={viewAction}>
+      <NavLink to={`/visits/details/${id}`} className={viewAction}>
         <Translate arg={"int.view"} />
       </NavLink>
     </div>

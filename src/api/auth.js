@@ -1,14 +1,18 @@
-export const getUserData = async (key, pin) => {
-  const response = await fetch(`https://randomuser.me/api/`)
-  const data = await response.json()
-  const mockedUser = data.results[0]
-  const mockedDateTimestamp = new Date().getTime()
+import { sleep } from "utils"
 
+export const getUserData = async (key, pin) => {
+  console.log("fetching user with pin:", pin)
+  await sleep(2000)
   return {
-    email: mockedUser.email,
-    firstName: mockedUser.name.first,
-    lastName: mockedUser.name.last,
-    profession: `random profession${pin}`,
-    birthDate: mockedDateTimestamp
+    id: "1",
+    firstName: "John",
+    lastName: "Doe1",
+    email: "johndoe@gmail.com",
+    birthDate: 969117408000,
+    createdDate: "14 / 8 / 2020",
+    afm: "165896352",
+    amka: "165896352",
+    role: "professional",
+    profession: "doctor"
   }
 }

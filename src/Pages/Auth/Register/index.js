@@ -38,7 +38,8 @@ function Register() {
         ...prevFormData,
         ...data
       }))
-    }
+    },
+    refetchOnWindowFocus: false
   })
 
   function handleSubmit() {

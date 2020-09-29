@@ -18,8 +18,29 @@ export async function getProfessionalVisits(key, { id, pageSize, pageIndex }) {
   }
 }
 
+// const URL2 = ""
+
+export async function getVisitationDetails(key, { id }) {
+  // const response = await fetch(URL2)
+  // const data = await response.json()
+  // return data
+  console.log(id)
+  await sleep(2000)
+  return mockVisitData.data2
+}
+
 export const mockVisitData = {
   total: 10,
+  data2: {
+    id: 1,
+    date: "12/3/2020",
+    startTime: "1990-12-01 13:00",
+    endTime: "1990-12-01 14:45",
+    patient: "Mary White_1",
+    comment: "Lorem Ipsum Mpla mpla",
+    professional: "John Doe",
+    address: "Ionias 12, Mastampas, "
+  },
   data: [
     {
       id: 1,

@@ -69,6 +69,9 @@ function ActionsColumn({ value }) {
       <NavLink to={`patients/details/${id}`} className={viewAction}>
         <Translate arg={"int.view"} />
       </NavLink>
+      <NavLink to={`patients/edit/${id}`} className={viewAction}>
+        <Translate arg={"int.edit"} />
+      </NavLink>
     </div>
   )
 }

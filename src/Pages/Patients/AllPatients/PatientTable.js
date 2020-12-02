@@ -137,4 +137,5 @@ const viewAction = css`
   color: var(--primary-60);
   font-size: 1.13rem;
   line-height: 1.33;
+  margin-right: 10px;
 `
